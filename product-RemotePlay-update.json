@@ -1,0 +1,68 @@
+{
+  "v": 1,
+  "type": "product",
+  "product": "RemotePlay",
+  "base_version": "2.5.2",
+  "version": "2.5.3",
+  "notes": "DS5/DualSense output now resolves to the DS4 virtual pad; added remoteplay_input_index for controller pinning; detector overlay on.",
+  "files": [
+    {
+      "path": "mtv_config.json",
+      "sha256": "cb1e04265b4cc3d5b0635a67e3c85a17926cab9cd02248b6cad08adfbccc51f7"
+    },
+    {
+      "path": "mtv_license/core.cp311-win_amd64.pyd",
+      "sha256": "61c1a48ee14c4dbdbb88a15374a23efefbc54616140b75e5778cda8ba2a369be"
+    },
+    {
+      "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
+      "sha256": "11c613976bdd65fa69a8fee126e1694fb7d6ebb818b1593d0119e234175cf210"
+    },
+    {
+      "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
+      "sha256": "9e8faff9a1dd4b3126ad7658592b7d0d4ae2580e1d1f0ba9cfc4ff5c0f663de8"
+    },
+    {
+      "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
+      "sha256": "399684348c8ae13b9236babc38c521b683d372de052667bfa8a8f35a6b4fd852"
+    },
+    {
+      "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
+      "sha256": "0e3cf466f042548cf245858a2f74139ad58638e25ebd6b146b2062b8cdf0ab21"
+    },
+    {
+      "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
+      "sha256": "036e8f3a5375f98bb053b5db857902d81d31716250eeb2fd3b77a6f7a9cddfc0"
+    },
+    {
+      "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
+      "sha256": "41681670a5d5f41aa043e29f495774c297c4630118f519425b3b6d12d715fba9"
+    },
+    {
+      "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
+      "sha256": "0611eabdadca52e4df233b903daa987ec1e3c217b6502b08e73468c22f59e6d6"
+    },
+    {
+      "path": "remoteplay/bridge.cp311-win_amd64.pyd",
+      "sha256": "48ffdedba2d9e91c9dc12bf59334a853e0cef6db38665349f4c5a96c508cf39a"
+    },
+    {
+      "path": "remoteplay/input.cp311-win_amd64.pyd",
+      "sha256": "3ba5ab39dade45b67974d3c8e7e9787e1bf65de7bb2b3874a1f93f5dc3c9368d"
+    },
+    {
+      "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
+      "sha256": "c047ca99da1a625ba4e8657499bc5574187cfbda9eb37ee13f718f9a7aa98c21"
+    },
+    {
+      "path": "remoteplay/output.cp311-win_amd64.pyd",
+      "sha256": "ed1c02fa8470b578ce076f5ddd876ef74d633a32e6275bb2e80bd590a2f27fe4"
+    },
+    {
+      "path": "remoteplay/state.cp311-win_amd64.pyd",
+      "sha256": "057a6a48e84a1730aa1f02a3ac92e026d8937742bf510cc215365fd43c5a9725"
+    }
+  ],
+  "remove": [],
+  "sig": "QODmT1p_2KCBWPJTTPATH7G2Xf6gNcr8CZApQOV7oKniKqf-458FQZYGj_c5TwRb1jjguo1qv_Seu5FmvEnFDg"
+}

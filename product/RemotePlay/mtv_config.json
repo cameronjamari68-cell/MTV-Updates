@@ -25,7 +25,7 @@
                       1.0,
                       0.68
                   ],
-    "target_height":  60.2,
+    "target_height":  64.0,
     "release_mode":  "threshold",
     "threshold_margin_px":  0.0,
     "threshold_margin_max_px":  0.0,
@@ -63,7 +63,7 @@
     "track_window_pad_y":  220,
     "idle_early_reject":  true,
     "idle_reject_scale":  4,
-    "show_hud":  false,
+    "show_hud":  true,
     "debug_mode":  false,
     "controller_type":  "PlayStation",
     "remoteplay_output_type":  "Xbox360",
