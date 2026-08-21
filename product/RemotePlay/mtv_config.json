@@ -1,6 +1,6 @@
 {
     "meter_profile_type":  "Arrow2",
-    "meter_profile_color":  "Purple",
+    "meter_profile_color":  "White",
     "meter_rgb_lower":  [
                             190,
                             0,
@@ -25,7 +25,7 @@
                       1.0,
                       0.68
                   ],
-    "target_height":  64.0,
+    "target_height":  60.300000000000004,
     "release_mode":  "threshold",
     "threshold_margin_px":  0.0,
     "threshold_margin_max_px":  0.0,

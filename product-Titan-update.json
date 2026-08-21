@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "type": "product",
+  "product": "Titan",
+  "base_version": "2.5.2",
+  "version": "2.5.4",
+  "notes": "DS5 input via SDL (never XInput), auto DS4 virtual pad for PlayStation, auto-close Helios in installer, enumeration diagnostics.",
+  "files": [
+    {
+      "path": "_mtv_engine.cp311-win_amd64.pyd",
+      "sha256": "9eda1fac2d1678372ba5fd5ecef9a273ca96017b67fa184c39bf86c5a4947e0f"
+    },
+    {
+      "path": "_mtvbridge_core.cp311-win_amd64.pyd",
+      "sha256": "8b4403af78cbde52abafcd424ed54603f53e4369ca4c43ba60b1aca3c90d2162"
+    },
+    {
+      "path": "mtv_config.json",
+      "sha256": "1ee606a47c3bc6bb27422eb2654286bac89518c8b52ec5e8f7a40fd8bcc97adf"
+    },
+    {
+      "path": "mtv_license/core.cp311-win_amd64.pyd",
+      "sha256": "1da7c86c63c1fb56d5b161522bff9b8ad350419835426371356de0ce41e775af"
+    },
+    {
+      "path": "mtv_vision.cp311-win_amd64.pyd",
+      "sha256": "e973ea6ce78006555e67a9b69c559ff7873878a29736a44ff8bcdbe210b5ad8b"
+    }
+  ],
+  "remove": [],
+  "sig": "G5ka_7p99-Ah--pVhCRnjjqawxoNGYmZYmx_mmFzzcNKnDCHjBUzmMszmVp8jhOXOIHgX4yigVI2LeuvgTu7Cg"
+}

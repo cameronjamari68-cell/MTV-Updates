@@ -2,67 +2,67 @@
   "v": 1,
   "type": "product",
   "product": "RemotePlay",
-  "base_version": "2.5.2",
-  "version": "2.5.3",
-  "notes": "DS5/DualSense output now resolves to the DS4 virtual pad; added remoteplay_input_index for controller pinning; detector overlay on.",
+  "base_version": "2.5.3",
+  "version": "2.5.4",
+  "notes": "DS5 input via SDL (never XInput), auto DS4 virtual pad for PlayStation, auto-close Helios in installer, enumeration diagnostics.",
   "files": [
     {
       "path": "mtv_config.json",
-      "sha256": "cb1e04265b4cc3d5b0635a67e3c85a17926cab9cd02248b6cad08adfbccc51f7"
+      "sha256": "1ee606a47c3bc6bb27422eb2654286bac89518c8b52ec5e8f7a40fd8bcc97adf"
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "61c1a48ee14c4dbdbb88a15374a23efefbc54616140b75e5778cda8ba2a369be"
+      "sha256": "1067ccd0de4bc3d06e648ff2888ebe932fc5eb82e76f47d1fed515a26a441da9"
     },
     {
       "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
-      "sha256": "11c613976bdd65fa69a8fee126e1694fb7d6ebb818b1593d0119e234175cf210"
+      "sha256": "3027810a33b36ceb8ef547e95fbb2cac825663df23e315e1e0956d634f39dae2"
     },
     {
       "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "9e8faff9a1dd4b3126ad7658592b7d0d4ae2580e1d1f0ba9cfc4ff5c0f663de8"
+      "sha256": "35b7e402ce6fcb3053f165d4788fb0af87082c34665af078ca0a2dd3d079e9b1"
     },
     {
       "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "399684348c8ae13b9236babc38c521b683d372de052667bfa8a8f35a6b4fd852"
+      "sha256": "3fe3ff915a1948da808803eaee726e3815b25481cc5e5331d762c70cd2c80294"
     },
     {
       "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
-      "sha256": "0e3cf466f042548cf245858a2f74139ad58638e25ebd6b146b2062b8cdf0ab21"
+      "sha256": "26498d0f3ea9e4d4b4886ceebbde4c0049d91fdd6cf9f35d967ced60663f42f9"
     },
     {
       "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
-      "sha256": "036e8f3a5375f98bb053b5db857902d81d31716250eeb2fd3b77a6f7a9cddfc0"
+      "sha256": "0e0979e5b77c5fd0b15ac981b8cdd3649096aed5af754acd1ec85b3398251dd9"
     },
     {
       "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
-      "sha256": "41681670a5d5f41aa043e29f495774c297c4630118f519425b3b6d12d715fba9"
+      "sha256": "29d87d54e1aac153a9aca197f5fa59db63961dc3df88e11716b3385dc1939cb1"
     },
     {
       "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
-      "sha256": "0611eabdadca52e4df233b903daa987ec1e3c217b6502b08e73468c22f59e6d6"
+      "sha256": "308ce6e0b375d2ab1cabf2fc828fa61b386076e917ae05f5df6515258ef28030"
     },
     {
       "path": "remoteplay/bridge.cp311-win_amd64.pyd",
-      "sha256": "48ffdedba2d9e91c9dc12bf59334a853e0cef6db38665349f4c5a96c508cf39a"
+      "sha256": "d137c71e1e712cb73b3e9c6eb16a68d4f959471a0eb50d9fc2638d45c6cf068b"
     },
     {
       "path": "remoteplay/input.cp311-win_amd64.pyd",
-      "sha256": "3ba5ab39dade45b67974d3c8e7e9787e1bf65de7bb2b3874a1f93f5dc3c9368d"
+      "sha256": "c5c69f0e7d49e110ddf1867ed2cc015950ebcae8e80eb727892466970a6b9d6a"
     },
     {
       "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "c047ca99da1a625ba4e8657499bc5574187cfbda9eb37ee13f718f9a7aa98c21"
+      "sha256": "c7ebfef9f37689e119768696ef8eacfc164401224c20925841ef0aa370ee0f58"
     },
     {
       "path": "remoteplay/output.cp311-win_amd64.pyd",
-      "sha256": "ed1c02fa8470b578ce076f5ddd876ef74d633a32e6275bb2e80bd590a2f27fe4"
+      "sha256": "587bce4c7dd6c543804e6650b19cdd6ec6cd0204c23f7f66dcf3a03c4667ff79"
     },
     {
       "path": "remoteplay/state.cp311-win_amd64.pyd",
-      "sha256": "057a6a48e84a1730aa1f02a3ac92e026d8937742bf510cc215365fd43c5a9725"
+      "sha256": "b38e4c882e0f4d8aadd3e20543871ac47f085b39863d9db21de98ce43d50dca3"
     }
   ],
   "remove": [],
-  "sig": "QODmT1p_2KCBWPJTTPATH7G2Xf6gNcr8CZApQOV7oKniKqf-458FQZYGj_c5TwRb1jjguo1qv_Seu5FmvEnFDg"
+  "sig": "BaWZ8pzND53CdcLUSBltR0ePmvVVDXf9oJxvdd92GCxTWCqCtKazoL1_X6JV_tjSeA4czF2krsC6a6JiEULXBA"
 }
