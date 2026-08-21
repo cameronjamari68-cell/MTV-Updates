@@ -12,10 +12,10 @@
       "size": 239602725
     },
     "RemotePlay": {
-      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.2/MTV-RemotePlay-2.5.2.zip",
-      "sha256": "830a45db7276dc6be7b4b412200e97937e6c33ccd9b03daf9b4cfc115990116e",
-      "size": 241448663
+      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.3/MTV-RemotePlay-2.5.3.zip",
+      "sha256": "dddd74918a7e5e64d74b33d9d036737e4603c362e9136a95bfff87426385899c",
+      "size": 241453380
     }
   },
-  "sig": "166oUECJGtGxD3OiarRiTTdtOhBqNafhQhojz4IKyHAPxDRRZTx3JSN1XRDYWSryCUwSfnhgUqpTgRKBhfQQDw"
+  "sig": "N9xnIfWM7Nm4WnyNwlOeT6s_sTjeyX1VUY3ZKR6jXiez462RbxOalQTy2Ks2sW6O_X_7lWO6Ysqt5W9k-EXLAw"
 }
