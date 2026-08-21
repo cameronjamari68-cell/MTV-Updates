@@ -2,20 +2,20 @@
   "v": 1,
   "version": "2.3.0",
   "exe": "MTVInstaller-2.3.0.exe",
-  "exe_sha256": "1f541b56ce85cec30dc32c9f98ae8667e7c4db4472946a91aeb8a8381686329d",
+  "exe_sha256": "94b0f085a422d36de846e1b413ed9053748f9c3f8bba961f04d132363f6b22f8",
   "min_version": "2.3.0",
   "notes": "Hub app \u2014 download, update, install & repair in one place",
   "packages": {
     "Titan": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/MTV-Titan-2.3.0.zip",
-      "sha256": "08e9ebf4cc29a0404c2efab3bedbef518739fd88f7eae46a056b55c8580e7dd7",
-      "size": 239387190
+      "sha256": "c1afd501d71bf49bf3e5fe76b1438b5fb6423ff8b1a947d796030c6e204a0920",
+      "size": 239386436
     },
     "RemotePlay": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/MTV-RemotePlay-2.3.0.zip",
-      "sha256": "5cf350b07954e4d2be094bda251b76be29e1e4551546c6b6ccb1612d59a3ad55",
-      "size": 241233958
+      "sha256": "56954a1142537037a442cab8ef082a5fff2d6c6f56791cf9f6af4b46030bb4ea",
+      "size": 241233203
     }
   },
-  "sig": "Gf-4tvjPu3ci6rU-OBU5OhLe39qF9OtphdHtXEppmLjwwobQcFUn_gNdiAEdBEraLQOJO_GWpYrGt8TudBF8Aw"
+  "sig": "mZ77frwxnbq3XUP7qWLZ4BbD6Sbvqpna-wzamkBcVM9ApTkl3IZLS6MbPKppCyvjFKPQ3gBFQneoQG_p7GW3Ag"
 }
