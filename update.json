@@ -2,8 +2,8 @@
   "v": 1,
   "version": "2.3.0",
   "exe": "MTVInstaller-2.3.0.exe",
-  "exe_sha256": "7aab7935e4081dde5b1dce2f38a63c8138617f4f161b69e131ca0d2468bbb03f",
+  "exe_sha256": "91666996d7d6428cdc0975185d85213cc672667668350353f2b483e54a3e4022",
   "min_version": "2.3.0",
-  "notes": "Installer 2.3.0 \u2014 embedded logo, signed self-update + incremental product updates",
-  "sig": "pvcDo5SBuhHdoxtwl80Pp5MSLCp3azh_buMjj4QUzHj61YzKYEB7LKnd9ZhlfFEwustqhz6Io_yHnar_i_5KDA"
+  "notes": "Installer 2.3.0 \u2014 embedded logo, self-update + incremental product updates",
+  "sig": "7fGalH0iYSqG_uH0r7R8D09KzbOCBqBOSoVsOIQuH7Vu-Yz9Vw_ltM-NesuN815tq9KpuKU0WQZeWF2aeEe1DQ"
 }
