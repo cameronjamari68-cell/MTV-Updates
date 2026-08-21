@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTV Updates — Download Titan &amp; Remote Play</title>
+<style>
+  :root {
+    --black: #0a0a0a;
+    --panel: #141414;
+    --border: #262626;
+    --red: #e50914;
+    --red-hover: #ff1a25;
+    --text: #e8e8e8;
+    --dim: #9a9a9a;
+    --green: #2ecc71;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(1200px 600px at 50% -10%, #1a0b0c 0%, var(--black) 55%);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 48px 22px 80px; }
+  .logo { display: block; margin: 0 auto 18px; width: 150px; height: 150px; }
+  h1 {
+    text-align: center; font-size: 34px; font-weight: 600; letter-spacing: 3px;
+    color: #fff;
+  }
+  h1 span { color: var(--red); }
+  .tagline {
+    text-align: center; color: var(--dim); font-size: 15px; margin: 10px 0 44px;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 26px 28px; margin-bottom: 22px;
+  }
+  .card h2 { font-size: 18px; font-weight: 600; letter-spacing: .5px; margin-bottom: 8px; }
+  .card p { color: var(--dim); font-size: 14px; line-height: 1.55; }
+  .card p strong { color: var(--text); }
+  .step-num {
+    display: inline-block; width: 22px; height: 22px; line-height: 22px;
+    text-align: center; border-radius: 50%; background: var(--red); color: #fff;
+    font-size: 13px; font-weight: 700; margin-right: 8px; vertical-align: 1px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  .product { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 26px 26px 30px; text-align: center; }
+  .product .badge { display: inline-block; font-size: 11px; letter-spacing: 2px; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
+  .product h3 { font-size: 24px; font-weight: 600; letter-spacing: 1px; margin-bottom: 6px; }
+  .product p { color: var(--dim); font-size: 13.5px; line-height: 1.55; min-height: 44px; margin-bottom: 20px; }
+  .btn {
+    display: inline-block; background: var(--red); color: #fff; text-decoration: none;
+    border-radius: 9px; padding: 14px 34px; font-size: 16px; font-weight: 600;
+    letter-spacing: .5px; transition: background .15s;
+  }
+  .btn:hover { background: var(--red-hover); }
+  .btn.ghost { background: transparent; border: 1px solid #444; color: var(--text); }
+  .btn.ghost:hover { border-color: var(--red); color: #fff; }
+  .meta { font-size: 12px; color: #777; margin-top: 14px; }
+  .meta code { color: #aaa; }
+  .ok { color: var(--green); font-size: 13px; margin-top: 10px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+  .faq { font-size: 13.5px; }
+  .faq li { color: var(--dim); line-height: 1.65; margin-bottom: 10px; }
+  .faq strong { color: var(--text); }
+  footer { text-align: center; color: #666; font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="mtv_logo.png" alt="MT VISION logo">
+  <h1>MT<span> VISION</span></h1>
+  <p class="tagline">MTV Titan &amp; Remote Play — one installer, automatic updates.</p>
+
+  <div class="card">
+    <h2><span class="step-num">1</span>Download your product</h2>
+    <p>Choose <strong>Titan</strong> or <strong>Remote Play</strong> below and download the full package.
+       New users get everything in one file — the app, the environment, and the installer.</p>
+    <div class="grid">
+      <div class="product">
+        <div class="badge">MTV</div>
+        <h3>TITAN</h3>
+        <p>Full installer package for Titan users. Contains the app, dependencies and the branded installer.</p>
+        <a class="btn" href="https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/titan.2.3.remastered.zip">Download Titan</a>
+        <p class="meta"><code>titan.2.3.remastered.zip</code> · ~239 MB</p>
+      </div>
+      <div class="product">
+        <div class="badge">MTV</div>
+        <h3>REMOTE PLAY</h3>
+        <p>Full installer package for Remote Play users. Contains the app, dependencies and the branded installer.</p>
+        <a class="btn" href="https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/remoteplay.2.3.Remastered.zip">Download Remote Play</a>
+        <p class="meta"><code>remoteplay.2.3.Remastered.zip</code> · ~241 MB</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">2</span>Extract &amp; run the installer</h2>
+    <p>Extract the ZIP to any folder — keep the whole folder together, don't copy single files out of it.
+       Then double-click <strong>INSTALL_OR_REPAIR_MTV.cmd</strong>. A window with the MT Vision logo opens;
+       click <strong>Install / Repair</strong> and approve the Windows prompt when it appears.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">3</span>Updates — automatic</h2>
+    <p>Every time you open the installer, it checks for updates in the background.
+       <strong>Titan and Remote Play updates download automatically</strong> — only the changed files, verified by signature —
+       and the installer applies them and re-runs the install for you. You never need to re-download the full package for updates.</p>
+    <p class="ok">✓ Both products update themselves from this page's signed manifests — no manual re-downloads.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="card faq">
+    <h2>Still need help?</h2>
+    <ul style="list-style:none; padding:0; margin-top:12px;">
+      <li><strong>UAC prompt?</strong> Yes — approve it. That's normal.</li>
+      <li><strong>"Close Helios completely"?</strong> The installer needs Helios closed before it can update. Close it and click Install again.</li>
+      <li><strong>Already have an older MTV?</strong> Just run your existing installer — it will update itself and your product automatically.</li>
+    </ul>
+  </div>
+
+  <footer>MTV · signed updates · the only official download locations are this page and your installer</footer>
+</div>
+</body>
+</html>
