@@ -2,8 +2,20 @@
   "v": 1,
   "version": "2.3.0",
   "exe": "MTVInstaller-2.3.0.exe",
-  "exe_sha256": "d5f23b34ec1037c87725e3b7a712645ef180d5ee0b97d6675e6811a8f1032ffd",
+  "exe_sha256": "1f541b56ce85cec30dc32c9f98ae8667e7c4db4472946a91aeb8a8381686329d",
   "min_version": "2.3.0",
-  "notes": "Installer 2.3.0 \u2014 updated MT Vision logo",
-  "sig": "3ZI1pWbk0HQaSW8ccSOFbMiZXL1VuCHyLN7LzKcHxnB_aFXnEOvoPthlD7LtePnIlB4o0lZ1bLfUF4t3kXbgAw"
+  "notes": "Hub app \u2014 download, update, install & repair in one place",
+  "packages": {
+    "Titan": {
+      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/MTV-Titan-2.3.0.zip",
+      "sha256": "08e9ebf4cc29a0404c2efab3bedbef518739fd88f7eae46a056b55c8580e7dd7",
+      "size": 239387190
+    },
+    "RemotePlay": {
+      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.3.0/MTV-RemotePlay-2.3.0.zip",
+      "sha256": "5cf350b07954e4d2be094bda251b76be29e1e4551546c6b6ccb1612d59a3ad55",
+      "size": 241233958
+    }
+  },
+  "sig": "Gf-4tvjPu3ci6rU-OBU5OhLe39qF9OtphdHtXEppmLjwwobQcFUn_gNdiAEdBEraLQOJO_GWpYrGt8TudBF8Aw"
 }
