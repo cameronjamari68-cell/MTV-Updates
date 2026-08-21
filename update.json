@@ -1,21 +1,21 @@
 {
   "v": 1,
-  "version": "2.5.4",
-  "exe": "MTVInstaller-2.5.4.exe",
-  "exe_sha256": "b5b72aba9913cb8febd39cdc63a20fe2624098624b78017c3e6af5a54e75a2d7",
-  "min_version": "2.5.4",
-  "notes": "DS5 input via SDL (never XInput), auto DS4 virtual pad for PlayStation, auto-close Helios in installer, enumeration diagnostics.",
+  "version": "2.5.1",
+  "exe": "MTVInstaller-2.5.1.exe",
+  "exe_sha256": "7b13ab4d8c0a2a6e0fa176cf0828b5de7399d7373574b1665e565618a46085d4",
+  "min_version": "2.5.1",
+  "notes": "Installer no longer freezes at scanning; package scan moved off the UI thread with a timeout",
   "packages": {
     "Titan": {
-      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.4/MTV-Titan-2.5.4.zip",
-      "sha256": "efcc9711f0e4a7eeb6fc624afadfcf002e4f648b77891010acb2830550be93a8",
-      "size": 239602728
+      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.1/MTV-Titan-2.5.1.zip",
+      "sha256": "22dfc98649fda9658554f01abe592461c770b1cbdc7dea4e125b2e26ad57ec72",
+      "size": 239601533
     },
     "RemotePlay": {
-      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.4/MTV-RemotePlay-2.5.4.zip",
-      "sha256": "535fd8f4765e0115e9c2e597c9d3c33e4d4dde216e8c09f13dccdfa7f3474c44",
-      "size": 241463504
+      "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.5.1/MTV-RemotePlay-2.5.1.zip",
+      "sha256": "58801285ba3f40202aa176330b9e9e7527f13aaf20d17f6cbe065a5d998d2d91",
+      "size": 241448148
     }
   },
-  "sig": "APrbfgX3Q6E0-Ni0r1M4XDMH5HKFuZkm7de03jFHzK6LW9cJP0RirdIj72vPmNw_P8JXx2mGAaTy-K1AqZyvBA"
+  "sig": "rZcV-tJXvbEpuobQ5CENPfEDOxN8_nBKlNy6C6VMZ9qF6DSHCNbnGFP99BFBEsNHQ7VnleZ0GObLEY7DBQTxDg"
 }
