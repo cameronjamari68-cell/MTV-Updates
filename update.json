@@ -2,8 +2,8 @@
   "v": 1,
   "version": "2.3.0",
   "exe": "MTVInstaller-2.3.0.exe",
-  "exe_sha256": "91666996d7d6428cdc0975185d85213cc672667668350353f2b483e54a3e4022",
+  "exe_sha256": "d5f23b34ec1037c87725e3b7a712645ef180d5ee0b97d6675e6811a8f1032ffd",
   "min_version": "2.3.0",
-  "notes": "Installer 2.3.0 \u2014 embedded logo, self-update + incremental product updates",
-  "sig": "7fGalH0iYSqG_uH0r7R8D09KzbOCBqBOSoVsOIQuH7Vu-Yz9Vw_ltM-NesuN815tq9KpuKU0WQZeWF2aeEe1DQ"
+  "notes": "Installer 2.3.0 \u2014 updated MT Vision logo",
+  "sig": "3ZI1pWbk0HQaSW8ccSOFbMiZXL1VuCHyLN7LzKcHxnB_aFXnEOvoPthlD7LtePnIlB4o0lZ1bLfUF4t3kXbgAw"
 }
