@@ -2,20 +2,20 @@
   "v": 1,
   "version": "2.4.0",
   "exe": "MTVInstaller-2.4.0.exe",
-  "exe_sha256": "ddce96c140c335691700b821882b73294796115c77686454724e71abd26ba704",
+  "exe_sha256": "06b0c8d245a3a2150507a44ac06bc54511dbccd6ac0228f4e1d39df4b978cffd",
   "min_version": "2.4.0",
-  "notes": "Role-locked hub: sign in with Discord to see only the products you own",
+  "notes": "App icon + Discord roles re-checked on every launch",
   "packages": {
     "Titan": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.4.0/MTV-Titan-2.4.0.zip",
-      "sha256": "3fc6afd73fe5e16a3c8ead2542c4fa2e801b1ffe8ac8ab2e895ffce68647a842",
-      "size": 239434440
+      "sha256": "bb7038a0de3f13113e3710f257b26a8569adb948294d6a0daf0447c8a0d07db8",
+      "size": 239564247
     },
     "RemotePlay": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v2.4.0/MTV-RemotePlay-2.4.0.zip",
-      "sha256": "337ea69f650f518e6cde70f28491580d2fc92f49dd5d721721715ed88a8e7db1",
-      "size": 241281216
+      "sha256": "bbb4464d030bded0a7857f28c7d6407ea4219fbcafab838a822a89cf588aa94b",
+      "size": 241411026
     }
   },
-  "sig": "RatZXtqj2xXJDPciDBtqjW2A-64Hh-9nB5rrlA5iOZqmaWPhHrHm4GgiImO1C8NpUrm-HiCfu6tFbbMXCnwvDQ"
+  "sig": "0BnDp4enWp7DV2ufjICTgKxFDnB5KfSOBMY_JBY9QCxa9V8C0y3TEn-DoQBjNMJ9F-a4NznzdeaiGSC0udA7BA"
 }
