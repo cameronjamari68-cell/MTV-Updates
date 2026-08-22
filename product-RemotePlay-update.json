@@ -2,75 +2,63 @@
   "v": 1,
   "type": "product",
   "product": "RemotePlay",
-  "base_version": "2.6.0",
-  "version": "2.6.1",
-  "notes": "Fixed installer for Download All / updates: self-healing launcher reconcile, valid-PE tolerance, DS5 input parity, overlay defaults locked on, clearer update guidance for old packages",
+  "base_version": "2.6.1",
+  "version": "2.6.2",
+  "notes": "Release notes go here",
   "files": [
     {
-      "path": "install_product.ps1",
-      "sha256": "9902ad9a2e14a29dfe5742fbfe9e665455c971385f3abad54fcc0dfa41533131"
-    },
-    {
-      "path": "mtv_config.json",
-      "sha256": "7277325c12af0c188e7767d8322f0c36ff9e10bce08619beb2b2432a48e7d1fe"
-    },
-    {
-      "path": "mtv_launcher.py",
-      "sha256": "98331b7636fee69e82f89ab4a1b70eebe28c2201da2a31bd2f974a0ae3af8da2"
-    },
-    {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "ec1352c2069cda0271802892fe87233a64d0d3146d15d204ab5002f1c60e15d6"
+      "sha256": "95ae43305ef23e939b8585a6ed56080b811c6f851e44fc8b494f81ef19999dac"
     },
     {
       "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
-      "sha256": "28aedd193412ca378c188d455d462d229ec5044dccbff32e515b83be49da6638"
+      "sha256": "da18203bc74460bafee6546ad7ba828e8405a20b862355beb0154f8c6a2018ec"
     },
     {
       "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "ebe190e3ebaa6a7a187718fe950728305a0a54f8317b76f7ae889a507e7d0f28"
+      "sha256": "a07c2685af1939df11d130f232f59ed33054bc71608987dcbd2bf688642485f9"
     },
     {
       "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "f1fc6d039deaf38fccde6bfc19fd43893dd22200a172fd4db542fdecd273d62d"
+      "sha256": "285bbc2ea1f3d24c9c20f6a36d353ee16a1049491ace3fb23ce1c0cadb5edfe0"
     },
     {
       "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
-      "sha256": "754e106751fbaf84011ad17f16a0588e605806f9395c01b73954283db73ab60e"
+      "sha256": "c464218b839f734509a853d42bca99d1d9dc588ff546755a8a5dda5cf1c343c5"
     },
     {
       "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
-      "sha256": "17a887650e8579e9230e4954a8c8a88269c4af76c6f1d2e41d95a7e2dfb95718"
+      "sha256": "7152db9867090af3fbd8a2e7338788ab0982a84f8078dfbe817c0a4c31cfab59"
     },
     {
       "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
-      "sha256": "59b7617ac7685b3fc4ec54673913865af53fd29faf6db3baeeecd6c406989719"
+      "sha256": "f42b332772a9a3c74fe9a237f763e6e33db45415fc14e32cc1eb592274806761"
     },
     {
       "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
-      "sha256": "d0a64d49b4092effc8a04e87f5c3a4b1e6a870746acb54c55ac6170045942621"
+      "sha256": "799d7978906d59a1164f61f0308139f35daa130d4647bee101c7c09385a4de0c"
     },
     {
       "path": "remoteplay/bridge.cp311-win_amd64.pyd",
-      "sha256": "cfb8fca167be6f211f6287661b24f2a939932b465256eac6d198767b8609ebb7"
+      "sha256": "9ef305c71c6a32a7a757b9fd42d091f61e2368c7b759dff52e3dd51a4b097568"
     },
     {
       "path": "remoteplay/input.cp311-win_amd64.pyd",
-      "sha256": "9f072a478ddbd50b935bf4a85b8091d3efcdbe8176f397b5f7204425e77f6f57"
+      "sha256": "2590c4048565407ac955ea76c92263833e68ed0116c8c44fcad6a8d92835a809"
     },
     {
       "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "9418b7f9aaaaf7cef357e420645dd35810cbdf885dc44b7aae906e0c394cc875"
+      "sha256": "cb85d157542bc692d3566ae162f16d5b349eae734a2de69464cac5d52a22932d"
     },
     {
       "path": "remoteplay/output.cp311-win_amd64.pyd",
-      "sha256": "e68ab3ecc3aaceee75dd0c27b13e081d7f860117de282726230b834822b37ff2"
+      "sha256": "8b38814f5783b7e957dd2578048861f49e706bee6179d5f828d9feda2927ec9c"
     },
     {
       "path": "remoteplay/state.cp311-win_amd64.pyd",
-      "sha256": "ca052688cccb56c97531bcc98a18945a54f96cc2ecd723dfa5618533bd6e193b"
+      "sha256": "92bf3240fda7188c1db062d3e7177a1f789d4345fff59fe85b9ed2107a3b642b"
     }
   ],
   "remove": [],
-  "sig": "DJ5mEQoroTkSsyK2urKElaFWAkJbE8hZaVbBeETwq7A8PZxTe82mt8vZyLV8QXlR00ZuyP6EiQe5piilFF_oAg"
+  "sig": "0-UaFnkJAvcttayJkdK3aBPdCIjXj7aQBlk-_z41PvNnOILLgtnespKQeYRQSnjKb1-5BEn5qqvJXi_jRtqdAw"
 }
