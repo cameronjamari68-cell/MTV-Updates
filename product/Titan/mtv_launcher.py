@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import json, os, statistics, sys, time, traceback
 from pathlib import Path
-from PyQt6.QtCore import Qt, QTimer
-from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal
+from PyQt6.QtGui import QIcon, QImage, QPixmap
 from PyQt6.QtWidgets import (
     QApplication, QCheckBox, QComboBox, QDialog, QDoubleSpinBox, QFrame,
     QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton,
@@ -316,6 +316,104 @@ class Card(QFrame):
         self.body.addWidget(label)
 
 
+class _ClickLabel(QLabel):
+    """A QLabel that reports click position (preview-local) via a signal."""
+    clicked = pyqtSignal(int, int)
+
+    def mousePressEvent(self, event):
+        self.clicked.emit(int(round(event.position().x())),
+                          int(round(event.position().y())))
+        super().mousePressEvent(event)
+
+
+class ColorPickerDialog(QDialog):
+    """Freeze the screen and let the user click the meter to sample its color.
+
+    Modal dialog over a full-res frozen screenshot. Clicking the meter
+    re-samples the pixel under the cursor and shows BGR/RGB; CONFIRM stores it
+    and closes. No extra deps: the screenshot comes from QScreen.grabWindow
+    and pixels are read via QImage.pixelColor.
+    """
+    def __init__(self, screen_image: QImage, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("MTV — Color Grabber")
+        self.setModal(True)
+        self.resize(1000, 700)
+        self.picked_color = None  # (b, g, r) once the user clicks then confirms
+        self._img = screen_image
+        self._scale = 1.0
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(16, 14, 16, 14)
+        layout.setSpacing(10)
+        hint = QLabel("CLICK the METER (its colored fill / arrow) in the frozen screen "
+                      "below. The sampled color becomes the detection color. "
+                      "Click CONFIRM to save, or click the meter again to re-sample.")
+        hint.setWordWrap(True)
+        layout.addWidget(hint)
+
+        self._preview = _ClickLabel()
+        self._preview.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._preview.setMinimumHeight(520)
+        self._preview.setStyleSheet("background:#07080a; border:1px solid #34363d;")
+        self._preview.clicked.connect(self._on_click)
+        self._refresh_preview()
+        layout.addWidget(self._preview, 1)
+
+        info_row = QHBoxLayout()
+        self._swatch = QLabel("   ")
+        self._swatch.setFixedSize(52, 26)
+        self._swatch.setStyleSheet("border:1px solid #555; background:#000;")
+        info_row.addWidget(self._swatch)
+        self._info = QLabel("Click the meter to sample its color")
+        self._info.setStyleSheet("color:#d7d8dd;")
+        info_row.addWidget(self._info)
+        info_row.addStretch()
+        self._cancel_btn = QPushButton("CANCEL")
+        self._cancel_btn.setObjectName("QuietButton")
+        self._cancel_btn.clicked.connect(self.reject)
+        info_row.addWidget(self._cancel_btn)
+        self._confirm_btn = QPushButton("CONFIRM COLOR")
+        self._confirm_btn.setEnabled(False)
+        self._confirm_btn.clicked.connect(self.accept)
+        info_row.addWidget(self._confirm_btn)
+        layout.addLayout(info_row)
+
+    def _refresh_preview(self):
+        w, h = self._img.width(), self._img.height()
+        if w <= 0 or h <= 0:
+            return
+        max_w, max_h = 980, 560
+        scale = min(max_w / w, max_h / h, 1.0)
+        self._scale = scale
+        pix = QPixmap.fromImage(self._img)
+        if scale < 1.0:
+            pix = pix.scaled(int(w * scale), int(h * scale),
+                             Qt.AspectRatioMode.KeepAspectRatio,
+                             Qt.TransformationMode.SmoothTransformation)
+        self._preview.setPixmap(pix)
+
+    def _on_click(self, x, y):
+        pix = self._preview.pixmap()
+        if pix is None or self._scale <= 0:
+            return
+        # Map preview-local click back to full-res image coords, accounting for
+        # the centered pixmap inside the label.
+        pw, ph = pix.width(), pix.height()
+        ox = (self._preview.width() - pw) // 2
+        oy = (self._preview.height() - ph) // 2
+        ix = int(round((x - ox) / self._scale))
+        iy = int(round((y - oy) / self._scale))
+        ix = max(0, min(self._img.width() - 1, ix))
+        iy = max(0, min(self._img.height() - 1, iy))
+        c = self._img.pixelColor(ix, iy)
+        b, g, r = c.blue(), c.green(), c.red()
+        self.picked_color = (b, g, r)
+        self._swatch.setStyleSheet(f"background:rgb({r},{g},{b}); border:1px solid #fff;")
+        self._info.setText(f"Sampled: BGR({b},{g},{r})  RGB({r},{g},{b}) — click CONFIRM to save")
+        self._confirm_btn.setEnabled(True)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -468,13 +566,20 @@ class MainWindow(QMainWindow):
         meter_grid.addWidget(self.meter, 0, 1)
         meter_grid.addWidget(QLabel("Color"), 1, 0)
         self.color = QComboBox()
-        self.color.addItems(["Purple", "Yellow", "Red", "White", "Orange", "Blue"])
+        self.color.addItems(["Purple", "Yellow", "Red", "White", "Orange", "Blue", "Custom"])
         self.color.setCurrentText(str(self.cfg.get("meter_profile_color", "Purple")))
         # activated passes the item INDEX; always resolve it to text first so
         # a broken integer never lands in meter_profile_color.
         self.color.activated.connect(
             lambda idx: self.on_color(self.color.itemText(int(idx))))
         meter_grid.addWidget(self.color, 1, 1)
+        self.pick_color_btn = QPushButton("PICK METER COLOR")
+        self.pick_color_btn.setObjectName("QuietButton")
+        self.pick_color_btn.setToolTip("Freeze the screen and click the meter to sample "
+                                       "its exact on-screen color. Saved as 'Custom' and used "
+                                       "by detection.")
+        self.pick_color_btn.clicked.connect(self.pick_color)
+        meter_grid.addWidget(self.pick_color_btn, 2, 0, 1, 2)
         meter_card.body.addLayout(meter_grid)
         self.hud = QCheckBox("Show detector overlay")
         self.hud.setChecked(bool(self.cfg.get("show_hud", True)))
@@ -636,6 +741,63 @@ class MainWindow(QMainWindow):
             self.saved.setText("PROFILE LOADED")
         except Exception:
             log_exc(f"set_meter({meter_name})")
+
+    def pick_color(self):
+        """Hide the launcher so the game is visible, then grab the screen."""
+        try:
+            self.pick_color_btn.setText("CAPTURING…")
+            self.pick_color_btn.setEnabled(False)
+            self.hide()
+            QApplication.processEvents()
+            QTimer.singleShot(350, self._do_pick_color)
+        except Exception:
+            log_exc("pick_color")
+            self._reset_pick_color()
+
+    def _reset_pick_color(self):
+        self.pick_color_btn.setText("PICK METER COLOR")
+        self.pick_color_btn.setEnabled(True)
+        self.show()
+
+    def _do_pick_color(self):
+        try:
+            screen = QApplication.primaryScreen()
+            image = screen.grabWindow(0).toImage()
+            self.show()
+            self.showNormal()
+            self.raise_()
+            dlg = ColorPickerDialog(image, self)
+            dlg.exec()
+            if dlg.picked_color is not None:
+                self.apply_picked_color(dlg.picked_color)
+                self.saved.setText("COLOR SAVED — Custom")
+                QTimer.singleShot(1200, lambda: self.saved.setText("REFERENCE MODE"))
+        except Exception:
+            log_exc("_do_pick_color")
+        finally:
+            self._reset_pick_color()
+
+    def apply_picked_color(self, bgr):
+        """Save the sampled meter color as a Custom BGR box used by detection.
+
+        A tolerance band is centered on the sampled pixel so a slightly
+        brighter/darker render of the same hue still matches. The fresh config
+        is written for the engine (which hot-reloads on file mtime).
+        """
+        try:
+            tol = 25
+            b, g, r = int(bgr[0]), int(bgr[1]), int(bgr[2])
+            fresh = load_config()
+            fresh["meter_profile_color"] = "Custom"
+            fresh["meter_rgb_lower"] = [max(0, b - tol), max(0, g - tol), max(0, r - tol)]
+            fresh["meter_rgb_upper"] = [min(255, b + tol), min(255, g + tol), min(255, r + tol)]
+            save_config(fresh)
+            self.cfg = fresh
+            self.color.blockSignals(True)
+            self.color.setCurrentText("Custom")
+            self.color.blockSignals(False)
+        except Exception:
+            log_exc("apply_picked_color")
 
     def test_shot(self):
         try:
