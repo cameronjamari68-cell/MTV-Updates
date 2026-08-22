@@ -429,6 +429,8 @@ class MainWindow(QMainWindow):
         self._unlocked = False
         self._license_info = {"ok": False, "reason": "no_license"}
         self._activation_dialog_open = False
+        self._update_result = None
+        self._update_applied = False
         self.build_ui()
         self.apply_style()
         self.refresh()
@@ -438,6 +440,39 @@ class MainWindow(QMainWindow):
         # Helios owns the 60 FPS capture loop.
         self.timer.setTimerType(Qt.TimerType.CoarseTimer)
         self.timer.start(250)
+        # Auto-update check: runs once at startup in the background.
+        QTimer.singleShot(500, self._start_update_check)
+
+    # ------------------------------------------------------------------ #
+    # auto-update
+    # ------------------------------------------------------------------ #
+    def _start_update_check(self) -> None:
+        """Check for updates in the background; apply silently if available."""
+        _shared = ROOT.parent / "shared"
+        if str(_shared) not in sys.path:
+            sys.path.insert(0, str(_shared))
+        from _auto_update import UpdateCheckThread
+        self._update_thread = UpdateCheckThread(
+            package_dir=ROOT, product="Titan",
+            on_done=self._on_update_done)
+        self._update_thread.start()
+
+    def _on_update_done(self, result) -> None:
+        self._update_result = result
+        if not result:
+            return
+        for line in result.log:
+            print(line, flush=True)
+        if result.available and not result.error:
+            self._update_applied = True
+            print(f"[MTV][UPDATE] Auto-update complete: {result.current_version} "
+                  f"-> {result.latest_version} ({result.files_changed} files changed, "
+                  f"{result.files_removed} removed)", flush=True)
+        elif result.error:
+            print(f"[MTV][UPDATE] Update check failed: {result.error}", flush=True)
+        else:
+            print(f"[MTV][UPDATE] Already at latest version ({result.current_version})",
+                  flush=True)
 
     def build_ui(self):
         root = QWidget()

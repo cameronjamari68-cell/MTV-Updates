@@ -66,7 +66,7 @@
     "show_hud":  true,
     "debug_mode":  false,
     "controller_type":  "PlayStation",
-    "remoteplay_output_type":  "Xbox360",
+    "remoteplay_output_type":  "auto",
     "dunk_release_ms":  50,
     "tempo_mid_value":  40,
     "tempo_ms":  65,
