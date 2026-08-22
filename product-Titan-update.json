@@ -4,15 +4,15 @@
   "product": "Titan",
   "base_version": "2.6.0",
   "version": "2.6.1",
-  "notes": "Fixed installer for Download All / updates: self-healing launcher reconcile, valid-PE tolerance, DS5 input parity, overlay defaults locked on, clearer update guidance",
+  "notes": "Fixed installer for Download All / updates: self-healing launcher reconcile, valid-PE tolerance, DS5 input parity, overlay defaults locked on, clearer update guidance for old packages",
   "files": [
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "cc2039fdcbe8e9942fa5202f8dcf93b3969f5825e9e65824344d3c743db6614a"
+      "sha256": "04c17e024e520392d8a69a805e64c2911799ff805ad8dfea7de222a1cbc711ad"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "897b775f286028bbabfb789985a16a5a3ed4fd06a4329b0fb65d3da061553150"
+      "sha256": "4b483a229841de500830a77ebb5d31846004fa64ef7bef72dd8557b3f5931ab0"
     },
     {
       "path": "install_product.ps1",
@@ -28,13 +28,13 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "a77508fd225668d71ec1dd53546baf96817c884cd8cf372f126fc38adef0b7cd"
+      "sha256": "069da91a347a70d0460c2724d1e75e817411235d2d34d64dd08696f0cdce847c"
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "129c1d7e85ce76d4251b20982f174e3ee2a6a7628919015fd246db809bd573cb"
+      "sha256": "c285826b82bd520b932a3ea6f2e6045647890e0efd688aba7ddfdef4265149cd"
     }
   ],
   "remove": [],
-  "sig": "UcARS3sphH_xQ4gXwkhwfW2dy7XFQMmStvtMROG2sQyZvXIl2zbViIbVDpUwu-YwkjmxBBrfQu4axJlBuL55Bg"
+  "sig": "jEShkL6yX3_dMS-tqY5Y4JMIjnfCr24iSPeW-_VuXs5loj5Z631x7lt2jUbR5uKoOGSQoLX6I5hGD_OD6iB_BA"
 }
