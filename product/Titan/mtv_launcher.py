@@ -147,7 +147,7 @@ REFERENCE = {
     "track_window_enable": True, "track_window_pad_x": 160,
     "track_window_pad_y": 220, "idle_early_reject": True,
     "idle_reject_scale": 4,
-    "show_hud": False, "debug_mode": False,
+    "show_hud": True, "debug_mode": False,
     "controller_type": "PlayStation", "dunk_release_ms": 50,
     "tempo_mid_value": 40, "tempo_ms": 65, "neutral_pause_ms": 40,
     "force_regular_only": True,
