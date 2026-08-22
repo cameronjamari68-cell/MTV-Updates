@@ -486,6 +486,7 @@ class MainWindow(QMainWindow):
                              "keys: meter_zoom_scale, meter_zoom_corner, "
                              "meter_zoom_pad_px.")
         self.zoom.toggled.connect(lambda value: self.set_value("meter_zoom_enable", value))
+        meter_card.body.addWidget(self.hud)
         meter_card.body.addWidget(self.zoom)
         self.restore = QPushButton("RESTORE DEFAULTS")
         self.restore.setObjectName("QuietButton")

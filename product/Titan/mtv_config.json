@@ -25,7 +25,7 @@
                       1.0,
                       0.68
                   ],
-    "target_height":  60.2,
+    "target_height":  64.0,
     "release_mode":  "threshold",
     "threshold_margin_px":  0.0,
     "threshold_margin_max_px":  0.0,
@@ -138,5 +138,39 @@
     "screen_cue_lab_de":  10.0,
     "screen_cue_lab_scale":  4,
     "green_aim_enable":  false,
-    "green_aim_offset_px":  0.0
+    "green_aim_offset_px":  0.0,
+    "meter_zoom_margin_px":  18,
+    "meter_zoom_max_w_px":  260,
+    "meter_zoom_max_h_px":  520,
+    "meter_zoom_show_green":  true,
+    "meter_zoom_green_alpha":  0.45,
+    "meter_zoom_show_stop_line":  true,
+    "meter_zoom_use_top_lock_line":  true,
+    "meter_zoom_show_label":  true,
+    "meter_zoom_border_color":  [
+                                    255,
+                                    210,
+                                    0
+                                ],
+    "meter_zoom_stop_line_color":  [
+                                       0,
+                                       200,
+                                       0
+                                   ],
+    "meter_zoom_green_color":  [
+                                   40,
+                                   254,
+                                   40
+                               ],
+    "meter_zoom_tip_color":  [
+                                 255,
+                                 220,
+                                 0
+                             ],
+    "meter_zoom_show_track":  true,
+    "meter_zoom_track_color":  [
+                                   255,
+                                   40,
+                                   40
+                               ]
 }

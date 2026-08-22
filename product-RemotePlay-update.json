@@ -2,63 +2,71 @@
   "v": 1,
   "type": "product",
   "product": "RemotePlay",
-  "base_version": "2.6.1",
-  "version": "2.6.2",
-  "notes": "Release notes go here",
+  "base_version": "2.6.2",
+  "version": "2.6.3",
+  "notes": "your release notes here",
   "files": [
     {
+      "path": "mtv_config.json",
+      "sha256": "0a0c8bb74339f969ca647acd6c364655651dfff45ee1bb2439855facb1df0ba0"
+    },
+    {
+      "path": "mtv_launcher.py",
+      "sha256": "f5fd2e92e6a7e42de0792d3537c5e3c70ee125f3ed1f43c5c18922d8833572de"
+    },
+    {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "95ae43305ef23e939b8585a6ed56080b811c6f851e44fc8b494f81ef19999dac"
+      "sha256": "406cdad5b70f3211bccfb31fc0f0fb1aa2b3ab12756f0eb39878247bea6ff34c"
     },
     {
       "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
-      "sha256": "da18203bc74460bafee6546ad7ba828e8405a20b862355beb0154f8c6a2018ec"
+      "sha256": "be702e8ff3d57acea3b4881c255a32c80ac7132577a9375532b66ddf7b1e2a91"
     },
     {
       "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "a07c2685af1939df11d130f232f59ed33054bc71608987dcbd2bf688642485f9"
+      "sha256": "72d89086ef59ed56d6ffca8d61d9968b42d1703036e4e80309806c301a60a38b"
     },
     {
       "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "285bbc2ea1f3d24c9c20f6a36d353ee16a1049491ace3fb23ce1c0cadb5edfe0"
+      "sha256": "ed01dd6f07f78cf493f40d4705d5a67ffb3b37445cda66e8cbdd93dbd27a56ac"
     },
     {
       "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
-      "sha256": "c464218b839f734509a853d42bca99d1d9dc588ff546755a8a5dda5cf1c343c5"
+      "sha256": "8a8b851c7d4d5837e31efb14a58f32546481c4a1d5ee18108853d6f72e472aa9"
     },
     {
       "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
-      "sha256": "7152db9867090af3fbd8a2e7338788ab0982a84f8078dfbe817c0a4c31cfab59"
+      "sha256": "6c5a9598e2c1eab06bbfbd8b7f98e34f5d9274ec5133c11aa9dd50a5282752c9"
     },
     {
       "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
-      "sha256": "f42b332772a9a3c74fe9a237f763e6e33db45415fc14e32cc1eb592274806761"
+      "sha256": "404c747c2bb481f66cfc21519bafbdedd403f6a6cfbfdd5924b7fde89113953d"
     },
     {
       "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
-      "sha256": "799d7978906d59a1164f61f0308139f35daa130d4647bee101c7c09385a4de0c"
+      "sha256": "5d88353da862084673e217e626bb411e0cac2e828a116ab0b73e07e03fe18d1d"
     },
     {
       "path": "remoteplay/bridge.cp311-win_amd64.pyd",
-      "sha256": "9ef305c71c6a32a7a757b9fd42d091f61e2368c7b759dff52e3dd51a4b097568"
+      "sha256": "79163473803cb14de46598efb7ea60cbec97738eaea65e7e233afd70fd185a72"
     },
     {
       "path": "remoteplay/input.cp311-win_amd64.pyd",
-      "sha256": "2590c4048565407ac955ea76c92263833e68ed0116c8c44fcad6a8d92835a809"
+      "sha256": "b2ab072fa1be18e64725173c1d4b23c63f2aeb2dafda448975d283d59c968068"
     },
     {
       "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "cb85d157542bc692d3566ae162f16d5b349eae734a2de69464cac5d52a22932d"
+      "sha256": "c57d362042b97c00b5ae87604392f3c4ea058aa56563c0cf7525d0a14bb1dddd"
     },
     {
       "path": "remoteplay/output.cp311-win_amd64.pyd",
-      "sha256": "8b38814f5783b7e957dd2578048861f49e706bee6179d5f828d9feda2927ec9c"
+      "sha256": "94dadc11943795f7aa87b5595ebae9cbbb870aa3ba8088555472b4dac03ea826"
     },
     {
       "path": "remoteplay/state.cp311-win_amd64.pyd",
-      "sha256": "92bf3240fda7188c1db062d3e7177a1f789d4345fff59fe85b9ed2107a3b642b"
+      "sha256": "7a05b334f10e2252629818ce1c9a929ad0592c9fa2328a2d6767a64371fd3543"
     }
   ],
   "remove": [],
-  "sig": "0-UaFnkJAvcttayJkdK3aBPdCIjXj7aQBlk-_z41PvNnOILLgtnespKQeYRQSnjKb1-5BEn5qqvJXi_jRtqdAw"
+  "sig": "GH3JDwiQm7IicBpNCKh2Z8Hezrlmk99va5sePVG_Tn4WyNKTVbLSYOoEUpNq9KkQXLfLtXL4ZgmGr9JOZs95BQ"
 }

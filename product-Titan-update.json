@@ -2,27 +2,35 @@
   "v": 1,
   "type": "product",
   "product": "Titan",
-  "base_version": "2.6.1",
-  "version": "2.6.2",
-  "notes": "Release notes go here",
+  "base_version": "2.6.2",
+  "version": "2.6.3",
+  "notes": "your release notes here",
   "files": [
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "2bafce4b735d38f862cdcddb3af3220b6229594cea7164ce6d31c81ca731388e"
+      "sha256": "8bbe5ca76f6d2d1708466a4443eded8f3282eafdb93cc5e2c65a2c24dac8a61d"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "6a60cb791023789c13867e439541d4a5304ec4133dc3e62e8ca08209d2755cba"
+      "sha256": "e790ed42bc4332704cf015c802552f27a378faad0d1eda19953c116d59ead9f6"
+    },
+    {
+      "path": "mtv_config.json",
+      "sha256": "0a0c8bb74339f969ca647acd6c364655651dfff45ee1bb2439855facb1df0ba0"
+    },
+    {
+      "path": "mtv_launcher.py",
+      "sha256": "1506f2350f575e92dbf49c6342d70225346d39452d515ebffa89e1d5bd6304b9"
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "169f252f23f812dd30d63410e36d5006dff3c7c0a2a8743ec9019bfe2dfbe27b"
+      "sha256": "3e698938ece98fdd78033d7a6b5aa1bc71142bbd7b01a735ab69f2a4410cd299"
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "b440a360e017359514c51ead2dc61fa614ed7ca3f22690cb8812e2ef9c04a069"
+      "sha256": "5792876603b8310d8723efbc9fc263d51316cee56677b9d57783c4b607c7dd89"
     }
   ],
   "remove": [],
-  "sig": "fB0oK2N_64c_Y6IDuYFNal4oo2BafrWD094DTznVlRS3UWQJpB_WlaAqlKwluoCjl0_OvbyJQ3ENCikwMFKSCQ"
+  "sig": "Gzhp66o-tP0lYUJ-7FSm7FcSHuYXnDHZhLE5pJIIAmlQxUaoZlc_Mw1fSo2QLDdJzRwewMUuFka-MOKKr0E8Dg"
 }
