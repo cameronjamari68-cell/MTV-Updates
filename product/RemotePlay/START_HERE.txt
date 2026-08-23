@@ -1,0 +1,87 @@
+========================================
+ MTV — REMOTE PLAY EDITION
+ (no Titan Two needed)
+ START HERE
+========================================
+
+Everything you need is in this folder. The installer handles
+Python, Helios, and the virtual-controller driver for you.
+You only need your controller plugged into THIS PC (USB).
+
+3-STEP SETUP
+------------
+
+STEP 1 — INSTALL
+   Double-click  INSTALL_OR_REPAIR_MTV.cmd
+   - It installs Helios if it is missing (Python 3.11 is included with Helios).
+   - It installs the ViGEmBus virtual-controller driver — approve the
+     Windows "User Account Control" popup when it appears.
+   Wait for the green "INSTALL COMPLETE" message, then close the window.
+
+STEP 2 — START THE VISION
+   Double-click the "MTV Helios" shortcut on your desktop.
+   In Helios, click "CV Python" in the left panel and press Start.
+   The console prints a line like:
+       [MTV] virtual pad on XInput slot 1
+   Remember that slot number (N).
+
+STEP 3 — POINT HELIOS AT THE VIRTUAL PAD
+   Helios  >  "XInput Input" plugin  >  selectedControllerId  =  N
+   (the number from Step 2). Your real controller still moves normally;
+   MTV drives the virtual pad to time the shot.
+
+ACTIVATE (first time only)
+--------------------------
+   1. In the small MTV window, click ACTIVATE, then COPY HWID.
+   2. Send that 32-character code to your seller.
+   3. Paste the key they send back and click ACTIVATE KEY.
+
+IN-GAME SETTING
+---------------
+   NBA 2K  >  Controller Settings  >  Shooting Input  =  "Pro Stick Only"
+   (or "All"). Do NOT use "Shot Button Only" — tempo needs the right stick.
+
+SHOOTING NOTES
+--------------
+   - Regular shot: hold the right stick DOWN, MTV flicks UP to time it.
+   - Fade: hold the right stick UP, MTV flicks DOWN.
+   - Dunk: hold RT + click the left stick (L3), MTV times the dunk release.
+   - If the sticks ever feel dead, reboot the PC once (clears stale pads).
+
+TUNING (only if a shot is off)
+------------------------------
+   In the small MTV window you'll see Target and Dunk.
+   - Shot fires too EARLY  -> raise Target
+   - Shot fires too LATE   -> lower Target
+   - Dunk lands late       -> raise Dunk
+   - Dunk lands early      -> lower Dunk
+
+TROUBLESHOOTING
+---------------
+- Helios says "CV Python script session failed to start ... SystemExit: 1":
+  run INSTALL_OR_REPAIR_MTV.cmd again (it repoints Helios at the MTV Python
+  3.11 environment), close Helios completely, and restart it. The console
+  above the error prints the exact missing piece.
+- "Python version mismatch" in the console: same fix as above - the installer
+  points Helios at the MTV Python 3.11 that the script needs.
+- If you selected the script from the EXTRACTED zip folder in Helios instead
+  of the installed copy, select the one under
+  %LOCALAPPDATA%\HeliosProject\Helios\python\MTV\RemotePlay instead.
+  The extracted copy now redirects there automatically, but the installed
+  copy is the one the installer keeps up to date.
+- "NO controller detected": both pad families are supported. Xbox pads are
+  read through Windows XInput (USB or the Xbox Wireless Adapter), and
+  PlayStation pads (DualSense/DualShock) are read through SDL (USB or
+  Bluetooth). Plug the pad into THIS PC — not the console — press a button,
+  and check the "controller OK" line in the Helios console when you press
+  Start. PlayStation pads over Bluetooth must be paired in Windows Settings
+  > Bluetooth & devices first; over USB a plain USB data cable is required
+  (charge-only cables light the pad but send no input).
+- "Sticks move but no shot fires" right after a crash or reboot: a stale
+  virtual pad from an earlier session can sit in an XInput slot. MTV now
+  detects this and reads the real pad instead, but if it ever happens anyway,
+  reboot the PC once (this clears leftover pads).
+- A PlayStation pad is never a Windows XInput device, so it cannot be the
+  "XInput Input" plugin's controller in Helios — that slot is only ever the
+  VIRTUAL pad MTV creates (Step 3). The real DualSense/DualShock is read
+  directly by MTV, so it does not need to be selected anywhere in Helios.

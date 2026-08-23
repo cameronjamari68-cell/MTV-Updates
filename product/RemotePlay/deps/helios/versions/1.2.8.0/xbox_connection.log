@@ -1,0 +1,472 @@
+[1786855308] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855309] Session started: D48B1C63-8662-4D5D-B5E0-176F83DEC5F2
+[1786855309] Waiting for session to be provisioned...
+[1786855309] Session state: Provisioning
+[1786855310] Session state: Provisioning
+[1786855311] Session state: Provisioning
+[1786855312] Session state: Provisioning
+[1786855313] Session state: Provisioning
+[1786855313] Session state: Provisioning
+[1786855314] Session state: Provisioning
+[1786855314] Session state: Provisioning
+[1786855315] Session state: Provisioning
+[1786855316] Session state: Provisioning
+[1786855316] Session state: Provisioned
+[1786855316] PeerConnection: Connecting
+[1786855316] Exchanging SDP...
+[1786855318] Got SDP answer
+[1786855318] Exchanging ICE...
+[1786855318] Got 6 remote candidates
+[1786855318] PeerConnection: Connected
+[1786855318] Control channel opened
+[1786855318] Auth sequence complete
+[1786855318] Input channel opened
+[1786855318] All channels ready - connected!
+[1786855318] Sent gamepadChanged: 1
+[1786855351] Sent gamepadChanged: 0
+[1786855351] PeerConnection: Closed
+[1786855352] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855352] Session started: D48B1C63-8662-4D5D-B5E0-176F83DEC5F2
+[1786855352] Waiting for session to be provisioned...
+[1786855352] Session state: Provisioning
+[1786855353] Session state: Provisioning
+[1786855354] Session state: Provisioned
+[1786855354] PeerConnection: Connecting
+[1786855354] Exchanging SDP...
+[1786855355] Got SDP answer
+[1786855355] Exchanging ICE...
+[1786855355] Got 6 remote candidates
+[1786855355] PeerConnection: Connected
+[1786855355] Control channel opened
+[1786855355] Auth sequence complete
+[1786855355] Input channel opened
+[1786855355] All channels ready - connected!
+[1786855355] Sent gamepadChanged: 1
+[1786855364] Sent gamepadChanged: 0
+[1786855364] PeerConnection: Closed
+[1786855366] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855366] Session started: D48B1C63-8662-4D5D-B5E0-176F83DEC5F2
+[1786855366] Waiting for session to be provisioned...
+[1786855366] Session state: Provisioning
+[1786855367] Session state: Provisioned
+[1786855367] PeerConnection: Connecting
+[1786855367] Exchanging SDP...
+[1786855367] Got SDP answer
+[1786855367] Exchanging ICE...
+[1786855368] Got 6 remote candidates
+[1786855368] PeerConnection: Connected
+[1786855368] Control channel opened
+[1786855368] Auth sequence complete
+[1786855368] Input channel opened
+[1786855368] All channels ready - connected!
+[1786855368] Sent gamepadChanged: 1
+[1786855375] Sent gamepadChanged: 0
+[1786855375] PeerConnection: Closed
+[1786855381] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855382] Session started: D48B1C63-8662-4D5D-B5E0-176F83DEC5F2
+[1786855382] Waiting for session to be provisioned...
+[1786855382] Session state: Provisioning
+[1786855382] Session state: Provisioning
+[1786855383] Session state: Provisioned
+[1786855383] PeerConnection: Connecting
+[1786855383] Exchanging SDP...
+[1786855383] PeerConnection: Closed
+[1786855387] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855387] Session started: D564495E-D117-4E34-B719-F074DC114BC7
+[1786855387] Waiting for session to be provisioned...
+[1786855388] Session state: Provisioning
+[1786855388] Session state: Provisioned
+[1786855388] PeerConnection: Connecting
+[1786855388] Exchanging SDP...
+[1786855390] Got SDP answer
+[1786855390] Exchanging ICE...
+[1786855390] Got 6 remote candidates
+[1786855390] PeerConnection: Connected
+[1786855390] Control channel opened
+[1786855390] Auth sequence complete
+[1786855390] Input channel opened
+[1786855390] All channels ready - connected!
+[1786855390] Sent gamepadChanged: 1
+[1786855408] PeerConnection: Disconnected
+[1786855408] PeerConnection: Closed
+[1786855411] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855412] Session started: D564495E-D117-4E34-B719-F074DC114BC7
+[1786855412] Waiting for session to be provisioned...
+[1786855412] Session state: Provisioned
+[1786855412] PeerConnection: Connecting
+[1786855412] Exchanging SDP...
+[1786855412] Got SDP answer
+[1786855412] Exchanging ICE...
+[1786855419] Got 6 remote candidates
+[1786855436] PeerConnection: Closed
+[1786855439] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786855440] Session started: D564495E-D117-4E34-B719-F074DC114BC7
+[1786855440] Waiting for session to be provisioned...
+[1786855440] Session state: Provisioning
+[1786855441] Session state: Provisioned
+[1786855441] PeerConnection: Connecting
+[1786855441] Exchanging SDP...
+[1786855442] Got SDP answer
+[1786855442] Exchanging ICE...
+[1786855442] Got 6 remote candidates
+[1786855442] PeerConnection: Connected
+[1786855442] Control channel opened
+[1786855442] Auth sequence complete
+[1786855442] Input channel opened
+[1786855442] All channels ready - connected!
+[1786855442] Sent gamepadChanged: 1
+[1786856191] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786856192] Session started: BF47CD1C-5A4D-4365-AA39-D6D5353686BD
+[1786856192] Waiting for session to be provisioned...
+[1786856194] Session state: Provisioning
+[1786856194] Session state: Provisioning
+[1786856195] Session state: Provisioned
+[1786856195] PeerConnection: Connecting
+[1786856195] Exchanging SDP...
+[1786856196] Got SDP answer
+[1786856196] Exchanging ICE...
+[1786856196] Got 6 remote candidates
+[1786856196] PeerConnection: Connected
+[1786856196] Control channel opened
+[1786856197] Auth sequence complete
+[1786856197] Input channel opened
+[1786856197] All channels ready - connected!
+[1786856197] Sent gamepadChanged: 1
+[1786856350] Sent gamepadChanged: 0
+[1786856350] PeerConnection: Closed
+[1786858348] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786858349] Session started: E0D7539E-2138-4BFD-8443-9EB56DA7F674
+[1786858349] Waiting for session to be provisioned...
+[1786858350] Session state: Provisioning
+[1786858350] Session state: Provisioned
+[1786858350] PeerConnection: Connecting
+[1786858350] Exchanging SDP...
+[1786858351] Got SDP answer
+[1786858351] Exchanging ICE...
+[1786858352] Got 6 remote candidates
+[1786858352] PeerConnection: Connected
+[1786858352] Control channel opened
+[1786858352] Auth sequence complete
+[1786858352] Input channel opened
+[1786858352] All channels ready - connected!
+[1786858352] Sent gamepadChanged: 1
+[1786858579] Sent gamepadChanged: 0
+[1786858579] PeerConnection: Closed
+[1786859871] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786859872] Session started: 61407DF7-9190-456D-82EB-77BD3E405E4A
+[1786859872] Waiting for session to be provisioned...
+[1786859872] Session state: Provisioning
+[1786859873] Session state: Provisioned
+[1786859873] Exchanging SDP...
+[1786859873] PeerConnection: Connecting
+[1786859874] Got SDP answer
+[1786859874] Exchanging ICE...
+[1786859874] Got 6 remote candidates
+[1786859874] PeerConnection: Connected
+[1786859874] Control channel opened
+[1786859875] Auth sequence complete
+[1786859875] Input channel opened
+[1786859875] All channels ready - connected!
+[1786859875] Sent gamepadChanged: 1
+[1786859969] Sent gamepadChanged: 0
+[1786859969] PeerConnection: Closed
+[1786860095] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860096] Session started: C0A825EC-75AF-4529-AB7B-9A2932FC5D8D
+[1786860096] Waiting for session to be provisioned...
+[1786860097] Session state: Provisioning
+[1786860097] Session state: Provisioned
+[1786860098] PeerConnection: Connecting
+[1786860098] Exchanging SDP...
+[1786860098] Got SDP answer
+[1786860098] Exchanging ICE...
+[1786860099] Got 6 remote candidates
+[1786860099] PeerConnection: Connected
+[1786860099] Control channel opened
+[1786860099] Auth sequence complete
+[1786860099] Input channel opened
+[1786860099] All channels ready - connected!
+[1786860099] Sent gamepadChanged: 1
+[1786860114] Sent gamepadChanged: 0
+[1786860114] PeerConnection: Closed
+[1786860249] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860256] Session started: C0A825EC-75AF-4529-AB7B-9A2932FC5D8D
+[1786860256] Waiting for session to be provisioned...
+[1786860256] Session state: Provisioning
+[1786860257] Session state: Provisioning
+[1786860258] Session state: Provisioning
+[1786860259] Session state: Provisioning
+[1786860259] Session state: Provisioning
+[1786860260] Session state: Provisioning
+[1786860261] Session state: Provisioning
+[1786860262] Session state: Provisioning
+[1786860262] Session state: Provisioning
+[1786860263] Session state: Provisioning
+[1786860264] Session state: Provisioning
+[1786860265] Session state: Provisioning
+[1786860265] Session state: Provisioning
+[1786860266] Session state: Provisioning
+[1786860267] Session state: Provisioning
+[1786860295] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860297] Session started: 2D1AEED5-6F03-448C-9FCE-76FDC521FD82
+[1786860297] Waiting for session to be provisioned...
+[1786860297] Session state: Provisioning
+[1786860298] Session state: Provisioning
+[1786860299] Session state: Provisioning
+[1786860300] Session state: Provisioning
+[1786860301] Session state: Provisioning
+[1786860302] Session state: Provisioning
+[1786860303] Session state: Provisioning
+[1786860304] Session state: Provisioning
+[1786860305] Session state: Provisioning
+[1786860306] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860307] Session started: 2D1AEED5-6F03-448C-9FCE-76FDC521FD82
+[1786860307] Waiting for session to be provisioned...
+[1786860307] Session state: Provisioning
+[1786860308] Session state: Provisioning
+[1786860309] Session state: Provisioning
+[1786860310] Session state: Provisioning
+[1786860311] Session state: Provisioning
+[1786860312] Session state: Provisioning
+[1786860314] Session state: Provisioning
+[1786860314] Session state: Provisioning
+[1786860354] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860355] Session started: 2D1AEED5-6F03-448C-9FCE-76FDC521FD82
+[1786860355] Waiting for session to be provisioned...
+[1786860355] Session state: Provisioning
+[1786860356] Session state: Provisioning
+[1786860356] Session state: Provisioning
+[1786860357] Session state: Provisioning
+[1786860358] Session state: Provisioning
+[1786860359] Session state: Provisioning
+[1786860360] Session state: Provisioning
+[1786860361] Session state: Provisioning
+[1786860362] Session state: Provisioning
+[1786860363] Session state: Provisioning
+[1786860364] Session state: Provisioning
+[1786860365] Session state: Provisioning
+[1786860370] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860370] Session started: 2D1AEED5-6F03-448C-9FCE-76FDC521FD82
+[1786860370] Waiting for session to be provisioned...
+[1786860370] Session state: Provisioning
+[1786860371] Session state: Provisioning
+[1786860372] Session state: Provisioning
+[1786860373] Session state: Provisioning
+[1786860374] Session state: Provisioning
+[1786860375] Session state: Provisioning
+[1786860376] Session state: Provisioning
+[1786860377] Session state: Provisioning
+[1786860378] Session state: Provisioning
+[1786860414] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860415] Session started: 0239BA2E-206A-4C0C-9DB0-4B28168DB141
+[1786860415] Waiting for session to be provisioned...
+[1786860416] Session state: Provisioning
+[1786860417] Session state: Provisioning
+[1786860417] Session state: Provisioning
+[1786860418] Session state: Provisioning
+[1786860419] Session state: Provisioning
+[1786860420] Session state: Provisioning
+[1786860421] Session state: Provisioning
+[1786860423] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860423] Session started: 0239BA2E-206A-4C0C-9DB0-4B28168DB141
+[1786860423] Waiting for session to be provisioned...
+[1786860423] Session state: Provisioning
+[1786860424] Session state: Provisioning
+[1786860425] Session state: Provisioning
+[1786860426] Session state: Provisioning
+[1786860426] Session state: Provisioning
+[1786860428] Session state: Provisioning
+[1786860429] Session state: Provisioning
+[1786860430] Session state: Provisioning
+[1786860430] Session state: Provisioning
+[1786860431] Session state: Provisioning
+[1786860432] Session state: Provisioning
+[1786860433] Session state: Provisioning
+[1786860434] Session state: Provisioning
+[1786860435] Session state: Provisioning
+[1786860436] Session state: Provisioning
+[1786860436] Session state: Provisioning
+[1786860437] Session state: Provisioning
+[1786860438] Session state: Provisioning
+[1786860439] Session state: Provisioning
+[1786860439] Session state: Provisioning
+[1786860441] Session state: Provisioning
+[1786860441] Session state: Provisioning
+[1786860442] Session state: Provisioning
+[1786860443] Session state: Provisioning
+[1786860444] Session state: Provisioning
+[1786860445] Session state: Provisioning
+[1786860445] Session state: Provisioning
+[1786860446] Session state: Provisioning
+[1786860447] Session state: Provisioning
+[1786860448] Session state: Provisioning
+[1786860449] Session state: Provisioning
+[1786860450] Session state: Provisioning
+[1786860531] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786860532] Session started: C3D068F3-498E-47A0-9ED4-EF5B245545DA
+[1786860532] Waiting for session to be provisioned...
+[1786860533] Session state: Provisioning
+[1786860533] Session state: Provisioned
+[1786860533] PeerConnection: Connecting
+[1786860533] Exchanging SDP...
+[1786860534] Got SDP answer
+[1786860534] Exchanging ICE...
+[1786860535] Got 4 remote candidates
+[1786860535] PeerConnection: Connected
+[1786860535] Control channel opened
+[1786860535] Auth sequence complete
+[1786860535] Input channel opened
+[1786860535] All channels ready - connected!
+[1786860535] Sent gamepadChanged: 1
+[1786860842] Sent gamepadChanged: 0
+[1786860842] PeerConnection: Closed
+[1786861749] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786861750] Session started: 2757568E-20C0-4FBF-9C41-AC6F848C5333
+[1786861750] Waiting for session to be provisioned...
+[1786861750] Session state: Provisioning
+[1786861751] Session state: Provisioned
+[1786861751] PeerConnection: Connecting
+[1786861751] Exchanging SDP...
+[1786861752] Got SDP answer
+[1786861752] Exchanging ICE...
+[1786861753] Got 6 remote candidates
+[1786861753] PeerConnection: Connected
+[1786861753] Control channel opened
+[1786861753] Auth sequence complete
+[1786861753] Input channel opened
+[1786861753] All channels ready - connected!
+[1786861753] Sent gamepadChanged: 1
+[1786861977] Sent gamepadChanged: 0
+[1786861977] PeerConnection: Closed
+[1786865967] Starting session: host=https://uks.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786865968] Session started: D6B21376-9E43-4E08-964B-0D24B0D410ED
+[1786865968] Waiting for session to be provisioned...
+[1786865969] Session state: Provisioning
+[1786865970] Session state: Provisioning
+[1786865971] Session state: Provisioning
+[1786865972] Session state: Provisioned
+[1786865972] PeerConnection: Connecting
+[1786865972] Exchanging SDP...
+[1786865973] Got SDP answer
+[1786865973] Exchanging ICE...
+[1786865974] Got 6 remote candidates
+[1786865974] PeerConnection: Connected
+[1786865974] Control channel opened
+[1786865974] Auth sequence complete
+[1786865974] Input channel opened
+[1786865974] All channels ready - connected!
+[1786865974] Sent gamepadChanged: 1
+[1786870068] PeerConnection: Disconnected
+[1786870068] PeerConnection: Closed
+[1786902036] Starting session: host=https://uks.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786902038] Session started: 672E3491-5947-42D7-A36F-A17B8D517297
+[1786902038] Waiting for session to be provisioned...
+[1786902038] Session state: Provisioning
+[1786902039] Session state: Provisioned
+[1786902039] PeerConnection: Connecting[
+1786902039] Exchanging SDP...
+[1786902040] Got SDP answer
+[1786902040] Exchanging ICE...
+[1786902041] Got 6 remote candidates
+[1786902041] PeerConnection: Connected
+[1786902041] Control channel opened
+[1786902041] Auth sequence complete
+[1786902041] Input channel opened
+[1786902041] All channels ready - connected!
+[1786902041] Sent gamepadChanged: 1
+[1786902972] PeerConnection: Disconnected
+[1786902972] PeerConnection: Closed
+[1786904194] Starting session: host=https://uks.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786904195] Session started: 9A7D61A2-7784-4FD1-AB94-221982F86CFE
+[1786904195] Waiting for session to be provisioned...
+[1786904196] Session state: Provisioning
+[1786904196] Session state: Provisioned
+[[1786904197] PeerConnection: Connecting1786904197] Exchanging SDP...
+
+[1786904197] Got SDP answer
+[1786904197] Exchanging ICE...
+[1786904198] Got 6 remote candidates
+[1786904198] PeerConnection: Connected
+[1786904198] Control channel opened
+[1786904198] Auth sequence complete
+[1786904198] Input channel opened
+[1786904198] All channels ready - connected!
+[1786904198] Sent gamepadChanged: 1
+[1786904293] Sent gamepadChanged: 0
+[1786904293] PeerConnection: Closed
+[1786905690] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786905691] Session started: 020BC0A8-71D9-4540-9558-A5614476D86D
+[1786905691] Waiting for session to be provisioned...
+[1786905691] Session state: Provisioning
+[1786905692] Session state: Provisioning
+[1786905693] Session state: Provisioned
+[[1786905693] Exchanging SDP...1786905693] PeerConnection: Connecting
+
+[1786905694] Got SDP answer
+[1786905694] Exchanging ICE...
+[1786905694] Got 6 remote candidates
+[1786905694] PeerConnection: Connected
+[1786905694] Control channel opened
+[1786905694] Auth sequence complete
+[1786905694] Input channel opened
+[1786905694] All channels ready - connected!
+[1786905694] Sent gamepadChanged: 1
+[1786905743] Sent gamepadChanged: 0
+[1786905743] PeerConnection: Closed
+[1786905743] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786905744] Session started: 020BC0A8-71D9-4540-9558-A5614476D86D
+[1786905744] Waiting for session to be provisioned...
+[1786905744] Session state: Provisioning
+[1786905744] Session state: Provisioned
+[[1786905744] PeerConnection: Connecting1786905744] Exchanging SDP...
+
+[1786905745] Got SDP answer
+[1786905745] Exchanging ICE...
+[1786905745] Got 6 remote candidates
+[1786905745] PeerConnection: Connected
+[1786905745] Control channel opened
+[1786905745] Auth sequence complete
+[1786905745] Input channel opened
+[1786905745] All channels ready - connected!
+[1786905745] Sent gamepadChanged: 1
+[1786906121] Sent gamepadChanged: 0
+[1786906121] PeerConnection: Closed
+[1786906156] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786906157] Session started: A5C7B5ED-EBEF-4D95-B387-DCFB223E9801
+[1786906157] Waiting for session to be provisioned...
+[1786906158] Session state: Provisioning
+[1786906159] Session state: Provisioned
+[1786906159] PeerConnection: Connecting
+[1786906159] Exchanging SDP...
+[1786906159] Got SDP answer
+[1786906159] Exchanging ICE...
+[1786906159] Got 6 remote candidates
+[1786906159] PeerConnection: Connected
+[1786906159] Control channel opened
+[1786906160] Auth sequence complete
+[1786906160] Input channel opened
+[1786906160] All channels ready - connected!
+[1786906160] Sent gamepadChanged: 1
+[1786906636] Sent gamepadChanged: 0
+[1786906636] PeerConnection: Closed
+[1786906768] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786906769] Session started: FB1D78E6-8C6B-4A89-B290-5113C60D3FDC
+[1786906769] Waiting for session to be provisioned...
+[1786906769] Session state: Failed
+[1786906835] Starting session: host=https://wus2.core.gssv-play-prodxhome.xboxlive.com serverId=F4001C138441453F
+[1786906837] Session started: CEEA4439-8EDA-47DD-BC0D-7CD7AF662BB8
+[1786906837] Waiting for session to be provisioned...
+[1786906837] Session state: Provisioning
+[1786906838] Session state: Provisioned
+[1786906838] PeerConnection: Connecting
+[1786906838] Exchanging SDP...
+[1786906838] Got SDP answer
+[1786906838] Exchanging ICE...
+[1786906839] Got 6 remote candidates
+[1786906839] PeerConnection: Connected
+[1786906839] Control channel opened
+[1786906839] Auth sequence complete
+[1786906839] Input channel opened
+[1786906839] All channels ready - connected!
+[1786906839] Sent gamepadChanged: 1
+[1786908226] Sent gamepadChanged: 0
+[1786908226] PeerConnection: Closed

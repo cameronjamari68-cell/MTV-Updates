@@ -1,0 +1,43 @@
+{
+  "search": {
+    "left": 5,
+    "top": 180,
+    "right": 1915,
+    "bottom": 880
+  },
+  "timing": {
+    "value": 11.5
+  },
+  "options": {
+    "Large/Frame": {
+      "frame": {
+        "color": {
+          "space": "hsv",
+          "low": [80, 60, 50],
+          "high": [100, 255, 255]
+        },
+        "width": {
+          "min": 55,
+          "max": 140
+        },
+        "height": {
+          "min": 150,
+          "max": 300
+        },
+        "min_aspect": 1.4,
+        "hollow_max_ratio": 0.35,
+        "perimeter_min_sides": 2
+      },
+      "fill": {
+        "color": {
+          "low": [0, 100, 200],
+          "high": [60, 180, 255]
+        }
+      }
+    }
+  },
+  "selected": {
+    "options": "Large/Frame",
+    "color": ""
+  }
+}

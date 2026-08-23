@@ -1,0 +1,77 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <g fill="white">
+    <circle cx="23" cy="18" r="1.5" fill-opacity="0.12"/>
+    <circle cx="87" cy="45" r="2" fill-opacity="0.08"/>
+    <circle cx="156" cy="12" r="1" fill-opacity="0.15"/>
+    <circle cx="42" cy="89" r="2.5" fill-opacity="0.06"/>
+    <circle cx="118" cy="67" r="1.5" fill-opacity="0.1"/>
+    <circle cx="178" cy="95" r="1" fill-opacity="0.14"/>
+    <circle cx="65" cy="142" r="2" fill-opacity="0.07"/>
+    <circle cx="134" cy="118" r="1.5" fill-opacity="0.11"/>
+    <circle cx="15" cy="165" r="1" fill-opacity="0.13"/>
+    <circle cx="95" cy="178" r="2.5" fill-opacity="0.05"/>
+    <circle cx="223" cy="32" r="1.5" fill-opacity="0.09"/>
+    <circle cx="287" cy="78" r="2" fill-opacity="0.12"/>
+    <circle cx="345" cy="15" r="1" fill-opacity="0.08"/>
+    <circle cx="256" cy="112" r="2.5" fill-opacity="0.06"/>
+    <circle cx="312" cy="56" r="1.5" fill-opacity="0.14"/>
+    <circle cx="378" cy="89" r="1" fill-opacity="0.1"/>
+    <circle cx="234" cy="156" r="2" fill-opacity="0.07"/>
+    <circle cx="298" cy="134" r="1.5" fill-opacity="0.11"/>
+    <circle cx="356" cy="167" r="1" fill-opacity="0.09"/>
+    <circle cx="389" cy="45" r="2.5" fill-opacity="0.05"/>
+    <circle cx="34" cy="234" r="1.5" fill-opacity="0.11"/>
+    <circle cx="98" cy="278" r="2" fill-opacity="0.07"/>
+    <circle cx="167" cy="223" r="1" fill-opacity="0.13"/>
+    <circle cx="56" cy="312" r="2.5" fill-opacity="0.06"/>
+    <circle cx="123" cy="256" r="1.5" fill-opacity="0.1"/>
+    <circle cx="178" cy="345" r="1" fill-opacity="0.12"/>
+    <circle cx="45" cy="378" r="2" fill-opacity="0.08"/>
+    <circle cx="145" cy="367" r="1.5" fill-opacity="0.09"/>
+    <circle cx="89" cy="389" r="1" fill-opacity="0.14"/>
+    <circle cx="12" cy="298" r="2.5" fill-opacity="0.05"/>
+    <circle cx="245" cy="245" r="1.5" fill-opacity="0.08"/>
+    <circle cx="312" cy="289" r="2" fill-opacity="0.11"/>
+    <circle cx="367" cy="234" r="1" fill-opacity="0.07"/>
+    <circle cx="278" cy="356" r="2.5" fill-opacity="0.06"/>
+    <circle cx="334" cy="312" r="1.5" fill-opacity="0.13"/>
+    <circle cx="389" cy="278" r="1" fill-opacity="0.1"/>
+    <circle cx="256" cy="389" r="2" fill-opacity="0.09"/>
+    <circle cx="345" cy="378" r="1.5" fill-opacity="0.12"/>
+    <circle cx="378" cy="345" r="1" fill-opacity="0.08"/>
+    <circle cx="298" cy="267" r="2.5" fill-opacity="0.05"/>
+    <circle cx="198" cy="198" r="1.5" fill-opacity="0.07"/>
+    <circle cx="167" cy="234" r="1" fill-opacity="0.1"/>
+    <circle cx="234" cy="178" r="2" fill-opacity="0.06"/>
+    <circle cx="189" cy="156" r="1.5" fill-opacity="0.09"/>
+    <circle cx="212" cy="267" r="1" fill-opacity="0.08"/>
+  </g>
+  <g stroke="white" fill="none" stroke-linecap="round">
+    <g transform="translate(70, 62)" stroke-width="1.1" opacity="0.14">
+      <path d="M0 -9 L0 9 M-7.8 -4.5 L7.8 4.5 M-7.8 4.5 L7.8 -4.5"/>
+      <path d="M-2.6 -5.6 L0 -3.6 L2.6 -5.6 M-2.6 5.6 L0 3.6 L2.6 5.6"/>
+      <path d="M-6.6 -0.9 L-4.2 0 L-6.6 0.9 M6.6 -0.9 L4.2 0 L6.6 0.9"/>
+    </g>
+    <g transform="translate(304, 118) rotate(18)" stroke-width="1" opacity="0.1">
+      <path d="M0 -7 L0 7 M-6.1 -3.5 L6.1 3.5 M-6.1 3.5 L6.1 -3.5"/>
+      <path d="M-2 -4.4 L0 -2.8 L2 -4.4 M-2 4.4 L0 2.8 L2 4.4"/>
+    </g>
+    <g transform="translate(186, 300) rotate(-12)" stroke-width="1.2" opacity="0.13">
+      <path d="M0 -10 L0 10 M-8.7 -5 L8.7 5 M-8.7 5 L8.7 -5"/>
+      <path d="M-2.9 -6.2 L0 -4 L2.9 -6.2 M-2.9 6.2 L0 4 L2.9 6.2"/>
+      <path d="M-7.3 -1 L-4.7 0 L-7.3 1 M7.3 -1 L4.7 0 L7.3 1"/>
+    </g>
+    <g transform="translate(352, 332) rotate(9)" stroke-width="1" opacity="0.09">
+      <path d="M0 -6 L0 6 M-5.2 -3 L5.2 3 M-5.2 3 L5.2 -3"/>
+      <path d="M-1.7 -3.8 L0 -2.4 L1.7 -3.8 M-1.7 3.8 L0 2.4 L1.7 3.8"/>
+    </g>
+    <g transform="translate(38, 228) rotate(24)" stroke-width="1" opacity="0.11">
+      <path d="M0 -7 L0 7 M-6.1 -3.5 L6.1 3.5 M-6.1 3.5 L6.1 -3.5"/>
+      <path d="M-2 -4.4 L0 -2.8 L2 -4.4 M-2 4.4 L0 2.8 L2 4.4"/>
+    </g>
+    <g transform="translate(248, 26) rotate(-20)" stroke-width="1" opacity="0.1">
+      <path d="M0 -6 L0 6 M-5.2 -3 L5.2 3 M-5.2 3 L5.2 -3"/>
+      <path d="M-1.7 -3.8 L0 -2.4 L1.7 -3.8 M-1.7 3.8 L0 2.4 L1.7 3.8"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,204 @@
+// MTV Remote Play -- Helios GPC 3 slot release script (v2, minimal core)
+// ======================================================================
+// Pair with MTVRemotePlay.py loaded in Helios's "CV Python" panel. The Python
+// detects the meter, predicts the release, and sends a 48-byte payload through
+// send_cvdata(). This script reads that payload and performs the MT Vision tempo
+// release on the right stick.
+//
+// Payload channels (build_payload in _mtvbridge_core.py), byte N = gcv_read(N):
+//   [12]  trigger    0 = idle, 1 = regular, 2 = dunk
+//   [13]+[14]        down-hold timing ms (low byte, high byte)
+//   [15]  flick hold  in 2 ms units (up_flick_ms / 2, so 300 ms -> 150)
+//   [16]  flick power 0..100
+//   [17]  hold  power 0..100
+//
+// No other gating: if the Python says "fire", this fires. The Python already
+// enforces arm/cooldown/one-shot logic, so gating the trigger on the routed
+// stick here can only cause missed releases (the exact "sticks move but the
+// script never flicks" symptom).
+//
+// Release gesture = MT Vision tempo flick with the follow-hold removed:
+// half power 50 ms -> full power held for the tempo -> center. Direction is
+// opposite to the held stick:
+//     regular shot (held DOWN) -> flick UP
+//     fade        (held UP)    -> flick DOWN
+//
+// Right-stick ports (Helios titanone.gph): XB1_RX / PS4_RX = 9, RY = 10.
+// Written in the most conservative Helios-GPC3-safe form: no #pragma /
+// #include / #define, no user-defined functions, no ternary, no float/fix32
+// math, no trig, no wait() inside main.
+
+int RX = 9;
+int RY = 10;
+int RT_BTN = 4;
+int L3_BTN = 8;
+int SHOOT_BTN = 20;
+
+int CH_RIGHT_Y   = 4;
+int CH_TRIGGER   = 12;
+int CH_TIMING_LO = 13;
+int CH_TIMING_HI = 14;
+int CH_FLICK_MS  = 15;
+int CH_FLICK_PWR = 16;
+int CH_HOLD_PWR  = 17;
+int CH_DUNK_MS   = 18;
+int CH_SHOT_INPUT = 20;
+int CH_RELEASE_STYLE = 21;
+
+int trigger_now = 0;
+int trigger_prev = 0;
+int timing_ms = 50;
+int flick_lock = 300;
+int flick_power = 100;
+int hold_power = 100;
+int dunk_lock = 50;
+int dunk_active = 0;
+int physical_ry = 0;
+int right_y = 0;
+int flick_dir = -1;
+int shot_input_button = 0;
+int physical_shot_button = 0;
+int suppress_shot_button = 0;
+int button_release_started = 0;
+int suppress_held_stick = 0;
+int release_style = 0;
+
+main {
+    physical_ry = get_val(RY);
+    physical_shot_button = get_val(SHOOT_BTN);
+    if (gcv_ready()) {
+        right_y = gcv_read(CH_RIGHT_Y);
+        if (right_y > 127) right_y = right_y - 256;
+        trigger_now = gcv_read(CH_TRIGGER);
+        flick_lock = gcv_read(CH_FLICK_MS) * 2;
+        if (flick_lock < 4) flick_lock = 300;
+        if (flick_lock > 500) flick_lock = 500;
+        flick_power = gcv_read(CH_FLICK_PWR);
+        if (flick_power < 20) flick_power = 100;
+        if (flick_power > 100) flick_power = 100;
+        hold_power = gcv_read(CH_HOLD_PWR);
+        if (hold_power < 20) hold_power = 100;
+        if (hold_power > 100) hold_power = 100;
+        timing_ms = (gcv_read(CH_TIMING_HI) << 8) | gcv_read(CH_TIMING_LO);
+        if (timing_ms < 10) timing_ms = 50;
+        if (timing_ms > 500) timing_ms = 50;
+        dunk_lock = gcv_read(CH_DUNK_MS);
+        if (dunk_lock < 1) dunk_lock = 50;
+        if (dunk_lock > 255) dunk_lock = 255;
+        shot_input_button = gcv_read(CH_SHOT_INPUT);
+        release_style = gcv_read(CH_RELEASE_STYLE);
+    }
+
+    // X/Square is remapped to the exact regular stick charge: hide the face
+    // button and hold the right stick DOWN until the CV-triggered flick.
+    if (shot_input_button && physical_shot_button > 20
+            && !(get_val(RT_BTN) > 50 && get_val(L3_BTN) > 20)) {
+        suppress_shot_button = 1;
+        set_val(SHOOT_BTN, 0);
+        if (!button_release_started
+                && !(combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
+                     || combo_running(MTV_DunkWave))) {
+            set_val(RX, 0);
+            set_val(RY, hold_power);
+        }
+    }
+
+    // Dunk meter: RT + L3 (left stick click). Force RT full, suppress the
+    // click, and hold the right stick DOWN while the MT Vision dunk is armed.
+    dunk_active = 0;
+    if (get_val(RT_BTN) > 50 && get_val(L3_BTN) > 20) {
+        dunk_active = 1;
+        set_val(L3_BTN, 0);
+        if (!(combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
+              || combo_running(MTV_DunkWave))) {
+            set_val(RT_BTN, 100);
+            set_val(RX, 0);
+            set_val(RY, 100);
+        }
+    }
+
+    if (trigger_now != trigger_prev && trigger_now != 0
+            && !(combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
+                 || combo_running(MTV_DunkWave))) {
+        // Fade (held up) flicks DOWN; regular (held down) flicks UP.
+        // Prefer the ROUTED stick Y from the payload (the engine's filtered
+        // read of the actual hold) so a noisy physical read at the trigger
+        // instant can never flip the direction; fall back to the physical
+        // stick when the payload Y is neutral.
+        flick_dir = -1;
+        if (physical_ry < -20) flick_dir = 1;
+        if (right_y <= -20 || right_y >= 20) {
+            if (right_y < -20) flick_dir = 1;
+            else flick_dir = -1;
+        }
+        if (dunk_active) {
+            combo_run(MTV_DunkRelease);
+        }
+        else if (shot_input_button && physical_shot_button > 20) {
+            suppress_shot_button = 1;
+            button_release_started = 1;
+            flick_dir = -1;
+            combo_run(MTV_Release);
+        }
+        else {
+            suppress_held_stick = 1;
+            combo_run(MTV_Release);
+        }
+    }
+    trigger_prev = trigger_now;
+
+    if (suppress_shot_button) {
+        set_val(SHOOT_BTN, 0);
+        if (physical_shot_button <= 20) {
+            suppress_shot_button = 0;
+            button_release_started = 0;
+        }
+    }
+    if (suppress_held_stick
+            && !(combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
+                 || combo_running(MTV_DunkWave))) {
+        set_val(RX, 0);
+        set_val(RY, 0);
+        if (physical_ry <= 20 && physical_ry >= -20) suppress_held_stick = 0;
+    }
+}
+
+combo MTV_Release {
+    set_val(RX, 0);
+    set_val(RY, flick_dir * (flick_power / 2));
+    wait(50);
+    set_val(RX, 0);
+    set_val(RY, flick_dir * flick_power);
+    wait(flick_lock);
+    set_val(RX, 0);
+    set_val(RY, 0);
+    wait(40);
+}
+
+combo MTV_DunkRelease {
+    // MT Vision dunk: RT full + right stick DOWN held for dunk_lock, then center + 70 ms.
+    set_val(RT_BTN, 100);
+    set_val(RX, 0);
+    set_val(RY, hold_power);
+    wait(dunk_lock);
+    set_val(RX, 0);
+    set_val(RY, 0);
+    wait(70);
+}
+
+combo MTV_DunkWave {
+    // MT Vision dunk wave: up/down oscillation ending with the stick held
+    // DOWN, then center. dunk_style: wave selects this over the hold.
+    set_val(RT_BTN, 100);
+    set_val(RX, 0);
+    set_val(RY, -50);  wait(30);
+    set_val(RY, -100); wait(30);
+    set_val(RY, -50);  wait(30);
+    set_val(RY, 0);    wait(30);
+    set_val(RY, 50);   wait(30);
+    set_val(RY, 100);  wait(1000);
+    set_val(RY, -50);  wait(30);
+    set_val(RX, 0);
+    set_val(RY, 0);
+    wait(10);
+}

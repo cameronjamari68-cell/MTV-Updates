@@ -1,0 +1,331 @@
+#pragma METAINFO("MTV_AUTOGREEN", 13, 00, "MTVKLK")
+#include <titanone.gph>
+
+// The physical right stick passes through unchanged during the charge (GPC2
+// default passthrough), so the held down-diagonal reaches the game and locks
+// the fade direction. CH_TRIGGER's rising edge performs the MT Vision tempo release:
+// a slow 2-stage flick opposite the hold -- half power for 50 ms, then full
+// power held for the tempo (default 300 ms) -- with a small X drift, then
+// centers and suppresses the held stick until the player physically releases
+// it. The long full-power hold is what makes the tempo read correctly.
+#define CH_FLAGS       0
+#define CH_RIGHT_X     3
+#define CH_RIGHT_Y     4
+#define CH_ACTIVATION 11
+#define CH_TRIGGER    12
+#define CH_TIMING_LO  13
+#define CH_TIMING_HI  14
+#define CH_FLICK_MS   15
+#define CH_FLICK_PWR  16
+#define CH_HOLD_PWR   17
+#define CH_DUNK_MS    18
+#define CH_TEMPO_MID  19
+#define CH_SHOT_INPUT 20
+#define CH_RELEASE_STYLE  21
+#define CH_CIRCLE_RATE    22
+#define CH_CIRCLE_SWEEP_LO 23
+#define CH_CIRCLE_SWEEP_HI 24
+#define CH_CIRCLE_RADIUS  25
+#define CH_DUNK_STYLE     26
+#define GCV_TIMEOUT_MS 250
+#define CIRCLE_STEP_MS 15
+#define RESET_DEADZONE 20
+#define RESET_WAIT_MS 120
+
+int routed_mode;
+int right_x;
+int right_y;
+int trigger_now;
+int trigger_prev;
+int timing_ms;
+int flick_ms;
+int flick_power;
+int hold_power;
+int dunk_ms;
+int tempo_mid;
+int shot_input_button;
+int timing_lock;
+int flick_lock;
+int dunk_lock;
+int dunk_active;
+int physical_ry;
+int physical_shot_button;
+int flick_dir;
+int suppress_held_stick;
+int suppress_shot_button;
+int button_release_started;
+uint32 gcv_age_ms;
+uint32 neutral_age_ms;
+int release_style;
+int circle_rate;
+int circle_sweep_total;
+int circle_radius;
+int dunk_style;
+int circle_active;
+uint32 circle_elapsed;
+fix32 circle_angle;
+fix32 circle_theta;
+
+init {
+    routed_mode = FALSE;
+    trigger_now = 0;
+    trigger_prev = 0;
+    timing_ms = 11;
+    flick_ms = 55;
+    flick_power = 100;
+    hold_power = 100;
+    dunk_ms = 50;
+    tempo_mid = 40;
+    shot_input_button = FALSE;
+    flick_dir = -1;
+    suppress_held_stick = FALSE;
+    suppress_shot_button = FALSE;
+    button_release_started = FALSE;
+    gcv_age_ms = GCV_TIMEOUT_MS + 1;
+    neutral_age_ms = 0;
+}
+
+int clamp_ms(int value) {
+    if (value < 0) return 0;
+    if (value > 500) return 500;
+    return value;
+}
+
+int clamp_power(int value) {
+    if (value < 10) return 100;
+    if (value > 100) return 100;
+    return value;
+}
+
+int release_running() {
+    // The circle release runs in main() (GPC forbids wait() inside
+    // conditional blocks, so it cannot be a combo); circle_active keeps the
+    // rest of the machine from double-firing while the sweep is in progress.
+    return combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
+        || circle_active || combo_running(MTV_DunkWave);
+}
+
+void read_gcv_packet() {
+    routed_mode = ((gcv_read(CH_FLAGS) & 1) && gcv_read(CH_ACTIVATION));
+    right_x = gcv_read(CH_RIGHT_X);
+    right_y = gcv_read(CH_RIGHT_Y);
+    if (right_x > 127) right_x = right_x - 256;
+    if (right_y > 127) right_y = right_y - 256;
+    trigger_now = gcv_read(CH_TRIGGER);
+    timing_ms = (gcv_read(CH_TIMING_HI) << 8) | gcv_read(CH_TIMING_LO);
+    flick_ms = gcv_read(CH_FLICK_MS);
+    flick_power = gcv_read(CH_FLICK_PWR);
+    hold_power = gcv_read(CH_HOLD_PWR);
+    dunk_ms = gcv_read(CH_DUNK_MS);
+    tempo_mid = gcv_read(CH_TEMPO_MID);
+    shot_input_button = gcv_read(CH_SHOT_INPUT);
+    release_style = gcv_read(CH_RELEASE_STYLE);
+    if (release_style != 0) release_style = 1;      // 0 = flick, 1 = circle
+    circle_rate = gcv_read(CH_CIRCLE_RATE);          // 0.1 deg/ms units
+    if (circle_rate < 2) circle_rate = 2;            // 0.2 deg/ms floor
+    if (circle_rate > 60) circle_rate = 60;          // 6.0 deg/ms cap
+    circle_sweep_total = (gcv_read(CH_CIRCLE_SWEEP_HI) << 8) | gcv_read(CH_CIRCLE_SWEEP_LO);
+    if (circle_sweep_total < 90) circle_sweep_total = 360;
+    if (circle_sweep_total > 4320) circle_sweep_total = 4320;  // 12 full spins max
+    circle_radius = gcv_read(CH_CIRCLE_RADIUS);
+    if (circle_radius < 30) circle_radius = 100;
+    if (circle_radius > 100) circle_radius = 100;
+    dunk_style = gcv_read(CH_DUNK_STYLE);
+    if (dunk_style != 0) dunk_style = 1;             // 0 = hold, 1 = wave
+    // Button mode must be routable before a meter exists: physical X is not
+    // visible to Python's stick-based activation channel.
+    if (shot_input_button) routed_mode = TRUE;
+}
+
+main {
+    physical_ry = get_val(XB1_RY);
+    physical_shot_button = get_val(XB1_X);
+    if (gcv_age_ms <= GCV_TIMEOUT_MS) gcv_age_ms = gcv_age_ms + elapsed_time();
+    if (gcv_ready()) {
+        gcv_age_ms = 0;
+        read_gcv_packet();
+    }
+    if (gcv_age_ms > GCV_TIMEOUT_MS) routed_mode = FALSE;
+
+    // Button mode is an input remap: X/Square never reaches 2K. Holding it
+    // produces the same right-stick DOWN charge as Stick mode.
+    if (routed_mode && shot_input_button && physical_shot_button > RESET_DEADZONE
+            && !((get_val(XB1_RT) > 50) && get_val(XB1_LS))) {
+        suppress_shot_button = TRUE;
+        set_val(XB1_X, 0);
+        if (!button_release_started && !release_running()) {
+            set_val(XB1_RX, 0);
+            set_val(XB1_RY, hold_power);
+        }
+    }
+    // MT Vision dunk meter: RT (trigger) held with
+    // the left stick clicked (L3) starts a dunk. While held, force RT full,
+    // suppress the click, and hold the right stick DOWN so the game registers
+    // the dunk attempt.
+    dunk_active = (get_val(XB1_RT) > 50) && get_val(XB1_LS);
+    if (dunk_active) {
+        set_val(XB1_LS, 0);
+        if (!release_running()) {
+            set_val(XB1_RT, 100);
+            set_val(XB1_RX, 0);
+            set_val(XB1_RY, 100);
+        }
+    }
+
+    // The Python is the ONE authority on when to release (it enforces
+    // arm/cooldown/one-shot): a trigger edge always fires, exactly like the
+    // .gpc3. Do NOT gate on routed_mode/activation here -- the activation
+    // byte can be briefly off at the fire instant (e.g. Helios's controller
+    // state updates a frame late) and that would silently swallow the shot
+    // ("sticks move but the script never flicks").
+    if (trigger_now != trigger_prev && trigger_now != 0 && !release_running()) {
+        timing_lock = clamp_ms(timing_ms);
+        flick_lock = clamp_ms(flick_ms * 2);   // byte 15 is 2 ms units so 300 ms fits
+        dunk_lock = clamp_ms(dunk_ms);         // byte 18: MT Vision dunk hold (default 50)
+        tempo_mid = clamp_power(tempo_mid);
+        flick_power = clamp_power(flick_power);
+        hold_power = clamp_power(hold_power);
+        combo_stop(MTV_Release);
+        combo_stop(MTV_DunkRelease);
+        combo_stop(MTV_DunkWave);
+        // Regular shots are held DOWN and released with an UP flick; fades are
+        // held UP and released with a DOWN flick. Flick opposite to the held Y,
+        // using MT Vision's direction-aware release (fade = up->down).
+        // Prefer the ROUTED stick Y from the payload (the engine's filtered,
+        // frame-stable read of the actual hold) so a noisy/transitioning
+        // physical read at the trigger instant can never flip the direction;
+        // fall back to the physical stick when the payload Y is neutral
+        // (e.g. Helios has no controller state in a Titan Two route).
+        flick_dir = (physical_ry < -RESET_DEADZONE) ? 1 : -1;
+        if (right_y <= -RESET_DEADZONE || right_y >= RESET_DEADZONE)
+            flick_dir = (right_y < -RESET_DEADZONE) ? 1 : -1;
+        if (dunk_active) {
+            if (dunk_style == 1) combo_run(MTV_DunkWave);
+            else combo_run(MTV_DunkRelease);
+            suppress_held_stick = TRUE;
+        } else if (release_style == 1) {
+            // Circle release: the right stick sweeps a full circle at the
+            // configured rate/radius instead of a straight tempo flick. The
+            // full rotation is what 2K reads as a complete spin release.
+            // Driven in main() below (GPC forbids wait() in conditionals).
+            circle_active = TRUE;
+            circle_elapsed = 0;
+            circle_angle = 0.0;
+            suppress_held_stick = TRUE;
+        } else if (shot_input_button) {
+            // X/Square starts the shot, but the detected release still runs
+            // MTV's regular upward tempo flick so button and stick feel alike.
+            if (physical_shot_button > RESET_DEADZONE) {
+                suppress_shot_button = TRUE;
+                button_release_started = TRUE;
+                flick_dir = -1;
+                combo_run(MTV_Release);
+            }
+        } else {
+            combo_run(MTV_Release);
+            suppress_held_stick = TRUE;
+        }
+        neutral_age_ms = 0;
+        printf("MTV:SHOT type=%d timing=%d flick=%d dunk=%d", trigger_now, timing_lock, flick_lock, dunk_lock);
+    }
+    trigger_prev = trigger_now;
+
+    // MT Vision circle release driver (runs in main so no wait()
+    // is needed): every CIRCLE_STEP_MS advance the sweep angle by
+    // circle_rate (0.1 deg/ms) and re-place the stick on the circle; when the
+    // total sweep is done, center and deactivate.
+    if (circle_active) {
+        circle_elapsed = circle_elapsed + elapsed_time();
+        if (circle_elapsed >= CIRCLE_STEP_MS) {
+            circle_elapsed = circle_elapsed - CIRCLE_STEP_MS;
+            circle_angle = circle_angle + ((fix32)circle_rate) * ((fix32)CIRCLE_STEP_MS) / 10.0;
+            if (circle_angle >= ((fix32)circle_sweep_total)) {
+                circle_active = FALSE;
+                set_val(XB1_RX, 0);
+                set_val(XB1_RY, 0);
+            } else {
+                circle_theta = deg2rad(90.0 + ((fix32)flick_dir) * circle_angle);
+                set_val(XB1_RX, cos(circle_theta) * ((fix32)circle_radius));
+                set_val(XB1_RY, sin(circle_theta) * ((fix32)circle_radius));
+            }
+        }
+    }
+
+    if (suppress_shot_button) {
+        set_val(XB1_X, 0);
+        if (physical_shot_button <= RESET_DEADZONE) {
+            suppress_shot_button = FALSE;
+            button_release_started = FALSE;
+        }
+    }
+
+    if (!release_running()) {
+        if (suppress_held_stick) {
+            set_val(XB1_RX, 0);
+            set_val(XB1_RY, 0);
+            if (abs(physical_ry) <= RESET_DEADZONE) {
+                neutral_age_ms = neutral_age_ms + elapsed_time();
+                if (neutral_age_ms >= RESET_WAIT_MS) suppress_held_stick = FALSE;
+            } else neutral_age_ms = 0;
+        }
+        // During the charge the physical right stick passes through unchanged
+        // (GPC2 default passthrough). The held stick (down for a regular shot,
+        // up or up-diagonal for a fade) reaches the game directly, which locks
+        // the shot type and fade direction in the MT Vision release path.
+        // Overriding it here with the GCV stream could zero/stale the stick and
+        // turn a fade into a chicken.
+    }
+}
+
+combo MTV_Release {
+    // MT Vision tempo release: a
+    // slow 2-stage flick in the OPPOSITE direction of the hold -- half power
+    // for 50 ms with a small X drift, then full power held for the tempo
+    // (flick_lock, default 300 ms) with more X drift, then center. The long
+    // full-power hold is what makes 2K read the tempo correctly; the X drift
+    // keeps it a rhythm flick, not a plain stick shot. Direction: up for a
+    // down-held regular shot, down for an up-held fade (flick_dir).
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, flick_dir * (flick_power * 50 / 100));
+    wait(50);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, flick_dir * flick_power);
+    wait(flick_lock);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, 0);
+    wait(40);
+}
+
+combo MTV_DunkRelease {
+    // MT Vision dunk release: RT full + right stick DOWN held
+    // through the dunk hold (dunk_lock, default 50 ms), then center with MT Vision's
+    // 70 ms tail. The short hold keeps the fill inside 2K's wide dunk green
+    // window.
+    set_val(XB1_RT, 100);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, hold_power);
+    wait(dunk_lock);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, 0);
+    wait(70);
+}
+
+combo MTV_DunkWave {
+    // MT Vision dunk wave: an up/down oscillation
+    // that ends holding the stick DOWN for the release, then centers. Select
+    // with dunk_style: wave (config key, byte 26). Default is the MT Vision hold
+    // above; the wave is an alternative timing gesture for dunk meters that
+    // read better with a moving stick.
+    set_val(XB1_RT, 100);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, -50);  wait(30);
+    set_val(XB1_RY, -100); wait(30);
+    set_val(XB1_RY, -50);  wait(30);
+    set_val(XB1_RY, 0);    wait(30);
+    set_val(XB1_RY, 50);   wait(30);
+    set_val(XB1_RY, 100);  wait(1000);
+    set_val(XB1_RY, -50);  wait(30);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, 0);
+    wait(10);
+}

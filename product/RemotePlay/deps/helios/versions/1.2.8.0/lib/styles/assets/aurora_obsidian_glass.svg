@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1024" viewBox="0 0 2048 1024">
+  <defs>
+    <linearGradient id="aogA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2FE0D0" stop-opacity="0"/>
+      <stop offset="0.28" stop-color="#2FE0D0" stop-opacity="0.38"/>
+      <stop offset="0.58" stop-color="#61A9FF" stop-opacity="0.42"/>
+      <stop offset="0.86" stop-color="#A78BFA" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="aogGrid" width="160" height="160" patternUnits="userSpaceOnUse">
+      <path d="M160 0H0V160" fill="none" stroke="#7EA4C4" stroke-width="1" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="2048" height="1024" fill="#07101A" fill-opacity="0.56"/>
+  <rect width="2048" height="1024" fill="url(#aogGrid)" opacity="0.88"/>
+  <path d="M-145 316C180 106 418 492 744 278S1292 98 1602 266S1960 436 2192 236" fill="none" stroke="url(#aogA)" stroke-width="10" stroke-opacity="0.72" stroke-linecap="round"/>
+  <path d="M-116 776C212 620 420 884 772 722S1284 578 1600 711S1924 842 2176 663" fill="none" stroke="url(#aogA)" stroke-width="6" stroke-opacity="0.50" stroke-linecap="round"/>
+  <g transform="translate(1640 540)" fill="none" stroke="#65E8DC">
+    <circle r="96" stroke-opacity="0.19"/>
+    <circle r="72" stroke-opacity="0.26" stroke-dasharray="3 9"/>
+    <path d="M-118 0H118M0-118V118" stroke-opacity="0.14"/>
+  </g>
+  <g fill="#C7F8F3" fill-opacity="0.35">
+    <circle cx="283" cy="82" r="1.5"/><circle cx="758" cy="106" r="1.5"/><circle cx="1324" cy="82" r="1.5"/><circle cx="1768" cy="158" r="2"/>
+    <circle cx="612" cy="946" r="1.5"/><circle cx="1288" cy="930" r="1.5"/>
+  </g>
+</svg>

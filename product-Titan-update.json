@@ -1,36 +1,1677 @@
 {
   "v": 1,
   "type": "product",
+  "mode": "full",
   "product": "Titan",
-  "base_version": "2.6.5",
-  "version": "2.6.7",
-  "notes": "your release notes",
+  "base_version": "2.6.7",
+  "version": "7.0.0",
+  "notes": "MTV 7.0: stabilized release target (session-firm), full meter-body color detection (no more sliver fill), removed meter zoom",
   "files": [
     {
+      "path": "MTV.gpc",
+      "sha256": "4df15da2b74b72d28d98ae40c7a687b2e94c9bac3abd12cc88d40fc60b1fcae0"
+    },
+    {
+      "path": "MTVBridge.py",
+      "sha256": "59bfc9632e55da06ab36414e4a66544996fcef8139d79748a9ae6d8f1b188b1a"
+    },
+    {
+      "path": "PS5_TITAN_SETUP.txt",
+      "sha256": "45671b6d77da6f8a7dc543d305b00b7ad582184eef7ebaf2b349fe36a21c5d4f"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "47c63cc8cb1f2d6466f65cd6b702d9d9c2c6589187f353dc5127620cdda4e668"
+    },
+    {
+      "path": "START_HERE.txt",
+      "sha256": "5fd7c49e1faaff26b37b23f149a007c8f4493e0dca5f562fd4dcf0949d64a3fd"
+    },
+    {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "1bc8a39696f98d0c6503ab59a116262bd340bee4ad215e8bb6819f42c309cc34"
+      "sha256": "352f016a9a951044147cd84a1f4579abbd7cf0175815cf4133760bf93b5ee448"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "57c875a6f3547741ecbe86eca9f2aa2abfb997bae24408fd30b2231f787b6b0d"
+      "sha256": "c2020e94e0a045e2f450e718aba0e2a923fbb5acb1ce1c17a4b9b8dcc31246e7"
+    },
+    {
+      "path": "deps/helios/Helios.exe",
+      "sha256": "6ceb8b5a54970a0d3403b20500a84dbd74904ac31db85877ac51549065c8007c"
+    },
+    {
+      "path": "deps/helios/helios_settings.ini",
+      "sha256": "8fc93f860c5ee0622ab3133830af268f87b5e273a552c7668ce69049c98bcda6"
+    },
+    {
+      "path": "deps/helios/lib/HeliosUpdater.exe",
+      "sha256": "5b1f01c07cdf539aa169f3c8683e4eb5067fdb419b4f328849fb50b0410fb079"
+    },
+    {
+      "path": "deps/helios/version_info.json",
+      "sha256": "20426cb6e32662008ac1b54c95c92119ce13efe75f2d745f6c8cf7c35fee5dd7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/COPYING.txt",
+      "sha256": "95fa474f174484ea49e16ad6403388aae9952c7f8517325dd0ac5f5204bcbe9a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/DirectML.dll",
+      "sha256": "9c9e6d822561c6c41b90e6994b3e8857cf1d66dbfb1e0c4c799c7c89b4e92da1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/HeliosApp.exe",
+      "sha256": "d11195a425723537fb7ab3868390d89ae9a23400f2e68ec685e05ccce691b056"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/HeliosCore.dll",
+      "sha256": "932bdabe8ab1f666a0efac1a95c75d4920a747d1b54c652ab24cd6afcd37ff5d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/HeliosEngineBuilderTrt10.exe",
+      "sha256": "609c960f0dba574b5d9be517614aab2bff674d6572590c916319438daca6dce6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/HeliosEngineBuilderTrt11.exe",
+      "sha256": "5582e5428db5c00e233258f5184a5472fd4188451f5ad573f04848403f1c8bd7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/HeliosVision.dll",
+      "sha256": "fcea95f34b5902a9d3aab22aba5f3b65e4bd1ce72af687cec61187f1b118ab0b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/InferenceCoreTrt10.dll",
+      "sha256": "2447a0ce6472e652a98d79525934909b747f5adb136a6d39fba9cc48b6f110bf"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/InferenceCoreTrt11.dll",
+      "sha256": "5c5bc1dc5192924d487d61a338fe12aa28f773a95646e70cff6b92676e5dc8d1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/LibMWCapture.dll",
+      "sha256": "dda93e2ac683d96cb1792a7f6b50c2466803e3504bf478f625e2414a91d56633"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/MakcuDriverRepair.exe",
+      "sha256": "f5678cee1321a70f60410a812055c439b8398cb7b6301bcf17d1e23726954fa8"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6Core.dll",
+      "sha256": "bc491a78ee8eb95d3192bb1da3c29a119ffe7039b142e854115a33f8008ae79c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6Gui.dll",
+      "sha256": "1e4a8fd1aa73c497c7a231c9c3f86b1d8fc42ef8c2d118a75de6a6e8cd2c9a8c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6Network.dll",
+      "sha256": "1e2cd4d0a605723ab31b25db736df843384db83114ff149e99e187c531529218"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6OpenGL.dll",
+      "sha256": "e0d0e441b2ec482aafe98b701e1d91ccec8b9f6ec5e29afe5936ee0d3631dd4e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6OpenGLWidgets.dll",
+      "sha256": "46326257e6eb3e2885570057bd66c3c0661861df48f623e07672ce89c58696e4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6Svg.dll",
+      "sha256": "efea2e0cb56e83ccb90909202c7b3a9560c29c062482fabab95deba0abdb025d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/Qt6Widgets.dll",
+      "sha256": "385399f92404f96d1bcec655c6c1f630d8e087d0abc3e50ee7a5a5a51b4caa20"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/brotlicommon.dll",
+      "sha256": "c6b97ca51f60e02389d6ad39da0e6469c0e0cee50e5caf6c0d9f24eb7ca7c577"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/brotlidec.dll",
+      "sha256": "27bf1bc07dc2e11b40deba0da6bbde99253195801ad9bba10630e7cc4590b1d7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/bz2.dll",
+      "sha256": "d59bbfb9c805f61bfce1860c3b13061b9f6a04f59025c778b8bfc9a6e02da155"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/concrt140.dll",
+      "sha256": "54716f0738af891f283d213b5c8d11b25896bb8ee3097d301eae718560cf974e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/cv_cpp/CVCppWrapper.exe",
+      "sha256": "8d619110615fcbcc288a3dbf600b3778a2a5db2bd81a760bc481ec8ee75ead43"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/cv_cpp/CVTest.dll",
+      "sha256": "ec580a052b9b802d8b7b41ddb3e2b9d27ad65782759ef9699a3587893946d06f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/datachannel.dll",
+      "sha256": "37b7ef8f7b332d880b9f98cd8bd52cf07f203d6256d4ec3e1763c09a5d508296"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/double-conversion.dll",
+      "sha256": "79353c29f9235ed62862442bb3fea60ee0ca37dee844cc2516f61cca6f12d077"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/drivers/vigembus/ViGEmBus_1.22.0_x64_x86_arm64.exe",
+      "sha256": "89220a7865076b342892f98865f3499fb7c4cfd673159e89d352c360fd014c6a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/dxcompiler.dll",
+      "sha256": "a5aa1d9a95bf9ea68eff4502eb687161464bb5a505e817782b7a770a2a312044"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/dxil.dll",
+      "sha256": "95ac1bb413178c4596f49498e912c270f8f343282b63840f174cbf5154ad1557"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/freetype.dll",
+      "sha256": "072a7ddfb12403db79bf98a8540776f5731eb39d1563135fa3256c3d384b54ba"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/generic/qtuiotouchplugin.dll",
+      "sha256": "60b6d146dcb48ae612702ad234454d9fb03f8553153039f38c7b2b3ad9110acc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/gpc3trc.exe",
+      "sha256": "449b035f74bbb30d67157cc717be88c9d076c5b2306b1b7c29f32b3190f54641"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/gpc3vm-run.exe",
+      "sha256": "700f267addd4a815bd2adf94248a0aa0ffebed36968da4ba4207764cff40618b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/gpc3vmc.exe",
+      "sha256": "10e2484ff66ddf25395fbe281af31018bd9a57b8e07c6f1c984652f26b51bda6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/session.dat",
+      "sha256": "c6c220db8f7aaaa2a6f22646dd6f1dd01992c66a7a919bc797a26e6275235eb6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/vcruntime140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/gpc3/vcruntime140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/harfbuzz.dll",
+      "sha256": "8972e2c5b6d7f799d542da52d4783888d7a71377c9c508fcc8d9709557bfcedc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/helios-components.bin",
+      "sha256": "4e4a5ed2f9c580281707715ffa392af418a88aad3b74fd6704910e00f4c06cbc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/helios-obs.dll",
+      "sha256": "99d142e388f773ad846b5b1944fa645bad698860a68ac7eb690b7a3296e763b2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/hidapi.dll",
+      "sha256": "9b97c62bf9c2d013140e893b386c9e2e407214d97c7b87b033385a7b26671218"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/iconengines/qsvgicon.dll",
+      "sha256": "2b3944738cfe72ebc83224a60bf5e8b366291562044ec2cd7dc27ef8e309be18"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/icudt78.dll",
+      "sha256": "797280f077f4980fd1fec9384ad01140b596a03396f9dda3c5401e33a8d1d153"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/icuin78.dll",
+      "sha256": "bf11d05197fc911bbf339822903678729339cb67d1b7b9228e66248f17b81f5c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/icuuc78.dll",
+      "sha256": "1c076d3e0ae77722b0ae1f9228deb530947c032557fd40796534ab41f5baeb3f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/imageformats/qgif.dll",
+      "sha256": "88f6d47ecf064b44ab4cf6c1fa64b46755951c00c6f9c0efeeaddd834efb5f27"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/imageformats/qico.dll",
+      "sha256": "0cb3c4f563fefdc7d6c62df31327c02e8f58029cfed331ff4ef40d686f497112"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/imageformats/qjpeg.dll",
+      "sha256": "5e6956ee1bbe9cdc3d99465c8e3ad5e7f05856b0b62f07f34b8adeef258283d9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/imageformats/qsvg.dll",
+      "sha256": "456748b3fdd9a4e0ac101e1c7da8df7aba3e83c1992f7e6b851db1dad9b7d5d3"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/jpeg62.dll",
+      "sha256": "8557e3847cbcc952f43c712162e79ba349b9b1b0f0b469fdfe98bb4e6e203906"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/json-c.dll",
+      "sha256": "b1ab71ccda4a19e9bc208a5e7add8d3fad450b074eae72e9e1941cd727b08197"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/juice.dll",
+      "sha256": "6a7b71f409d48a58ffa01eae32d41ec1b5ff2350fcc8e1d0debd4f2f418dffb1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libcrypto-3-x64.dll",
+      "sha256": "764178177d100bc55a30111d1247d7b1362e5ac377b6181a305cb2e7f78c53ea"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libcurl.dll",
+      "sha256": "afe4632d269fd428807e9289fdc0f58c58965dc14c7908f4f5d4eca78b14d9bc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libpng16.dll",
+      "sha256": "1743e25c6a9719721e6efd4b9032f8c86dc2a2a7df709a1738430727a61e8fde"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libsharpyuv.dll",
+      "sha256": "e29dc61cd9c7d8e7b38e11f806d8443e8d3881f36cc8730c32c7070d12f09ec2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libssl-3-x64.dll",
+      "sha256": "f0f040ef02dae6c1836a7474a5b3f8bca186d531b41a6b2ae10fdef4f90f6eea"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/libwebp.dll",
+      "sha256": "d99d1996aa5efde1b9035d360e6eba13a84390c12d085657ba30d3240fc300c3"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/md4c.dll",
+      "sha256": "220d423fbc6c539b57fb0fbb8b222cf7d86991ddc9adfe7b63e1be3a3e2f0e42"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/miniupnpc.dll",
+      "sha256": "a1a3c1a7706b0e62f41208dd4430529d5060bef78d34151137997f545b0dbd69"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/msvcp140_1.dll",
+      "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/msvcp140_2.dll",
+      "sha256": "d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/networkinformation/qnetworklistmanager.dll",
+      "sha256": "fb4db28dbf2fe1c9ce6de3816b80b1b1675e974e68b20795468cdb1851c1d8d6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/ocr/ppocrv6_small_rec/inference.onnx",
+      "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/ocr/ppocrv6_small_rec/inference.yml",
+      "sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/onnxruntime.dll",
+      "sha256": "e7eedec6a6f26dc39dc948276a75ef6d2bee3fff944d874ceed0bbd3b97bff40"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/onnxruntime_providers_shared.dll",
+      "sha256": "265c8daf29637cb259cac8be9f08f2cd45f3883f0f0e4949cbfddd5b4cbec3b6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_core500.dll",
+      "sha256": "5ad71a611c2e24fe40f198c30a1fbff0c20b0611cade7b2eb3c543e8e9573d55"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_flann500.dll",
+      "sha256": "6d28900c6b697b26bdd17aa306b27bb0b2e0241d2281d79b5bbe953eb6d7210e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_geometry500.dll",
+      "sha256": "c617e0d1086abc1c2196477024019e1a44ca1fd70f6b9359696fad50456fe9b4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_imgcodecs500.dll",
+      "sha256": "18b2249d4859a87dd336ad288be5407a6db9f5bb314e4854656a3dfea92cf8c4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_imgproc500.dll",
+      "sha256": "082dd18317c2702c6b141aad5e1e1b114dbaebf3da2b6c5c63001bbfdb75d583"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_videoio500.dll",
+      "sha256": "07bb6f940989dc8d083d0b45a207eb85bfc28943d8892d3be2af192ac2f5b25b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opencv_videoio_ffmpeg500_64.dll",
+      "sha256": "7aabff029d1fa47cf56ede4dbbe05dc62da3208f07cd16471d4c966a33f9aa31"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/opus.dll",
+      "sha256": "e722f43fbfa29aba9cffe51baef368ada639c734b973925fef1ac3f3867995c9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/pcre2-16.dll",
+      "sha256": "3295aef75cdbff040781df8cad8e405db84196cee275ad1de299364cc241da60"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/platforms/qwindows.dll",
+      "sha256": "344319fb9c7947a3b40ef62a129f44bff8109e453429d33a1d4682ef63b66d15"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/CVTest.py",
+      "sha256": "d7dac4c06b58b9efff5f19cc402306178e02a9a7ec3496a75b965812d5318754"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/_helios_controls.pyd",
+      "sha256": "d891b9ff4302022f568799bf5f9505b6c18c764bedf99fc2fd665b4cd5a686d0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/_helios_vision.pyd",
+      "sha256": "98bc266c1d3851d66069d87f0fad6bb7268755f643b9790b1585a3822d3576dd"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/cvpython_host.pyd",
+      "sha256": "00f87834058fca4d975cd77bb617ae73953d1db4a9a6e1c5d4fa7b23e8db719b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/inference_core.pyd",
+      "sha256": "3455a466ba1bf933bbff05c753981783bc938dc3c35bc8248e11d65020d3c615"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/msvcp140_atomic_wait.dll",
+      "sha256": "3d0cbfaa1bf3eecf5a3f4491d2960ee803cb994f30292c6adc4a07c498f60e2b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/vcruntime140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/py/vcruntime140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/setups/Default.ini",
+      "sha256": "5d7d5b0702752bbd536bc43d17d24536502d0e6e2924d37175d07d2c19468e64"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/setups/Makcu.ini",
+      "sha256": "1bc30bc2d23080e672d98a7b6610310f1bab409f7ef3bfb23690804dc04fd8e1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/setups/Remote Play.ini",
+      "sha256": "d3a3632f73371ed25f480c61f3ffd18860e64ae347e49db96b67ba05324b8dcc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/setups/Titan.ini",
+      "sha256": "5d7d5b0702752bbd536bc43d17d24536502d0e6e2924d37175d07d2c19468e64"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Aurora Obsidian.qss",
+      "sha256": "e8d2b9a0e4293f583742f770dc648199f15a3244dc0e2f0f758b02ada93e1a83"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Black Meridian.qss",
+      "sha256": "d1bdf180a9051c24f9c09b424b09f49293d35317137a42b01f0b0cb824e7f6dc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Charcoal Red Static.qss",
+      "sha256": "33819b92d81c64421ffc706c99ff459f068bbca126cf9471b739ce38494acc12"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Charcoal by xed.qss",
+      "sha256": "f15490f2ea5c3f95827cc6419e73266c737752cd1740ea6b8ad9dd4152b0e192"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Christmas Eve.qss",
+      "sha256": "09cda38ef93a80d63774cd37a3057be0c85601c5179a7878eccb97ee10d2579b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Chromavane (Animated).qss",
+      "sha256": "b24a2521da0eb5b5371c41a8f7bdc06f3535dfffe94a1898ea5f9c31dd9ef6c8"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Cloud.qss",
+      "sha256": "ec41b36bbbbab18c1b839302da6d031f2ab764663abecfa0e415e8fb19b850ff"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Color by xed.qss",
+      "sha256": "4b04d6010c0ee590f30488721eb0dda5d02dfde879444bb9977d3c9b82b72a85"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Cyralume (Animated).qss",
+      "sha256": "a6001c7268c608c6c5b2d2104131c240e26bc746be32413da7f3df3be5a85f34"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Darker.qss",
+      "sha256": "3086b01f553efa1f06c49a1c10832f1769d6010f9307272957459699410b56bc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Desert Signal.qss",
+      "sha256": "c6bd6a64c8e7e3b2be74ae96ef36822b832c0046a639b5b9c3e536ce8a2ca213"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Gemini Dark.qss",
+      "sha256": "f50b87ff05154486f7b882ea22e2591310adac9b645ca4212188f5118b47b3a1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Gemini Light.qss",
+      "sha256": "ff9af25989123db8b6a5f2621b9f34cb1cbcc8900dda117000ae6342fb6a5180"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Hacker Rain (Animated).qss",
+      "sha256": "758f41bd76f283695939913926b2fb934ffb02ba09472da9d529fcd932a2c8da"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Hacker by Kem.qss",
+      "sha256": "2d93c52cbab208cb3bfb8ab7f8bf9a2991cab61cc16446a5804bd23ebb37d766"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Inkori.qss",
+      "sha256": "2a50e11f0b62f7a8c86beeb57a1527ee23e616be1ad8efbdb1e0b49cac4bffcc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Modern Hacker.qss",
+      "sha256": "ceb543f907f25029d5b8d2e54354290f8673a0755ed11d8fd53bbc9fc880e551"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Nexus Plasma Forge.qss",
+      "sha256": "5a58fffae6cfbc8e7e6b788511e4f0666537d4b8f61472650d16021d0f0cbb92"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Purple Future.qss",
+      "sha256": "e5f04f29d5bb4dc16f10ee3584f7ae76157cfb76df5a611c78a92ef662f1f793"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/The Pioneer.qss",
+      "sha256": "2d8e4c54d8cd0b98366ce3080e8e9491c4f078403a534c542aecc20af7c2acf8"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Ugly Christmas Sweater.qss",
+      "sha256": "3792f2239e6869e3194901bbdda8e2bc465b7fdba77406addf28f1497802bc59"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/Vermyx.qss",
+      "sha256": "253eddc4ccb277d49a825b8ed8bbf9721dee5eb2e0143891a5f5e9ab256e77d0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian.svg",
+      "sha256": "4fd82f936cdf0d02a965eb58299b7a2061e0bf0d71ea540e58a120fed96e0595"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_arrow_hover_new.svg",
+      "sha256": "e0144c773d110e300b2d40e0f08dfb27c5bc5cd3ca0f9b4f335f414aae6b8653"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_arrow_new.svg",
+      "sha256": "ab6be2b74f4ea1e142e56d5978b179fd549418ec55dfdae3ea45eea18a900549"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_folder_hover_new.svg",
+      "sha256": "146d9720f6a686a428e0d15bd86dcc9fbdccf7e14bdcd43b9c2b56d9c90217f2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_folder_new.svg",
+      "sha256": "8929edc6dec15a33536ce3c30f45011e8478ff3f2eeb369da6652fa294458546"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_glass.svg",
+      "sha256": "f53836b53996c79fe27b5d3abc3ff41acfc77c997ede02d1d3786512fdc130b1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_refresh_hover_new.svg",
+      "sha256": "2e8373fe950986b4c15e60ec8fff91112567bb7d5e6a4c1e85e588b9a654b427"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/aurora_obsidian_refresh_new.svg",
+      "sha256": "e12e9c3343895e07fa560883bf88ff81a8b9de07f95e1374a7da6364e901651a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian.svg",
+      "sha256": "b9eb63129c32b7a7922585d2dac968a6f3f09d468e4a94c98800c893121410d2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_arrow_hover_new.svg",
+      "sha256": "d622a3f15dfb78ef230946e08142ef2805db9e3ce42a1ee2b04b8eac88e0a801"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_arrow_new.svg",
+      "sha256": "a98e7866ed017b090f7a48cb79ecd06eb21b53ddd989b34a3aede5156e52d317"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_folder_hover_new.svg",
+      "sha256": "4102ca3c5903693703d276dcd01293f4f060af8c14549d44bb9ba943f24a32f7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_folder_new.svg",
+      "sha256": "38fb2ba4c381e8247c35e99ffcfee78ea7626a2ffa662e2d68153aa94f39e91d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_glass.svg",
+      "sha256": "8c583e6def2ba8fe532195afb032647bf9fef9e1471d8f0991aebb14b0262e94"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_refresh_hover_new.svg",
+      "sha256": "2cd82084ca9cef63a45c5f5874cd49f2d2a34f136ac95bdbea0c685f0def3c2e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/black_meridian_refresh_new.svg",
+      "sha256": "3eb0f2ab10a29d5b1eace6d8e9d6cf59f750e12a4a541606b889744b3480d5ae"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static.svg",
+      "sha256": "a3c1186d97811ec6014fb508bd894751afb35f3a20cd4c511664b87fe99dc345"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_arrow_hover_new.svg",
+      "sha256": "48dd6897f9f9087225fb5e3809d34aa060000cd61f030513afef77812406ee9d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_arrow_new.svg",
+      "sha256": "9c921731098a70eec348c18c7a62bf7d2ff6d2327cb2898a31a3ebe04e8ee59d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_folder_hover_new.svg",
+      "sha256": "a47b635f3222ae433b1760d02e03a9b87112f8bb3cb426bd0a3103297d23f126"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_folder_new.svg",
+      "sha256": "85628316172bd576b91b4513f6c000be02887b2e8d549b4fdbfcd1c068470475"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_glass.svg",
+      "sha256": "532a978a50162bc5d38eaffc6836f668b7602bb90e3e1024c64101a9cf6ea083"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_refresh_hover_new.svg",
+      "sha256": "ab366884c59a99d28473a2bc3a9412865d5d730fea7b9a38dc039e4142109b42"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/charcoal_red_static_refresh_new.svg",
+      "sha256": "9b74c472da5576a352451d0ad5f96c82d49371b34d1bb99eed8ae6ea700c06bc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_arrow.svg",
+      "sha256": "9a42736917264d9046e8e64bccf593d7a64977509c2f8183e593d6ff269d030a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_arrow_hover.svg",
+      "sha256": "74d05b0fb0334828cfd76e1345f4b19a6ab15c7965f03275643285d07d6ecf1c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_folder.svg",
+      "sha256": "efafe5693c5516d07ccae7fc554424c215b053b0ac35cb5a0f18245f992a2bb0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_folder_hover.svg",
+      "sha256": "4e8786951621802abd4e58e375163878d976c6ea5f6d6cf46b123813b5660f2c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_glass.svg",
+      "sha256": "e49b3f39647cebd8632472e1a83df0b160707e96daae6ffc1259791d5d748344"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_loader.png",
+      "sha256": "e4d8e1beb7a98128f173add9fec0e671d307e9466e7f7afb434521f310115c68"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_motion_4k.gif",
+      "sha256": "c68aae31ae89a34e252b9717fd916b6f3b8261d7cac934a35fceac82259f0109"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_refresh.svg",
+      "sha256": "47470efca792d6cb660f3424fe6c8e335669738099e545328c792c40692ea41b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/chromavane_refresh_hover.svg",
+      "sha256": "ef8910d0eef402beb447b1eadf59e8a9d463082084eb25bda2bc8e6f18ac48ec"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_arrow_blank.svg",
+      "sha256": "c38e18614af8604bb544ee51e36a6b28e55ad8add011f8d107b36a960b5650e6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_folder.svg",
+      "sha256": "ba0dec5e673f80092de5f331a9e6badcf1a9e95e8e821cf5d2739e813ef7c93e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_folder_hover.svg",
+      "sha256": "08148cdd02cf209a72a9392ff8d4ac6c61b106fb452d2486c964b78a2d7f61ce"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_glass.svg",
+      "sha256": "bae6e34abb598d6d3d9484eddbb920500d3c41a44c43b9ae7ccae7e0183cb71f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_loader.png",
+      "sha256": "b997588fb7e5b24c76bc399702d48c5c69be3e109c8da54b311d28a8fe748f71"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_motion.gif",
+      "sha256": "c31b1179b62c2b839636b904142c1bace40089455dde675bb651fca605aa0d4a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_refresh.svg",
+      "sha256": "a7e22f0dd2e085bee17bda67debd1ed1b4ea9e25d04e2d594de6e8e59d0884d9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/cyralume_refresh_hover.svg",
+      "sha256": "c40a49d8cfc2f1e6db72b2c804a42e6ee0b7646a04f8e86a80d4fddce83599d5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal.svg",
+      "sha256": "2204fba869ed204b5474cd89752af180f503ed29645840d84355b57de8bfd630"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_arrow_hover_new.svg",
+      "sha256": "a7ef124bff9dc7990bb3cd40ccbebb45eed081c0bc3d4a724ef62a3a4cb5e935"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_arrow_new.svg",
+      "sha256": "c84166586778cec7eecc4d63b7ee8649cf3fae8d76e6e721e0f37e24318e5f2b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_folder_hover_new.svg",
+      "sha256": "afa6170c6ff24a08c85e439ec4e49a712691a106c34f4d738b031bce7381e3b0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_folder_new.svg",
+      "sha256": "44dce4e564a2ae3fc79d47a6886470fa82a2db46b7e4e9734f0aa97eafae607e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_glass.svg",
+      "sha256": "8ed1ef869c1c44d137d50de591ee1d90a6d60c123cd5253b26344a4836ca20f7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_refresh_hover_new.svg",
+      "sha256": "c23000e39f510c7339511fd356e34562c4cecdcccbbc673919b5c7ed2e6ead83"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/desert_signal_refresh_new.svg",
+      "sha256": "360416c936ed51eb817694793da6f3f23a89babcbd6b692f23ef7b18a098f804"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/hacker_rain_motion.gif",
+      "sha256": "425ef69b3da75301a0c84b8ddcc1ce1d1df9ea22f00d94e092823af7fe8c4718"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori.png",
+      "sha256": "e13b2fa39e4388d0810373f43eb88e61bca128b673b9ab95c36d4ef89f1ef115"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_arrow.svg",
+      "sha256": "74416e7089c4f835ea447d725287d737908734b6b77d4a1c45fa16b943ec4351"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_arrow_hover_new.svg",
+      "sha256": "e9f3c468252e24ff8695d656bca7c7c13211dc7c7078e374b3911a09ae97443d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_arrow_new.svg",
+      "sha256": "d02224195e54ea33d3c745e2d6f35791998947f423317db951c0ef49a65ff097"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_folder_hover_new.svg",
+      "sha256": "d562ebae4e914f41b23775c007a5ec08930993b4faa14564ed0ad1e90009460f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_folder_new.svg",
+      "sha256": "780a59d933325e824a8e9b8ef9ea9e7a4bd67bc74e71d1e6e5a4a92e0f2b9120"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_glass.svg",
+      "sha256": "2f6ba8d8c9bcd0e09b0c542125e57bfda7fd1e0b93f748d0585998398d6e1d9b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_refresh_hover_new.svg",
+      "sha256": "5cb69351762c4739532e0ba90aff20f07bd3da4116815e58060703cee6c01b9f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/inkori_refresh_new.svg",
+      "sha256": "daebeb8cbdefd296bd830f50d966a230b9c183873f2c301fc94113185d6c3681"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/jaj_wallpaper.png",
+      "sha256": "6bd954696c72a5d4623f40feb34f50fb46090eb4faf16ab81a9bb6ed0b29120e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge.png",
+      "sha256": "2afb913e61c74dfcfbdecd3bffe24137cadec679e7e08ed85a5ecba046581932"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_arrow_hover_new.svg",
+      "sha256": "edad608b9570438cb9b6807d7a0145d92c5069e62dae88bbc1bc2f85c735a9fc"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_arrow_new.svg",
+      "sha256": "946ef1b6fd110ba5622c697379982765ee25d401b8bf0ab8f75d0eda963fd3cf"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_folder_hover_new.svg",
+      "sha256": "db8ad4bf44b888511a6653449d98466f854cf62b2579946d3a3717e60172fe24"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_folder_new.svg",
+      "sha256": "42c8156959670fe3351e9d522dee38c637a301800673095c98beb5595459fe1a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_preferences.png",
+      "sha256": "4df838b253524b1e7cd82d607441b3314b9d12fa35d14035168e68819bf365ab"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_refresh_hover_new.svg",
+      "sha256": "adad6ce84bc011173cb80880d6e256599a497613af35ec16bb0ecef0e41b6bba"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/nexus_plasma_forge_refresh_new.svg",
+      "sha256": "14377d6a68b23b9a3fb7c6f4f0028841c994bb5d8e9a4ba862152b15a806181d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/snow_pattern.svg",
+      "sha256": "bf8761c6a16d75fe67dee30de4519df6305f1191f4e6fcc66c9ce436a5e5fbb4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/sweater_knit.svg",
+      "sha256": "949fd1948de1b4bf6ef30f5933a1341b3d6638c79f9ca1fdc17211b546659de9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx.png",
+      "sha256": "9df686685d7cb23b3f206783e23920560dff572d6b49f8f5e7593b9159fb5617"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_arrow_hover_new.svg",
+      "sha256": "89b55423ca002c39ac8239e7cf80bde0f715ff6afc848bf89d5f775e0c9aa534"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_arrow_new.svg",
+      "sha256": "5115f2b4df333d2af94e4c18904775a77301f9b67452baa3e87f05ebdba41b1f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_folder_hover_new.svg",
+      "sha256": "75feb2abadf7945f823f7f9db58ab198e0620659edd3a399ec821d901c73696a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_folder_new.svg",
+      "sha256": "9c9d9cdc3a9f314cb44eaa8b31f9f288a5af03e37c21e9a737927e43c4e1160a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_glass.png",
+      "sha256": "96aad0879bcbe6cc9e29b785e8b1d29fca0b403141891d8e443168b7925bb679"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_refresh_hover_new.svg",
+      "sha256": "2c34d3966e505c50e66bcb4c1cabf3facf1ebaa4b9f90ba598e1c4258331cbc1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/assets/vermyx_refresh_new.svg",
+      "sha256": "50b1bb09c2b83354d408e4e863581611a124050d57f24c1b60c52783ae5a116b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/dark.qss",
+      "sha256": "c4567d35115d0d74ee204f3fda91c96c7b196a636ba4af35e9c4b9cd6c9a930c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/light.qss",
+      "sha256": "e32d31e35c119a42efe0b60293b3c01217d28c9e43d915e7330954875f577b2c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/styles/qmodernwindowsstyle.dll",
+      "sha256": "d8c22023adf728378a8be6e6b6b897033064a64f295ff65681d85602172b7a75"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/tls/qcertonlybackend.dll",
+      "sha256": "eac3836d5b74d2f4b7ede5d14847584cb8d540c4c816d7e370101d62de30fc5b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/tls/qopensslbackend.dll",
+      "sha256": "8457b369a7656099ee8000c06dbc90de47b98838a0c51b86fc1f469a17428093"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/tls/qschannelbackend.dll",
+      "sha256": "293a898b298b28f1a0dd75f4d20aef4b9b8200a635c92ba74ac984c316cff5a2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/core/helios_de.qm",
+      "sha256": "e048b783c807d556c265d0dd7acb8f5e467113c5f1dd2e155bcb2fa72f1b617d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/core/helios_en.qm",
+      "sha256": "723b37293041abda17b0d11f62fd2343e0cb806759068776a96fb62205ed0713"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/core/helios_es.qm",
+      "sha256": "690891aa4aa249869eb3517c1fce3461a1ce3227f652658bd3122dff802e9d78"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/core/helios_fr.qm",
+      "sha256": "4f76414162a4fd5ed7f09197ebfa559725b24469120b45c6340229c652a24045"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/core/helios_zh.qm",
+      "sha256": "09ac33104a6a5e6deba1b9e2fc106afcb6bf0b0fccbe9f91631068d8b6c7ddc4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVCpp/cvcpp_de.qm",
+      "sha256": "9da967dd5d405f50f19be4070199313af2528d58d3dc198f2da7282f2d12c1e9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVCpp/cvcpp_en.qm",
+      "sha256": "f5ac6f705530e98bfed2507e39efc54cd7a1a87837f4a155bf2f3c9588011422"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVCpp/cvcpp_es.qm",
+      "sha256": "e8c153df26918a6e2dc023af65b437bc34d0ef0bf42036406b9a8548b010d981"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVCpp/cvcpp_fr.qm",
+      "sha256": "5a1e19d2fbf7ae6ae4eca08c2a76754fa4edc217553361032bbda8a57fcb6966"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVCpp/cvcpp_zh.qm",
+      "sha256": "145af5a830741ecb14b6f4f6addc74fd5a55487d902c69f5e6d6b7b3d405aa0c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVPython/cvpython_de.qm",
+      "sha256": "6ce4183f30ed36dcc334dd2beeeaf27653924cf4b95a366ae1aa3bbe07d2dcb2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVPython/cvpython_en.qm",
+      "sha256": "4421f04d843e2e64bb2118f0c9a91042a2452be0dedabc06ca8aaa5edfd83ec0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVPython/cvpython_es.qm",
+      "sha256": "72a2b00bca789fbedf9ceee2bb7da6ac5482c3b58b8c19a3e0d5253bd7367f2c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVPython/cvpython_fr.qm",
+      "sha256": "d02ec54cbd1f52c989243a4f53adb7f2ea5f18ce6903ff9dea4bad49ff5e0648"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/CVPython/cvpython_zh.qm",
+      "sha256": "7f402ba8d3d5ef11df6dd0dc58bb8689bef5bebca2d306410d01cecf349187b9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS4Input/ds4input_de.qm",
+      "sha256": "d85a481c511575e80ef1bad4b05a3267d74f8f8b0236940e924129db0451ece6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS4Input/ds4input_en.qm",
+      "sha256": "a88f471d6168ded81faa9fb92cb1a9726ab68a7e4f516594036e8333af6f9e59"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS4Input/ds4input_es.qm",
+      "sha256": "3b8bad3d8e2d90cf7b3dfc3497d4cdf397b40a1b704df038c43971c21f7ecdf6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS4Input/ds4input_fr.qm",
+      "sha256": "e0bbcb25c987b8de3bc3c9a91498740175d5b887715815b504be02f02437f9ee"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS4Input/ds4input_zh.qm",
+      "sha256": "c3e5d7da8ddfb20d9865a9c256544133abf5610c20faeb0ae3296cfcf5641b68"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS5Input/ds5input_de.qm",
+      "sha256": "0143f315b40328a6fbf49b294f22b665b555a324118dae1f9750ff09a119b6a5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS5Input/ds5input_en.qm",
+      "sha256": "ed1f56f616112096a3665208a11a04472ed0b3a7adaa7f25b53bdf78881fe756"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS5Input/ds5input_es.qm",
+      "sha256": "ef858e85bc54d6a8cc8effebec9420d5e327c83a63c0063e0a67dbc002e22dd7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS5Input/ds5input_fr.qm",
+      "sha256": "e8690ea0369f03177f54a1bdde11ec1426f25addc649853c3a4ba7d29aa7d3c7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DS5Input/ds5input_zh.qm",
+      "sha256": "127ee0e91213cd89ff745f00b3b12b83de6c66f0701fc2b0278ce887585751ec"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DSCapture/dscapture_de.qm",
+      "sha256": "d566f78e0410daea94c9a69bb7d847e6d18637f395d5453924e551f7d921937d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DSCapture/dscapture_en.qm",
+      "sha256": "a6baa155a887f6b1159935cbf92f67b119f8304dbe62e41d6b4b18f93358d622"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DSCapture/dscapture_es.qm",
+      "sha256": "bdae3d74c9d0153e27fd5452da79c20be254680c080fdb1680537ff8042bc688"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DSCapture/dscapture_fr.qm",
+      "sha256": "737b7980239be86523942947bdee17584ea421e1b5bf863d1fcacb1186255bce"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DSCapture/dscapture_zh.qm",
+      "sha256": "2cf55e189a1d65477e408f6d323a025cee12f1bc0c03628cd4481388bc3cbfb1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DeviceMonitor/devicemonitor_de.qm",
+      "sha256": "197a3fd7afb23e41105a21792ab7dfbd9af3f6422bb53ba36a4e71fc65e9c799"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DeviceMonitor/devicemonitor_en.qm",
+      "sha256": "a4c6ba3fa120480584eb173a2a17d67c0767cbb9c663ae98bd2a28900dfe88b4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DeviceMonitor/devicemonitor_es.qm",
+      "sha256": "fadfa54f3ac7aeaed4f0a56c9986a0caa8c22444a11885f58a40b98d9cedb3ae"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DeviceMonitor/devicemonitor_fr.qm",
+      "sha256": "74356183cfbefbea7764a5e5ec90d9c31e63b32eac332f865f306bacca33b781"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/DeviceMonitor/devicemonitor_zh.qm",
+      "sha256": "35d5f834e135f084a68194f548e17f0547c253bc7bef3e2461881f98e92e7a2e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/FileExplorer/fileexplorer_de.qm",
+      "sha256": "3e8fedc6b30cb47e3dea420e729ea4f98d3d708e13e0034338ffe4fed3995f57"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/FileExplorer/fileexplorer_en.qm",
+      "sha256": "d7b6e7862a7900e4ecc85dd683652485b19ab8d1d82244ffed65cd86e22540b2"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/FileExplorer/fileexplorer_es.qm",
+      "sha256": "c485a01907c9922d3dc8a0630927c29652a3239ad60e2ab16d18effdc9934bbd"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/FileExplorer/fileexplorer_fr.qm",
+      "sha256": "8e8b478e9d2b824b77c8042905f9160397c60ead50aeef022c9e59df0e5556d4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/FileExplorer/fileexplorer_zh.qm",
+      "sha256": "e35516e07064313c793868a2e5ff4e08c4a49e50d5f4fed4a4bc013fadb4290d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/GPC3/gpc3_de.qm",
+      "sha256": "f0a3b1cdb89527d11c1fb1a2ba5cb05a5226c02be5b10aa2134c81d05a60ed96"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/GPC3/gpc3_en.qm",
+      "sha256": "997db88795eca57e9378fc5ad027fa54d7755beada363b1578a181fea6ec7213"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/GPC3/gpc3_es.qm",
+      "sha256": "a6c7379a219080fdb6443f4162f03e07bdf5751fbcf73008434072e6385cc723"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/GPC3/gpc3_fr.qm",
+      "sha256": "541795e43879cc726e6af59a7cda632799425e410d691d6a730ace577c98318d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/GPC3/gpc3_zh.qm",
+      "sha256": "e8d54fa817c0787e8f7c5a6f4c3b3af3cd38eb5d5ee3ace4c1bf78380d383039"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/InputTranslator/inputtranslator_de.qm",
+      "sha256": "f0f346934c6194fc3f77a0a900558a326d1a27580f6579f86c0ae03455e87ff3"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/InputTranslator/inputtranslator_en.qm",
+      "sha256": "579071d96390e49f08defc9d9e95d612aadf677c833f8e71a809c6988c7e2c1a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/InputTranslator/inputtranslator_es.qm",
+      "sha256": "55a51090417b90185fd29b49d34285d5128b33a4ec17309dade8a6eadfebd26d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/InputTranslator/inputtranslator_fr.qm",
+      "sha256": "3ad5e5fa9dbdc6018f135ebe9182873f3af7c5cd5113d56f83dce43a23ff945d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/InputTranslator/inputtranslator_zh.qm",
+      "sha256": "90d137c6fc9f18448c4c77e15e66a687474dbe273325deb4b8cf5d4a61975f35"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/KBMInput/kbminput_de.qm",
+      "sha256": "2aa18dd2a2fc3d58c8d548b9fe8e45e6c7de724b24fbf57ae8d304f991d05a28"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/KBMInput/kbminput_en.qm",
+      "sha256": "7c86730159053a9427e7168e1899b55c1609d153fe6e2f7aac655506492aed62"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/KBMInput/kbminput_es.qm",
+      "sha256": "08da756cd3405f396544b9426b9085f7ffbc2acc37054045a9e3f79888f19c4a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/KBMInput/kbminput_fr.qm",
+      "sha256": "6cc2de8209a9f64a64e81b780e7d70ee74aecdf43b9ff607f65b1df880cfb52d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/KBMInput/kbminput_zh.qm",
+      "sha256": "b73eb7cef9ffe38415ed4945a314c871f6aa53f010fdd26297292a98234a4706"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MFCapture/mfcapture_de.qm",
+      "sha256": "4e4bb9de6b68dd5ca360ff56be79126d1f11f205608acd67a6e1bebfd16b4dfb"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MFCapture/mfcapture_en.qm",
+      "sha256": "1094b9f7a86714ef59cc12eac38ae1f25be476fc8dd38afc29aa9eccef75edcd"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MFCapture/mfcapture_es.qm",
+      "sha256": "0d087e752e9107e144f761ad20cd01e1c2cfcdc908aef4060d7dfa893548f483"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MFCapture/mfcapture_fr.qm",
+      "sha256": "6152809744e4963fccd5523f98492b6491610698fdf6d2cc7cf4209515efbd8c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MFCapture/mfcapture_zh.qm",
+      "sha256": "4ba27626535800545f4208266bc3167e3baed90cdded18510474d7943d9a1932"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MagewellCapture/magewellcapture_de.qm",
+      "sha256": "23c9a84b414ee9c9feb66aed4c3cfe1b8d265f9dc7037dfa482061b46e39485d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MagewellCapture/magewellcapture_en.qm",
+      "sha256": "2534b0506ddc1c98ec2c9b3fc1670c9a6551fd8259be0d9485eabd36cead463f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MagewellCapture/magewellcapture_es.qm",
+      "sha256": "cb509a43564cfbf13618f619b1686c72655e2a13cc4f403def5da278e0f30cf7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MagewellCapture/magewellcapture_fr.qm",
+      "sha256": "d900b31038d0708433830bbc8951fabab83eefad21c19ec73410ac44cfe768a9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MagewellCapture/magewellcapture_zh.qm",
+      "sha256": "f4550d5bdda006377f19835288f73d5d31a86ad6bf78ea9718fda468c26cf93e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MakcuBridge/makcubridge_de.qm",
+      "sha256": "cb2e27ed6b9fa2811eb8007d484ca9f381c5cff6e8e488bbe94c9079518549e6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MakcuBridge/makcubridge_en.qm",
+      "sha256": "975eb813ac68dd4bc6b0a243871c7e304e801232832d8bfebaea7a35363a2300"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MakcuBridge/makcubridge_es.qm",
+      "sha256": "e134e5215aed03d0d8ca48765d35887a67cf8417f01c404e5469797eea8a630f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MakcuBridge/makcubridge_fr.qm",
+      "sha256": "cc1ede64c4802d5ef8b7c8586e8c1f48adc6e1fecd8325db5d1729823d204b86"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/MakcuBridge/makcubridge_zh.qm",
+      "sha256": "ded4c3c53abbad847ee8d67f0dcb360ff4ee1f69c2a2ec6cd74ed2cdae413e88"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OBSCapture/obscapture_de.qm",
+      "sha256": "68f6e85a3df439cbee30c2729f8e2630b1e515bf3e5b5d4b664ffece3137f342"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OBSCapture/obscapture_en.qm",
+      "sha256": "091b2bc5b0c86f7e5f1e93989f2d234ce64855e567c7a936eaa54e2143937115"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OBSCapture/obscapture_es.qm",
+      "sha256": "1c3960241dae2d1d5704b144a916ef9c880b14c3b6d479ddb951d480c2e13182"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OBSCapture/obscapture_fr.qm",
+      "sha256": "a7ed680b95f3652e770b5f9fbfa6b983802fa7e933808121397d13c48181bc9f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OBSCapture/obscapture_zh.qm",
+      "sha256": "4c866a955772b602deb3e9bace7c4709b1baef1192b0d15b5a17dee5471e78f4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OnlineResources/onlineresources_de.qm",
+      "sha256": "d95a4ebfa12febb4e9168ce0fe4bac6297789a14e1dafceb6b941b6b1e8da9f5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OnlineResources/onlineresources_en.qm",
+      "sha256": "dfb57413a25bf9d888965572f0c09bdf45dc2a81a0b6ef0472d81f11f339d11d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OnlineResources/onlineresources_es.qm",
+      "sha256": "bc6fb2bdfc1357ab120de9e7daa9cef03155237eb96313d9b8afe5f2933e1b6e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OnlineResources/onlineresources_fr.qm",
+      "sha256": "b8f63defdf1f3523cd390076902db37d0eff17f63cc5c7af9639d90340698143"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OnlineResources/onlineresources_zh.qm",
+      "sha256": "20fef861557218011e5fd4859190c4a5872d660387310a392e19978c4a720051"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenCVCapture/opencvcapture_de.qm",
+      "sha256": "56049ec8a36162f0a51f6c70b4fef7b0f7b8bcb7a5fb9206ce6d53f44bd066fe"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenCVCapture/opencvcapture_en.qm",
+      "sha256": "d841a5ae8d2377d96a6292c4687f9eac1291d6a9897b2ef8543ef44b096b0d76"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenCVCapture/opencvcapture_es.qm",
+      "sha256": "1d330b697255cdd4893ffe2d582640b6d869377243220b58dec8c0bc221c5f19"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenCVCapture/opencvcapture_fr.qm",
+      "sha256": "0f926f71cd043744e10cdfed64f25df629a8dfa793caacea3bba2ed4d3c7fb60"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenCVCapture/opencvcapture_zh.qm",
+      "sha256": "c9f00b80fa818cc09ac8af1544d86fecfc1ce6d7c0f66a30f6e14c57dd4d673c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenGLDisplay/opengl_display_de.qm",
+      "sha256": "e9eb5b8d1223e63464fbbef0e8ca91b00e507e1e023dcfd99b2388b8bc58d64f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenGLDisplay/opengl_display_en.qm",
+      "sha256": "7fa1fcf1da5854e79e8ad110ccf0f9944ca52c1b1a645d300cedcc8a47255570"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenGLDisplay/opengl_display_es.qm",
+      "sha256": "133d99dbd5621c44fa8dde0dd13281fbbe8870a38fc3c57e8389697e696b106b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenGLDisplay/opengl_display_fr.qm",
+      "sha256": "08c302ea2c169eaf1dc1b744ef7278e0eaf43ed4bf40f680548c6f9ba15f663e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OpenGLDisplay/opengl_display_zh.qm",
+      "sha256": "4bccccaf688284aadd2c96685f714e4534004e2c061748e966b1daac1f01122e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OutputPanel/outputpanel_de.qm",
+      "sha256": "6d053e4df1e568a5e79baf98687a1f43b795c63db0553deb8e2a89e3cb08425a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OutputPanel/outputpanel_en.qm",
+      "sha256": "6351fea3b71951db1ea7a53646cb9f709ec281659a48ee7287bb63fe56aeeed7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OutputPanel/outputpanel_es.qm",
+      "sha256": "5cec5a24b5fe591a76d5aad8b215be38fc3de8e4373e6c3c9502dc662031d61f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OutputPanel/outputpanel_fr.qm",
+      "sha256": "a441dbb34296949db7aef8c7da7fe248cd2a161c0c4a9dc9558402164b74f2f6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/OutputPanel/outputpanel_zh.qm",
+      "sha256": "f2a6fe96922f19a9b50f26d1ccff1930dfe16b7cb06bc85061f9cd6f2b4daa06"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/PSRemotePlay/psrp_de.qm",
+      "sha256": "a76685f79c74d7d80e9528dec77c163f36c15c63baf7464eaab777e78d5fb70f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/PSRemotePlay/psrp_en.qm",
+      "sha256": "b1777b932b75b9d087ffd4fc337cfcba1df0b5b905099498ad0e49f012ff5bbd"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/PSRemotePlay/psrp_es.qm",
+      "sha256": "c4dc36b576c23491db12a1c96d8130699fa1889cb8a3ef9c2a471607123a7f37"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/PSRemotePlay/psrp_fr.qm",
+      "sha256": "ef2dbb83d32060f5aa76769f5cd4d5607e48ec8b5b843c61da481348ca691de1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/PSRemotePlay/psrp_zh.qm",
+      "sha256": "0a0531e9bcd08db956fa33891d59bdc6816e2e2c19ba2e6695c81f5e36b8002c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/TitanBridge/titanbridge_de.qm",
+      "sha256": "7dabafbbe63ebbafa77ed4ccecfcbb43147ba7b9b9e963f86537c27394819610"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/TitanBridge/titanbridge_en.qm",
+      "sha256": "ba21b3cf155a1033b833a240cb26e3376f04bfaec69d03394688217b01f3ada3"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/TitanBridge/titanbridge_es.qm",
+      "sha256": "1fac917cae6e02665a2b6add82472f42f84bcf6b2bd8ade95a384233189ebcad"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/TitanBridge/titanbridge_fr.qm",
+      "sha256": "585085cbced307afc59296e377613d5124f2a27857a5ba6613199e572f88a325"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/TitanBridge/titanbridge_zh.qm",
+      "sha256": "aa63d351fc62338f003f6a6e410352825565604d5112db813bf31945491f3b2c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/ViGEmOutput/vigemoutput_de.qm",
+      "sha256": "bbbb5727eae4efbe9c47e7ee194d1c5baa1862a9b7fc31c06e94ab3e575716ca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/ViGEmOutput/vigemoutput_en.qm",
+      "sha256": "bdfe9a63c03920e44e57a2f80679a944fc5fbce9f249c947bca67c95d53b65a7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/ViGEmOutput/vigemoutput_es.qm",
+      "sha256": "178fb2c4e77b037a24f92a2fb161709cce4c51b4445f03f0d96d499aa6082d2a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/ViGEmOutput/vigemoutput_fr.qm",
+      "sha256": "6bd1ac7c40b98e7945079beb000fc79ae8485be3ace932bdee6cc389ed0bd804"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/ViGEmOutput/vigemoutput_zh.qm",
+      "sha256": "dd0b4cf85aeddc2d4cc26b980b1ef6ec446a2e82d355f5e95dedb163cf97e002"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VideoDisplay/video_display_de.qm",
+      "sha256": "b7b45822d391c56a9f80dab7eb07f65c7e73bd9ce1e4b26ead2f1015ec6d29ce"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VideoDisplay/video_display_en.qm",
+      "sha256": "8c8b35a1a9abaded7bb0f87dc9f219b77d2bf97eca1ee7924735ab25c8c3b69b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VideoDisplay/video_display_es.qm",
+      "sha256": "e5ea9ef8cbaefa4512443e7fb4aa878ad33bddf5bcb567ce46de520a186ac901"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VideoDisplay/video_display_fr.qm",
+      "sha256": "a729d4d3130cd309e464b664df3f2b7e5b641ebdff98db8e1ae86c081d0c2211"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VideoDisplay/video_display_zh.qm",
+      "sha256": "c28cab7d84ef6a855b4828282c97f4b8599bee711be1715a5931dd0a95068dff"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VisualController/visualcontroller_de.qm",
+      "sha256": "884c07f4acbb418c74ad426832b2689b9f40a4665e378aa26f64cd0d20c7309b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VisualController/visualcontroller_en.qm",
+      "sha256": "8d2c02070cad9e5306480a8150c82a1a08d0a419ef77bcea056fb7481b10eeca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VisualController/visualcontroller_es.qm",
+      "sha256": "2926143b534c385e138e82051225bb176a39096ef0c3682d1e6db10456e94174"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VisualController/visualcontroller_fr.qm",
+      "sha256": "ea3589cdbebd1047f0b11398fae0080d3d076b742c91e8ed2df5a47341318f29"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/VisualController/visualcontroller_zh.qm",
+      "sha256": "2f3560dc9f71eba7d734ae9edb921505685b48fd75de426b2b9ca3b6261a94d5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XInputInput/xinputinput_de.qm",
+      "sha256": "1f4f6a407bd29d7015dea9ee126576220074bfc97469d70e6fc5efcb4dfc451d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XInputInput/xinputinput_en.qm",
+      "sha256": "435e780acdb2c1d571b1639789853916cd8f6415de169e55888fee84aca87f75"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XInputInput/xinputinput_es.qm",
+      "sha256": "b17452ba5d195d27ec4eab5f6316e97ae846d05f8abf5370255d6ee63b11dd6b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XInputInput/xinputinput_fr.qm",
+      "sha256": "268ea9dbdee2d3f84fdd492e6f9beacf4f73936ee4cbf77cd330a059e62446c6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XInputInput/xinputinput_zh.qm",
+      "sha256": "141e71b1e7dce55a69b4a9607d8afb905cbc1b8ed3840037eb47ba258657fd21"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XboxRemotePlay/xboxremoteplay_de.qm",
+      "sha256": "f100ada68da07eb632a7810aab6b350976a74dfe816786589499c1691a4de51c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XboxRemotePlay/xboxremoteplay_en.qm",
+      "sha256": "40e0d59a59208dfc98f7b714689462a11a60ab1564a377a4ee152ce5422b337e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XboxRemotePlay/xboxremoteplay_es.qm",
+      "sha256": "b2fd01c6e0c02f8ab9ca860df5ef4fa5f92a24a539baa592b413d76aa64ba9d4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XboxRemotePlay/xboxremoteplay_fr.qm",
+      "sha256": "11d81c7a5ca72affb8d32d3506f235e14b292a0c276f621adf50081fc3ec5a2d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/translations/plugins/XboxRemotePlay/xboxremoteplay_zh.qm",
+      "sha256": "5b54399bb38c21f697a3dad865dc731b503e9b7b75de5a6894a58dc0e9a62ef9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/vcruntime140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/vcruntime140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/z.dll",
+      "sha256": "b6af897a2aab05cdec720e90206bb5de362fe3a4c7e6480d7ae762dd746fffbb"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/lib/zstd.dll",
+      "sha256": "15a2c4c4963e593489fb3f105d95b37bd51985cac5ae812738b3d67d2b91a034"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/CvCpp.dll",
+      "sha256": "9fe63b3d1749e0e78be53ea00052a9b0a70890e94347873047af63b6a4d114ce"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/CvPython.dll",
+      "sha256": "58fb2d0c841ba6e024031c15031a0186693072ed10951c11add1dd4aea18886d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/DS4Input.dll",
+      "sha256": "9d2d66d23b10f36c1ca01bc1c43746d12244bc55e39cd3dc69dd2c95fefa9c08"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/DS5Input.dll",
+      "sha256": "9afdb5758c362dc000200806b002f3a24018b44aad6b4a9fcc3db5f993bb5439"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/DSCapture.dll",
+      "sha256": "263f24f0a05c56146c4cf8a199700df401d81e31ce85b3a45015b072bdc230d3"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/DeviceMonitor.dll",
+      "sha256": "7fb08bccb14d2fa42e369f53b9820b53c08d9cab360c93315921af69652a182b"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/FileExplorer.dll",
+      "sha256": "a63d06070de1bf18df192cd2328b893e28903a76662d089ee9afaff8144ce9eb"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/GPC3.dll",
+      "sha256": "171207543ef1175fdb1726c2fe9d4e99c1faae4edec9fee84505109483e182d5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/InputTranslator.dll",
+      "sha256": "481da72ec98acabed97d8ea92b0b97176cd25853a2755c2b77a6316f6b5e85f5"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/KBMInput.dll",
+      "sha256": "13091c0408cb47fa16ff8f03a4ed633160fe519a4489bc0f5f4b3f78d101c8c0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/KSCapture.dll",
+      "sha256": "bde026d3a84f436083882264b21c384d408ad7df2389e1385f7e9a1f9bd3d1ff"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/MFCapture.dll",
+      "sha256": "5f288b2711c22d80c139f8c5bcef6b0c34ca9800be1ff9ffc97e7f224bba9fca"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/MagewellCapture.dll",
+      "sha256": "320f56dacdc798032f04c54421f4f208ef5cdb7d632c9ad7892916b223e1ea5d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/MakcuBridge.dll",
+      "sha256": "2b163165c26a818510a7f2f0f901e7d85aabd8f390300c20e428e048bfcfcbf7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/OBSCapture.dll",
+      "sha256": "ca7cf2c54a05c638a9832d83dca4146b5802f7aff66679b053061c2381de4eaa"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/OnlineResources.dll",
+      "sha256": "29471d96e7ee57873eca50177586dd01ce016ae6ccd38704469db4a9d4b45068"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/OpenGLDisplay.dll",
+      "sha256": "c5fd303c8b808b9fa2ca0b22c264ed6f19e67ed838b9c1591f5d10805ca56c24"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/OpencvCapture.dll",
+      "sha256": "020ee162fc2fc815ca63cf9ec1db198f68c174a58a3c1ad69a177f4ea3c12c70"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/OutputPanel.dll",
+      "sha256": "edb20a1f68cd6d41c8250152af766358d38a96adfb589da1cc77f72aa064dd88"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/PSRemotePlay.dll",
+      "sha256": "f79fb8a62c782d306b68a2e4995aa3111ea60f892a3773d388a6e22c5a1e4058"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/TitanBridge.dll",
+      "sha256": "6a4ba135e749696c5d34907f0a57440a7742e4d3a978dedee78160688eb1c36d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/ViGEmOutput.dll",
+      "sha256": "e1ccbb6500060dbc1e8c332adfdebd4ff60ccbc620b0db0756d68309794596a9"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/VideoDisplay.dll",
+      "sha256": "8d26f9516b09e08ad81cf7b43dcb4f928e2254bcb12d9b26e3e695807f1d803d"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/VisualController.dll",
+      "sha256": "2a115a6272ba2a99280579946538121bd02e8286b1f02b768938480c62c02d2c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/XInputInput.dll",
+      "sha256": "48d6888d41f3110dfbc92a296e6d5c1ece81254249b831c944e2d32047e3884a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/plugins/XboxRemotePlay.dll",
+      "sha256": "c00c9298d3c487e62bdb0e954777e176dbcf5a857c53fc686c7b8467fc063cb1"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/docs/HELIOS_VISION_API.md",
+      "sha256": "5e1aab76d20fee38c345cc8fbba49dbb675285b90ba47f58a109a7f69d6e883c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/docs/InferenceCore_Native_Scripting_API.md",
+      "sha256": "554040b42555c2c6cc20bbf51fc871448c04fbb0397b59526c6a1c99b81ce33f"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/docs/InferenceCore_Python_API.md",
+      "sha256": "37412bc9b4bcb88546edf786c4cd4275d715bf13a805a97a34ac0469a0fe4f2a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/docs/THIRD_PARTY_SCRIPT_SDK.md",
+      "sha256": "e38edc4f1bc49aa6816cf272da720c03b98ec6c3c5824a3c4e6197fe7a0181d4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/examples/cpp/CMakeLists.txt",
+      "sha256": "09063a99856ca34c613bea52db921122b7b96dfcb95812a574b4219953e81f3a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/examples/cpp/CVTemplate.cpp",
+      "sha256": "d454a3a0f947647652ec1612faec43367c869d2ad655bb24fbcf8ff5cd96989c"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/examples/cpp/CVTest.cpp",
+      "sha256": "1da65f42d158175b183fcdf5af322ecfeaadc3c0fb8c081e8e285140edce67e8"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/examples/python/CVTest.py",
+      "sha256": "d7dac4c06b58b9efff5f19cc402306178e02a9a7ec3496a75b965812d5318754"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/FuserOverlayAccessors.hpp",
+      "sha256": "af600a0e8d45d05758d0f10afa3c73d07080ca7954535e0a7eddb1b9cd27def4"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/FuserOverlayTypes.hpp",
+      "sha256": "9cc1899ca9cf06bc47a9eeec2d689b2743faa1d85c22adc4df34b7a79f26c3df"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosCVSDK.h",
+      "sha256": "9f009a60417eb912e378e4d7f8ec000041cf1662d253c809f862edeae00f2e22"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosCVScriptABI.h",
+      "sha256": "94fc67b72efe105aa140e3ff4996a103da41883edea347f94eeb621338e226ea"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosHostFunctions.h",
+      "sha256": "a3f34c556c5563e42ac75c910f95d5a5253cae874b56a18f76700330ca0f33d8"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosHybridInputSDK.hpp",
+      "sha256": "fe0add6e678768564657c906ad5dfa22659f7bba6e0a6be25171710ff5b73d25"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInferenceHostTriggerABI.h",
+      "sha256": "3c7085c6cf9e78e49b9c250eeab2fd0ec5c737ef327064cd74de0f26ef81cad0"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInferenceOcrABI.h",
+      "sha256": "2a18a40bba58323c51511ff3c459ddff4aaf0a02e8239b84e48263c68eae4f08"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInferenceResultsABI.h",
+      "sha256": "fa4e8ca70e4830f052425060093830467a4c6b818e32a6027405c06a91f1539a"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInferenceSDK.hpp",
+      "sha256": "b311e25abeb9b212433560d578ba4412869f79ef023633c4b00fa2e25aebb6d7"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInferenceSegmentationResultsABI.h",
+      "sha256": "da96b58d18c07d24a41298692eb690990a9c9e1856d6752c7c14e0566deeea48"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosInputABI.h",
+      "sha256": "469dd7ed9b0b4ec49d0306fcfc9a3519bf7a9049d11010058b4d9c7b70791719"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosMeter.h",
+      "sha256": "acacd61ea371d9bbccd63b60e4d4bff2d90629e13358c815e76afbe220963e1e"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosVision.h",
+      "sha256": "f78a52edf4743eef10c8a0560392452643c4f0679809f95edcb8b28cf853a6d6"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/HeliosVisionSDK.hpp",
+      "sha256": "53f251a9beec4e8346687800d5bb9667826eb06bd09c94aca85202d9ee130023"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/InferenceCore.h",
+      "sha256": "c4b558f08e2ff8968d2bcbe7628c80295ff6e020747fb34365862b77bdb721db"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/sdk/include/helios/InferenceCoreApi.h",
+      "sha256": "a3db6c1bc5824351da3ca25b3dcb07be98bb49dc98c7681f9b4b5b51ba7386ee"
+    },
+    {
+      "path": "deps/helios/versions/1.2.8.0/xbox_connection.log",
+      "sha256": "d4cd36e849c419f7a48ccf36412f44ec820f42fe25b6e46e968f7ac6c090bb3f"
+    },
+    {
+      "path": "install_product.ps1",
+      "sha256": "9902ad9a2e14a29dfe5742fbfe9e665455c971385f3abad54fcc0dfa41533131"
+    },
+    {
+      "path": "meters/Arrow.json",
+      "sha256": "9640771d23837633f949eb8fb702fbb94409dcf0105a8b5494dc8b249554344e"
+    },
+    {
+      "path": "meters/Arrow2.json",
+      "sha256": "34c45c7788f8557c5b3888390b94e6b8b39c63b5090d80d6e86019990f46aa2c"
+    },
+    {
+      "path": "meters/Dial.json",
+      "sha256": "c9205badae006df931b676e3774ecdb3284eb875980a4dcd009b4248713f8bbc"
+    },
+    {
+      "path": "meters/Frame2.json",
+      "sha256": "0102368de73dbc3aac7330a92aee7b405a06a32cfe87116254f8ff9c940ad1d8"
+    },
+    {
+      "path": "meters/Funnel.json",
+      "sha256": "5117a9b3be315838444715930514fb2b6300f508a5660ebcdca2a3101e55645e"
+    },
+    {
+      "path": "meters/Pill.json",
+      "sha256": "6654d2ef20a352bafcfdfc869186d0703bd4e24cca40ee063c113bafdd5c38a0"
+    },
+    {
+      "path": "meters/Straight.json",
+      "sha256": "d68900165e76ca5ccbfe5b922f6ca1b1870865e2fe9766229ad707bd48c823b9"
+    },
+    {
+      "path": "meters/Sword.json",
+      "sha256": "fb90acb8a13c6043e0e2495db76fd65605698c68918f3a24c81c6a4472a60918"
+    },
+    {
+      "path": "meters/Tube.json",
+      "sha256": "8bf5d114326c62319753aa10dc0e1e463afb42e60780d5811b5eb34468464063"
+    },
+    {
+      "path": "meters/_2kOL2.json",
+      "sha256": "005c53f42017e8f2d0a38694e6c0bd9ec3873616ee17570d7f37c26dd52385f3"
     },
     {
       "path": "mtv_config.json",
-      "sha256": "ee70b61deccf328523d4949c143d76c1a2ee7271aee881f88fff18249a93c04f"
+      "sha256": "ca71398d34addfecd94bf1bcf55120c00426558b85ff4597c3499152f23be834"
     },
     {
       "path": "mtv_launcher.py",
       "sha256": "235fc3a476b7092582e8a9510f73adb0af891c9a910e53c744b849ad64c78d2e"
     },
     {
+      "path": "mtv_license/__init__.py",
+      "sha256": "e3af3b9360cb143683654bef02aee268c605751b6ac7854a51c2ff7dce33a05a"
+    },
+    {
+      "path": "mtv_license/_pubkey.py",
+      "sha256": "192361bf1d02c08880e85cd7daad87828dd89d940e87b8a84837330c6088adee"
+    },
+    {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "cdcdf0abad774c6046582eccd1b701a2bf40ef41fa11deac341af07053b05c3c"
+      "sha256": "2a07c72541afcd0ca7bd6823cf187af0a58541408d7526c6ab84980d704f36cd"
+    },
+    {
+      "path": "mtv_logo.png",
+      "sha256": "c84059d43e11e9d1a434df84237016248364a37f443acdb138bf4a017b703006"
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "f984f56ba0c34646e6c8547ff23339c84b085c4c02618688b15a7b78e58d2d7d"
+      "sha256": "370f511c9ac5206aacba44206b6ed115ab24b59b4ba8cbe8bbcdff27e4a186c0"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "sha256": "0c11a276ccd272bd1ecdf6ecc119ca6e4a7669e97ad1eed6028881d050dc089c"
+    },
+    {
+      "path": "runtime.dat",
+      "sha256": "99b58980d1748fc4fad8e74e6dc7a3867ad1bde89f9dd5bd6c346b9a5f974cf1"
+    },
+    {
+      "path": "titanone.gph",
+      "sha256": "d996e9dd5531114d9d960f02eedc0eb7c010c64c626c7720cca71d19466eabd1"
     }
   ],
   "remove": [],
-  "sig": "f1ELo-ZjsCQ3nCqz2OOnIVfaBOz6IrvBq00u8bhfxLIwrKoWun6Ycal3NOQI8K1TudvFHkhhMm98JeKLabK-CA"
+  "sig": "Pi-g_Pe2rPTXSyeJ6vn8L3ky5HDnbRdX3KQ4v35raMwdYvVKlY23-7EqMwDABJABC1pc30tSpgXQBOm8Umj-Cg"
 }

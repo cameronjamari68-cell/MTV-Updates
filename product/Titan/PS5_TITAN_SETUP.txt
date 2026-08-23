@@ -1,0 +1,49 @@
+MTV TITAN TWO — PLAYSTATION 5 SETUP
+===================================
+
+The regular MTV.gpc does not block the movement stick. If the character
+cannot move at all, the Titan Two connection/output is not reaching the PS5.
+This happens before MTV's shot-release code runs.
+
+CONNECT THE HARDWARE
+--------------------
+1. Update Gtuner IV and the Titan Two firmware.
+2. Connect the controller you play with to Titan Two INPUT-A using a USB data
+   cable. A charge-only cable will light the controller but send no controls.
+3. If your PS5 setup requires an authentication controller, connect the
+   compatible authentication controller to INPUT-B.
+4. Connect Titan Two OUTPUT to the PS5. Connect Titan Two PROG to the PC.
+5. In Gtuner IV > Device Configuration, set Output Protocol to
+   USB Automatic or USB PlayStation 5.
+6. On PS5, set:
+   Settings > Accessories > Controller (General) > Communication Method
+   > Use USB Cable.
+7. The Titan INPUT and OUTPUT LEDs must be green. Its display should show the
+   active memory-slot number (0 when no slot is selected).
+
+PROVE PASSTHROUGH BEFORE LOADING MTV
+------------------------------------
+1. Select an empty Titan Two memory slot.
+2. Open Gtuner IV > Device Monitor and move the left stick.
+3. Confirm INPUT-A LX/LY move in Device Monitor and that you can move in-game.
+4. Only after that works, install/select MTV.gpc.
+
+If movement fails in the empty slot, MTV.gpc is not the cause. Recheck the
+USB data cable, INPUT-A, OUTPUT cable, PS5 USB communication setting, output
+protocol, and authentication controller.
+
+NATIVE PS5 AUTHENTICATION LIMIT
+-------------------------------
+Titan Two's PS5 support depends on the console/game accepting its output and
+a compatible authentication route. Some native PS5 setups will reject or
+periodically disconnect it even though the DualSense works when connected
+directly. If the OUTPUT LED will not remain green after the steps above, use
+the MTV Remote Play edition; it is the supported fallback that does not rely
+on native Titan-to-PS5 authentication.
+
+CONTROL MAPPING NOTE
+--------------------
+MTV.gpc uses Titan's universal control IDs. PlayStation Square/Xbox X share
+control 20; PS4/PS5 and Xbox left/right stick axes use the same Titan slots.
+The Xbox-style constant names in the source therefore do not convert a
+DualSense into Xbox input and do not disable PlayStation movement.

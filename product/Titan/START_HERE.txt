@@ -1,0 +1,81 @@
+========================================
+ MTV — TITAN TWO EDITION
+ START HERE
+========================================
+
+Everything you need is in this folder. The installer handles
+Python and Helios for you. You only need the Titan Two + capture card
+and your controller in the Titan Two.
+Xbox and PlayStation controllers use the same Titan control slots, so either
+family can be used without a different MTV script. Set Titan's Output Protocol
+for the console you are connecting to; that choice is independent of the pad.
+
+3-STEP SETUP
+------------
+
+STEP 1 — INSTALL
+   Double-click  INSTALL_OR_REPAIR_MTV.cmd
+   It installs Helios if it is missing, then copies MTV. Python 3.11 is
+   included with Helios, so there is nothing else to install.
+   Wait for the green "INSTALL COMPLETE" message, then close the window.
+   (Run it again any time to repair.)
+
+STEP 2 — START THE VISION
+   Double-click the "MTV Helios" shortcut on your desktop.
+   In Helios, click "CV Python" in the left panel and press Start.
+   A small MTV window opens. You should see "bridge OK".
+
+STEP 3 — LOAD THE RELEASE SCRIPT
+   In Gtuner, open  MTV.gpc  (in this folder) and install it to a
+   Titan Two memory slot. That's it — MTV now times your shots.
+
+PLAYSTATION 5 USERS — REQUIRED HARDWARE SETUP
+---------------------------------------------
+   Open PS5_TITAN_SETUP.txt in this folder before connecting to a PS5.
+   The regular GPC passes movement through, but the PS5 will ignore the
+   whole controller when the Titan output protocol/authentication is wrong.
+
+ACTIVATE (first time only)
+--------------------------
+   1. In the small MTV window, click ACTIVATE, then COPY HWID.
+   2. Send that 32-character code to your seller.
+   3. Paste the key they send back and click ACTIVATE KEY.
+
+IN-GAME SETTING
+---------------
+   NBA 2K  >  Controller Settings  >  Shooting Input  =  "Pro Stick Only"
+   (or "All"). Do NOT use "Shot Button Only" — tempo needs the right stick.
+
+TUNING (only if a shot is off)
+------------------------------
+   In the small MTV window you'll see Target and Dunk.
+   - Shot fires too EARLY  -> raise Target
+   - Shot fires too LATE   -> lower Target
+   - Dunk lands late       -> raise Dunk
+   - Dunk lands early      -> lower Dunk
+   Everything else is automatic.
+
+DUNK METER
+----------
+   Hold RT (right trigger) + click the left stick (L3) to start a dunk.
+   MTV times the dunk release automatically using the Dunk value.
+
+TROUBLESHOOTING — CONTROLLER NOT DETECTED
+------------------------------------------
+Xbox and PlayStation controllers use the same Titan control slots, so both
+families work with the same script. "Not detected" here is always the
+hardware/Helios link, never the pad family:
+
+- The controller must be plugged into the Titan Two (INPUT-A) with a USB
+  DATA cable — charge-only cables light the pad but send no input.
+- Titan INPUT-A and OUTPUT LEDs must be green, and its display must show the
+  active memory-slot number.
+- In Gtuner IV > Device Monitor, move the left stick and confirm INPUT-A
+  LX/LY move. If they do, the pad IS detected and any remaining problem is
+  the output/console side (see PS5_TITAN_SETUP.txt for PlayStation 5).
+- In Helios, the "CV Python" console should show the right stick moving
+  (GAP appears) when you hold a shot. If GAP never appears but Device
+  Monitor shows input, check Helios's controller/input settings.
+- For PlayStation pads on PS5, read PS5_TITAN_SETUP.txt completely before
+  connecting — the PS5 ignores the whole controller when the output
+  protocol/authentication is wrong.

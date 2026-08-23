@@ -1,0 +1,59 @@
+{
+  "search": {
+    "left": 5,
+    "top": 250,
+    "right": 1915,
+    "bottom": 770
+  },
+  "timing": {
+    "value": 11.5
+  },
+  "options": {
+    "Large/Side": {
+      "bbox": {
+        "left": 16,
+        "top": 15,
+        "right": 16,
+        "bottom": 15
+      },
+      "contour": {
+        "width": {
+          "min": 3,
+          "max": 10
+        },
+        "height": {
+          "min": 25,
+          "max": 230
+        },
+        "min_aspect": 3.0,
+        "min_solidity": 0.7
+      },
+      "color": {
+        "Purple": {
+          "low": [160, 0, 160],
+          "high": [255, 80, 255]
+        },
+        "Blue": {
+          "low": [200, 100, 0],
+          "high": [255, 180, 60]
+        },
+        "Yellow": {
+          "low": [0, 190, 190],
+          "high": [60, 225, 225]
+        },
+        "Orange": {
+          "low": [0, 100, 200],
+          "high": [60, 180, 255]
+        },
+        "Red": {
+          "low": [0, 0, 190],
+          "high": [60, 60, 255]
+        }
+      }
+    }
+  },
+  "selected": {
+    "options": "Large/Side",
+    "color": "Purple"
+  }
+}

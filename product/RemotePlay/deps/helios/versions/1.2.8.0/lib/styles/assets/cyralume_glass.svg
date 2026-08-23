@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16001b" stop-opacity="0.86"/>
+      <stop offset="0.48" stop-color="#050008" stop-opacity="0.77"/>
+      <stop offset="1" stop-color="#00121a" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff2bea" stop-opacity="0.42"/>
+      <stop offset="0.48" stop-color="#ac68ff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#20d9ff" stop-opacity="0.40"/>
+    </linearGradient>
+    <radialGradient id="flareA" cx="0" cy="0" r="1">
+      <stop offset="0" stop-color="#ff2bea" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ff2bea" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="flareB" cx="1" cy="1" r="1">
+      <stop offset="0" stop-color="#20d9ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#20d9ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="96" height="96" rx="8" fill="url(#surface)"/>
+  <rect width="96" height="96" rx="8" fill="url(#flareA)"/>
+  <rect width="96" height="96" rx="8" fill="url(#flareB)"/>
+  <rect x="0.75" y="0.75" width="94.5" height="94.5" rx="7.25" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+</svg>

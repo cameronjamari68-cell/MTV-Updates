@@ -1,0 +1,875 @@
+/* Titan One compatibility definitions used by MT Vision.                     */
+#ifndef TITAN_ONE_GPH_
+#define TITAN_ONE_GPH_
+
+/**
+ * TITAN ONE CONSTANTS
+ */
+#define FALSE                   0
+#define TRUE                    1
+
+#define NOT_USE                 0
+#define ALL_REMAPS             -1
+#define REMAP_NULL             -1
+#define DZ_CIRCLE               101
+
+#define LED_NONE               -1
+#define LED_1                   LED_1
+#define LED_2                   LED_2
+#define LED_3                   LED_3
+#define LED_4                   LED_4
+
+#define RUMBLE_A                0
+#define RUMBLE_B                1
+#define RUMBLE_RT               2
+#define RUMBLE_LT               3
+
+#define PIO_NONE                0
+#define PIO_AUTO                0
+#define PIO_PS4                 4
+#define PIO_PS3                 1
+#define PIO_XB1                 5
+#define PIO_XB360               2
+#define PIO_WII                 3
+#define PIO_HID                 6
+#define PIO_SWITCH              7
+
+#define PS4T_P1                 0x01
+#define PS4T_P1X                0x02
+#define PS4T_P1Y                0x03
+#define PS4T_P2                 0x10
+#define PS4T_P2X                0x20
+#define PS4T_P2Y                0x30
+
+#define PVAR_1                  0
+#define PVAR_2                  1
+#define PVAR_3                  2
+#define PVAR_4                  3
+#define PVAR_5                  4
+#define PVAR_6                  5
+#define PVAR_7                  6
+#define PVAR_8                  7
+#define PVAR_9                  8
+#define PVAR_10                 9
+#define PVAR_11                 10
+#define PVAR_12                 11
+#define PVAR_13                 12
+#define PVAR_14                 13
+#define PVAR_15                 14
+#define PVAR_16                 15
+
+#define SPVAR_1                -32768
+#define SPVAR_2                -32767
+#define SPVAR_3                -32766
+#define SPVAR_4                -32765
+#define SPVAR_5                -32764
+#define SPVAR_6                -32763
+#define SPVAR_7                -32762
+#define SPVAR_8                -32761
+#define SPVAR_9                -32760
+#define SPVAR_10               -32759
+#define SPVAR_11               -32758
+#define SPVAR_12               -32757
+#define SPVAR_13               -32756
+#define SPVAR_14               -32755
+#define SPVAR_15               -32754
+#define SPVAR_16               -32753
+
+#define T0                      #pragma T0
+
+/**
+ * TITAN ONE INPUT INDEXES
+ */
+#define PS4_PS                  0
+#define PS4_TOUCH               1   // 27
+#define PS4_OPTIONS             2
+#define PS4_R1                  3
+#define PS4_R2                  4
+#define PS4_R3                  5
+#define PS4_L1                  6
+#define PS4_L2                  7
+#define PS4_L3                  8
+#define PS4_RX                  9
+#define PS4_RY                  10
+#define PS4_LX                  11
+#define PS4_LY                  12
+#define PS4_UP                  13
+#define PS4_DOWN                14
+#define PS4_LEFT                15
+#define PS4_RIGHT               16
+#define PS4_TRIANGLE            17
+#define PS4_CIRCLE              18
+#define PS4_CROSS               19
+#define PS4_SQUARE              20
+#define PS4_ACCX                21
+#define PS4_ACCY                22
+#define PS4_ACCZ                23
+#define PS4_GYROX               24
+#define PS4_GYROY               25
+#define PS4_GYROZ               26
+#define PS4_SHARE               27  // 1
+#define PS4_TOUCHX              28
+#define PS4_TOUCHY              29
+#define PS4_T_INPUTS            30
+
+#define PS3_PS                  0
+#define PS3_SELECT              1
+#define PS3_START               2
+#define PS3_R1                  3
+#define PS3_R2                  4
+#define PS3_R3                  5
+#define PS3_L1                  6
+#define PS3_L2                  7
+#define PS3_L3                  8
+#define PS3_RX                  9
+#define PS3_RY                  10
+#define PS3_LX                  11
+#define PS3_LY                  12
+#define PS3_UP                  13
+#define PS3_DOWN                14
+#define PS3_LEFT                15
+#define PS3_RIGHT               16
+#define PS3_TRIANGLE            17
+#define PS3_CIRCLE              18
+#define PS3_CROSS               19
+#define PS3_SQUARE              20
+#define PS3_ACCX                21
+#define PS3_ACCY                22
+#define PS3_ACCZ                23
+#define PS3_GYRO                24
+#define PS3_T_INPUTS            25
+
+#define XB1_XBOX                0
+#define XB1_VIEW                1
+#define XB1_MENU                2
+#define XB1_RB                  3
+#define XB1_RT                  4
+#define XB1_RS                  5
+#define XB1_LB                  6
+#define XB1_LT                  7
+#define XB1_LS                  8
+#define XB1_RX                  9
+#define XB1_RY                  10
+#define XB1_LX                  11
+#define XB1_LY                  12
+#define XB1_UP                  13
+#define XB1_DOWN                14
+#define XB1_LEFT                15
+#define XB1_RIGHT               16
+#define XB1_Y                   17
+#define XB1_B                   18
+#define XB1_A                   19
+#define XB1_X                   20
+#define XB1_P1                  27  // 24
+#define XB1_P2                  30  // 25
+#define XB1_P3                  31  // 26
+#define XB1_P4                  32  // 27
+#define XB1_T_INPUTS            28
+
+#define XB360_XBOX              0
+#define XB360_BACK              1
+#define XB360_START             2
+#define XB360_RB                3
+#define XB360_RT                4
+#define XB360_RS                5
+#define XB360_LB                6
+#define XB360_LT                7
+#define XB360_LS                8
+#define XB360_RX                9
+#define XB360_RY                10
+#define XB360_LX                11
+#define XB360_LY                12
+#define XB360_UP                13
+#define XB360_DOWN              14
+#define XB360_LEFT              15
+#define XB360_RIGHT             16
+#define XB360_Y                 17
+#define XB360_B                 18
+#define XB360_A                 19
+#define XB360_X                 20
+#define XB360_T_INPUTS          21
+
+#define SWITCH_HOME             0
+#define SWITCH_MINUS            1
+#define SWITCH_PLUS             2
+#define SWITCH_R                3
+#define SWITCH_ZR               4
+#define SWITCH_SR               5
+#define SWITCH_L                6
+#define SWITCH_ZL               7
+#define SWITCH_SL               8
+#define SWITCH_RX               9
+#define SWITCH_RY               10
+#define SWITCH_LX               11
+#define SWITCH_LY               12
+#define SWITCH_UP               13
+#define SWITCH_DOWN             14
+#define SWITCH_LEFT             15
+#define SWITCH_RIGHT            16
+#define SWITCH_X                17
+#define SWITCH_A                18
+#define SWITCH_B                19
+#define SWITCH_Y                20
+#define SWITCH_ACCX             21
+#define SWITCH_ACCY             22
+#define SWITCH_ACCZ             23
+#define SWITCH_GYROX            24
+#define SWITCH_GYROY            25
+#define SWITCH_GYROZ            26
+#define SWITCH_CAPTURE          27
+#define SWITCH_T_INPUTS         28
+
+#define WII_HOME                0
+#define WII_MINUS               1
+#define WII_PLUS                2
+#define WII_RT                  3
+#define WII_ZR                  4
+#define WII_ONE                 5
+#define WII_C                   6
+#define WII_LT                  6
+#define WII_Z                   7
+#define WII_ZL                  7
+#define WII_TWO                 8
+#define WII_RX                  9
+#define WII_RY                  10
+#define WII_NX                  11
+#define WII_LX                  11
+#define WII_NY                  12
+#define WII_LY                  12
+#define WII_UP                  13
+#define WII_DOWN                14
+#define WII_LEFT                15
+#define WII_RIGHT               16
+#define WII_X                   17
+#define WII_B                   18
+#define WII_A                   19
+#define WII_Y                   20
+#define WII_ACCX                21
+#define WII_ACCY                22
+#define WII_ACCZ                23
+#define WII_ACCNX               25
+#define WII_ACCNY               26
+#define WII_ACCNZ               27
+#define WII_IRX                 28
+#define WII_IRY                 29
+#define WII_T_INPUTS            30
+
+#define HID_BUTTON_1            0
+#define HID_BUTTON_2            1
+#define HID_BUTTON_3            2
+#define HID_BUTTON_4            3
+#define HID_BUTTON_5            4
+#define HID_BUTTON_6            5
+#define HID_BUTTON_7            6
+#define HID_BUTTON_8            7
+#define HID_BUTTON_9            8
+#define HID_STICK_1_X           9
+#define HID_STICK_1_Y           10
+#define HID_STICK_2_X           11
+#define HID_STICK_2_Y           12
+#define HID_BUTTON_10           13
+#define HID_BUTTON_11           14
+#define HID_BUTTON_12           15
+#define HID_BUTTON_13           16
+#define HID_BUTTON_14           17
+#define HID_BUTTON_15           18
+#define HID_BUTTON_16           19
+#define HID_BUTTON_17           20
+#define HID_XINPUT_1            21
+#define HID_XINPUT_2            22
+#define HID_XINPUT_3            23
+#define HID_XINPUT_4            24
+#define HID_XINPUT_5            25
+#define HID_XINPUT_6            26
+#define HID_XINPUT_7            27
+#define HID_XINPUT_8            28
+#define HID_XINPUT_9            29
+
+#define CEMU_EXTRA1             21
+#define CEMU_EXTRA2             22
+#define CEMU_EXTRA3             23
+#define CEMU_EXTRA4             24
+#define CEMU_EXTRA5             25
+#define CEMU_EXTRA6             26
+#define CEMU_EXTRA7             27
+#define CEMU_EXTRA8             28
+#define CEMU_EXTRA9             29
+#define TRACE_1                 30
+#define TRACE_2                 31
+#define TRACE_3                 32
+#define TRACE_4                 33
+#define TRACE_5                 34
+#define TRACE_6                 35
+
+/**
+ * TABLES
+ */
+const uint8 _ot_i[] = { // Titan One to Titan Two input index conversion table
+    BUTTON_1,  BUTTON_2,  BUTTON_3,  BUTTON_4,  BUTTON_5,  BUTTON_6, 
+    BUTTON_7,  BUTTON_8,  BUTTON_9,  STICK_1_X, STICK_1_Y, STICK_2_X, 
+    STICK_2_Y, BUTTON_10, BUTTON_11, BUTTON_12, BUTTON_13, BUTTON_14, 
+    BUTTON_15, BUTTON_16, BUTTON_17, ACCEL_1_X, ACCEL_1_Y, ACCEL_1_Z, 
+    GYRO_1_X,  GYRO_1_Y,  GYRO_1_Z,  BUTTON_18, POINT_1_X, POINT_1_Y, 
+    BUTTON_19, BUTTON_20, BUTTON_21, ACCEL_2_X, ACCEL_2_Y, ACCEL_2_Z
+};
+
+#ifndef DISABLE_MAPPING
+
+#include <remapper.gph>
+
+const uint8 _ot_map[] = { // Mapping table for remap and unmap
+    RMP_USB_A | RMP_USB_B | RMP_USB_C | RMP_USB_D | RMP_BT_A | RMP_BT_B, 
+    BUTTON_1,  BUTTON_2,  BUTTON_3,  BUTTON_4,  BUTTON_5,  BUTTON_6, 
+    BUTTON_7,  BUTTON_8,  BUTTON_9,  BUTTON_10, BUTTON_11, BUTTON_12, 
+    BUTTON_13, BUTTON_14, BUTTON_15, BUTTON_16, BUTTON_17, BUTTON_18, 
+    BUTTON_19, BUTTON_20, BUTTON_21, STICK_1_X, STICK_1_Y, STICK_2_X, 
+    STICK_2_Y, POINT_1_X, POINT_1_Y, POINT_2_X, POINT_2_Y, ACCEL_1_X, 
+    ACCEL_1_Y, ACCEL_1_Z, ACCEL_2_X, ACCEL_2_Y, ACCEL_2_Z, GYRO_1_X,  
+    GYRO_1_Y,  GYRO_1_Z,  PADDLE_1,  PADDLE_2,  PADDLE_3,  PADDLE_4
+};
+
+#endif /* DISABLE_MAPPING */
+
+/**
+ * DATA SEGMENT
+ */
+#ifndef DISABLE_DATASEG
+
+#define data                    const uint8 data[] =
+
+uint8 *_ot_data;
+
+#ifndef DISABLE_DBYTE
+int dbyte(int i) {
+    return((int)_ot_data[i]);
+}
+#endif /* DISABLE_DBYTE */
+
+#ifndef DISABLE_DCHAR
+int dchar(int i) {
+    return((int)_ot_data[i]);
+}
+#endif /* DISABLE_DCHAR */
+
+#ifndef DISABLE_DWORD
+int dword(int i) {
+    return((int)((_ot_data[i+1] << 8) | _ot_data[i]));
+}
+#endif /* DISABLE_DWORD */
+
+#endif /* DISABLE_DATASEG */
+
+/**
+ * REMAPPING
+ */
+#ifndef DISABLE_MAPPING
+
+#ifndef DISABLE_REMAP
+void remap(uint8 from, uint8 to) {
+    _ot_map[_ot_i[to]+1] = _ot_i[from];
+    remapper(_ot_map);
+    return;
+}
+#endif /* DISABLE_REMAP */
+
+#ifndef DISABLE_UNMAP
+void unmap(uint8 to) {
+    _ot_map[_ot_i[to]+1] = RMP_NULL;
+    remapper(_ot_map);
+    return;
+}
+#endif /* DISABLE_UNMAP */
+
+#endif /* DISABLE_MAPPING */
+
+/**
+ * VARIABLES
+ */
+#define int                     int
+
+/**
+ * INIT AND MAIN
+ */
+#define init                    init
+#define main                    main
+
+/**
+ * COMBOS
+ */
+#define combo_run               combo_run
+#define combo_stop              combo_stop
+#define combo_running(c)        (c)
+#define combo_restart           combo_restart
+
+/**
+ * USER-DEFINED FUNCTIONS
+ */
+#define function                int
+
+/**
+ * FLOW CONTROL
+ */
+#define if                      if
+#define else                    else
+#define while                   while
+#define break                   break
+
+/**
+ * PERSISTENT VARIABLES
+ */
+#ifndef DISABLE_PVAR
+
+#ifndef DISABLE_SET_PVAR
+uint32 _ot_pvar_save_ts;
+
+main {
+    if(_ot_pvar_save_ts && (system_time() - _ot_pvar_save_ts) >= 5000) {
+        _ot_pvar_save_ts = 0;
+        pmem_save();
+    }
+}
+#endif /* DISABLE_SET_PVAR */
+
+uint8 _ot_pvar(int idx) {
+    static uint8 loaded_mslot;
+    uint8 mslot;
+    
+    if(idx < 0) {
+        idx += 32768;
+        mslot = mslot_get();
+    } else {
+        mslot = 255;
+    }
+    if(loaded_mslot != mslot) {
+        pmem_load(mslot);
+        loaded_mslot = mslot;
+    }
+    return(idx * 2);
+}
+
+#ifndef DISABLE_GET_PVAR
+int get_pvar(int idx, int vmin, int vmax, int vdef) {
+    int pvar;
+
+    pmem_read(_ot_pvar(idx), &pvar);
+    
+    if(pvar < vmin || pvar > vmax) {
+        return(vdef);
+    }
+    return(pvar);
+}
+#endif /* DISABLE_GET_PVAR */
+
+#ifndef DISABLE_SET_PVAR
+void set_pvar(int idx, int val) {
+    pmem_write(_ot_pvar(idx), val);
+    if(!_ot_pvar_save_ts) {
+        _ot_pvar_save_ts = system_time();
+    }
+    return;
+}
+#endif /* DISABLE_SET_PVAR */
+
+#endif /* DISABLE_PVAR */
+
+/**
+ * I/O FUNCTIONS
+ */
+#define get_val(i)              ((int) get_val(_ot_i[i]))
+#define set_val(i, v)           set_val(_ot_i[i], v)
+#define get_lval(i)             ((int) get_prev(_ot_i[i]))
+#define get_ptime(i)            time_active(_ot_i[i])
+#define event_press(i)          event_active(_ot_i[i])
+#define event_release(i)        event_release(_ot_i[i])
+
+#ifndef DISABLE_SWAP
+void swap(int ida, int idb) {
+    int val_ida = get_val(ida);
+    set_val(ida, get_val(idb));
+    set_val(idb, val_ida);
+    return;
+}
+#endif /* DISABLE_SWAP */
+
+#define block(i, t)             inhibit(_ot_i[i], t)
+
+#ifndef DISABLE_SENSITIVITY
+void sensitivity(int id, int mid, int sen) {
+    int val = get_val(id);
+    
+    if(mid != NOT_USE) {
+        int val_s = (val >= 0) ? 1 : -1;
+        val *= val_s;
+        if(val <= mid) val = (val * 50) / mid;
+        else val = ((50 * (val - mid)) / (100 - mid)) + 50;
+        val *= val_s;
+    }
+    
+    if(sen != NOT_USE) {
+        val = (val * sen) / 100;
+    }
+    
+    set_val(id, clamp(val, -100, 100));
+    return;
+}
+#endif /* DISABLE_SENSITIVITY */
+
+#ifndef DISABLE_DEADZONE
+void deadzone(int idx, int idy, int xdc, int ydr) {
+    int val_x = get_val(idx);
+    int val_y = get_val(idy);
+    
+    if(xdc == DZ_CIRCLE) {
+        if(val_x || val_y) {
+            int H = (int) round(sqrt((fix32)(pow(val_x, 2) * pow(val_y, 2))));
+            xdc = abs((ydr * val_x) / H);
+            ydr = abs((ydr * val_y) / H);
+        } else {
+            xdc = 0;
+            ydr = 0;
+        }
+    }
+    
+    if(val_x) {
+        if(val_x > 0) {
+            val_x += xdc;
+        } else {
+            val_x -= xdc;
+        }
+        set_val(idx, clamp(val_x, -100, 100));
+    }
+    
+    if(val_y) {
+        if(val_y > 0) {
+            val_y += ydr;
+        } else {
+            val_y -= ydr;
+        }
+        set_val(idy, clamp(val_y, -100, 100));
+    }
+    return;
+}
+#endif /* DISABLE_DEADZONE */
+
+#ifndef DISABLE_STICKIZE
+void stickize(int idx, int idy, int rad) {
+    int val_x = get_val(idx);
+    int val_y = get_val(idy);
+    
+    int abs_val_x = abs(val_x);
+    int abs_val_y = abs(val_y);
+    
+    int h = (((abs_val_x > abs_val_y) ? abs_val_x : abs_val_y) * rad) / 100;
+    int H = (int) round(sqrt((fix32)(pow(abs_val_x, 2) + pow(abs_val_y, 2))));
+    
+    if(H > h) {
+        set_val(idx, (val_x * h) / H);
+        set_val(idy, (val_y * h) / H);
+    }
+    return;
+}
+#endif /* DISABLE_STICKIZE */
+
+/**
+ * LEDS
+ */
+#ifndef DISABLE_GET_LED
+int get_led(int id) {
+    fix32 intensity;
+    uint32 dutylength;
+        
+    switch(id) {
+        case LED_1: intensity = led_get(LED_1, &dutylength); break;
+        case LED_2: intensity = led_get(LED_2, &dutylength); break;
+        case LED_3: intensity = led_get(LED_3, &dutylength); break;
+        case LED_4: intensity = led_get(LED_4, &dutylength); break;
+    }
+    return(intensity ? (dutylength ? ((dutylength >= 2418) ? 3 : 2) : 1) : 0);
+}
+#endif /* DISABLE_GET_LED */
+
+#ifndef DISABLE_SET_LED
+void set_led(int id, int state) {
+    static uint32 timestamp;
+    uint32 elapsed = system_time() - timestamp;
+        
+    if(!elapsed || elapsed >= 10) {
+        fix32 intensity = -1.0;
+        uint32 dutylength;
+        
+        switch(state) {
+            case 0: intensity = 0.0; break;
+            case 2: dutylength = 186; break;
+            case 3: dutylength = 2418; break;
+        }
+        
+        switch(id) {
+            case LED_1: led_set(LED_1, intensity, dutylength); break;
+            case LED_2: led_set(LED_2, intensity, dutylength); break;
+            case LED_3: led_set(LED_3, intensity, dutylength); break;
+            case LED_4: led_set(LED_4, intensity, dutylength); break;
+        }
+        
+        timestamp = system_time();
+    }
+    return;
+}
+#endif /* DISABLE_SET_LED */
+
+#ifndef DISABLE_SET_LEDX
+void set_ledx(int id, int count) {
+    static uint32 timestamp;
+    uint32 elapsed = system_time() - timestamp;
+        
+    if(!elapsed || elapsed >= 10) {
+        uint16 on, off;
+        
+        if(count < 1 || count > 255) {
+            count = -1;
+            on = 64000;
+        } else {
+            on = 260;
+            off = 200;
+        }
+        
+        led_set(LED_1, 0.0, 0);
+        led_set(LED_2, 0.0, 0);
+        led_set(LED_3, 0.0, 0);
+        led_set(LED_4, 0.0, 0);
+
+        switch(id) {
+            case LED_1: led_vmset(LED_1, on, off, count); break;
+            case LED_2: led_vmset(LED_2, on, off, count); break;
+            case LED_3: led_vmset(LED_3, on, off, count); break;
+            case LED_4: led_vmset(LED_4, on, off, count); break;
+        }
+    
+        timestamp = system_time();
+    }
+    return;
+}
+#endif /* DISABLE_SET_LEDX */
+
+#ifndef DISABLE_GET_LEDX
+int get_ledx() {
+    return((
+        led_vmget(LED_1) | led_vmget(LED_2) | 
+        led_vmget(LED_3) | led_vmget(LED_4)) > 0
+    );
+}
+#endif /* DISABLE_GET_LEDX */
+
+#ifndef DISABLE_RESET_LEDS
+void reset_leds() {
+    static uint32 timestamp;
+    uint32 elapsed = system_time() - timestamp;
+        
+    if(!elapsed || elapsed >= 10) {
+        led_reset();
+        
+        timestamp = system_time();
+    }
+    return;
+}
+#endif /* DISABLE_RESET_LEDS */
+
+/**
+ * RUMBLE
+ */
+#ifndef DISABLE_GET_RUMBLE
+int get_rumble(int id) {
+    fix32 speed;
+        
+    switch(id) {
+        case RUMBLE_A: speed = ffb_get(FFB_1, NULL); break;
+        case RUMBLE_B: speed = ffb_get(FFB_2, NULL); break;
+        case RUMBLE_RT: speed = ffb_get(FFB_3, NULL); break;
+        case RUMBLE_LT: speed = ffb_get(FFB_4, NULL); break;
+    }
+    return((int) speed);
+}
+#endif /* DISABLE_GET_RUMBLE */
+
+#ifndef DISABLE_SET_RUMBLE
+void set_rumble(int id, int speed) {
+    static uint32 timestamp;
+    uint32 elapsed = system_time() - timestamp;
+        
+    if(!elapsed || elapsed >= 10) {
+        switch(id) {
+            case RUMBLE_A: ffb_set(FFB_1, (fix32) speed, 3600000); break;
+            case RUMBLE_B: ffb_set(FFB_2, (fix32) speed, 3600000); break;
+            case RUMBLE_RT: ffb_set(FFB_3, (fix32) speed, 3600000); break;
+            case RUMBLE_LT: ffb_set(FFB_4, (fix32) speed, 3600000); break;
+        }
+        
+        timestamp = system_time();
+    }
+    return;
+}
+#endif /* DISABLE_SET_RUMBLE */
+
+#ifndef DISABLE_BLOCK_RUMBLE
+void block_rumble() {
+    set_rumble(RUMBLE_A, 0);
+    set_rumble(RUMBLE_B, 0);
+    set_rumble(RUMBLE_RT, 0);
+    set_rumble(RUMBLE_LT, 0);
+    return;
+}
+#endif /* DISABLE_BLOCK_RUMBLE */
+
+#define reset_rumble()          ffb_reset()
+
+/**
+ * BIT OPERATIONS
+ */
+#define set_bit(v, i)           (v |= (1 << i))
+#define clear_bit(v, i)         (v &= ~(1 << i))
+#define test_bit(e, i)          (e & (1 << i))
+#define set_bits(v, e, i, m)    (v = (v & ~(m << i)) | (e << i))
+#define get_bits(e, i, m)       ((e & (m << i)) >> i)
+
+/**
+ * MATH FUNCTIONS
+ */
+#define abs(n)                  abs(n)
+#define inv(n)                  inv(n)
+#define pow(n, e)               pow(n, e)
+
+#ifndef DISABLE_ISQRT
+int isqrt(int num) {
+    return((int) round(sqrt((fix32) num)));
+}
+#endif /* DISABLE_ISQRT */
+
+#ifndef DISABLE_IRAND
+int irand(int vmin, int vmax) {
+    return(((int)(rand() * (fix32)(vmax + 1 - vmin))) + vmin);
+}
+#endif /* DISABLE_IRAND */
+
+/**
+ * MISC FUNCTIONS
+ */
+#define get_rtime()             ((int) elapsed_time())
+
+#ifndef DISABLE_TURN_OFF
+void turn_off() {
+    port_turnoff(PORT_USB_A);
+    port_turnoff(PORT_USB_B);
+    port_turnoff(PORT_BT_A);
+    port_turnoff(PORT_BT_B);
+    return;
+}
+#endif /* DISABLE_TURN_OFF */
+
+#define get_slot()              ((int) mslot_get())
+#define check_slot(s)           ((int) mslot_check(s))
+#define load_slot(s)            mslot_load(s)
+#define load_script(s)          mslot_load(s)
+
+#ifndef DISABLE_PS4_TOUCHPAD
+int ps4_touchpad(int id) {
+    if(id > 0x03) {
+        id = (id >> 4) + 1;
+    }
+    switch(id) {
+        case 1: return((int) get_actual(BUTTON_19)); // PS4T_P1
+        case 2: return((int) get_actual(POINT_1_X)); // PS4T_P1X
+        case 3: return((int) get_actual(POINT_1_Y)); // PS4T_P1Y
+        case 4: return((int) get_actual(BUTTON_20)); // PS4T_P2
+        case 5: return((int) get_actual(STICK_2_X)); // PS4T_P2X
+        case 6: return((int) get_actual(STICK_2_Y)); // PS4T_P2Y
+    }
+    return(0);
+}
+#endif /* DISABLE_PS4_TOUCHPAD */
+
+#ifndef DISABLE_PS4_SET_TOUCHPAD
+void ps4_set_touchpad(int vx, int vy) {
+    set_val(PS4_TOUCHX, vx);
+    set_val(PS4_TOUCHY, vy);
+    set_val(PS4_T_INPUTS, 100);
+    return;
+}
+#endif /* DISABLE_PS4_SET_TOUCHPAD */
+
+#define ps4_authtimeout()       22
+
+#ifndef DISABLE_OUTPUT_PROTOCOL
+void output_protocol(int id) {
+    port_disconnect();
+    switch(id) {
+        case PIO_PS3: port_connect(PORT_USB_C, PROTOCOL_PS3); break;
+        case PIO_XB360: port_connect(PORT_USB_C, PROTOCOL_XB360); break;
+        case PIO_PS4: port_connect(PORT_USB_C, PROTOCOL_PS4); break;
+        case PIO_XB1: port_connect(PORT_USB_C, PROTOCOL_XB1); break;
+        case PIO_SWITCH: port_connect(PORT_USB_C, PROTOCOL_SWITCH); break;
+    }
+    return;
+}
+#endif /* DISABLE_OUTPUT_PROTOCOL */
+
+#ifndef DISABLE_OUTPUT_RECONNECTION
+void output_reconnection() {
+    port_disconnect();
+    port_connect();
+    return;
+}
+#endif /* DISABLE_OUTPUT_RECONNECTION */
+
+#define wiir_offscreen()        1
+
+#ifndef DISABLE_GET_BATTERY
+int get_battery() {
+    return(((int) battery_get_actual(NULL)) / 10);
+}
+#endif /* DISABLE_GET_BATTERY */
+
+#ifndef DISABLE_GET_CONSOLE
+int get_console() {
+    uint8 protocol;
+    
+    if(port_status(PORT_USB_C, &protocol, NULL) & DIR_OUTPUT) {
+        switch(protocol) {
+            case PROTOCOL_PS3: return(PIO_PS3);
+            case PROTOCOL_PS4: return(PIO_PS4);
+            case PROTOCOL_XB360: return(PIO_XB360);
+            case PROTOCOL_XB1: return(PIO_XB1);
+            case PROTOCOL_SWITCH: return(PIO_SWITCH);
+        }
+    }
+    return(0);
+}
+#endif /* DISABLE_GET_CONSOLE */
+
+#ifndef DISABLE_GET_CONTROLLER
+int get_controller() {
+    uint8 i, protocol;
+    
+    for(i = PORT_USB_A; i <= PORT_BT_A; ++i) {
+        if(port_status(i, &protocol, NULL) & DIR_INPUT) {
+            switch(protocol) {
+                case PROTOCOL_PS3: return(PIO_PS3);
+                case PROTOCOL_PS4: return(PIO_PS4);
+                case PROTOCOL_XB360: return(PIO_XB360);
+                case PROTOCOL_XB1: return(PIO_XB1);
+                case PROTOCOL_HID: return(PIO_HID);
+                case PROTOCOL_SWITCH: return(PIO_SWITCH);
+            }
+        }
+    }
+    return(0);
+}
+#endif /* DISABLE_GET_CONTROLLER */
+
+#define get_ctrlbutton()        1
+#define vm_tctrl(...)
+
+/**
+ * FLAG PRE-PROCESSOR FOR TITAN ONE CODE
+ */
+#pragma GPCPP titan_one_gpc
+
+#endif /* TITAN_ONE_GPH_ */

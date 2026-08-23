@@ -1,0 +1,217 @@
+MTV REMOTE PLAY - XBOX AND PLAYSTATION
+======================================
+
+What it does
+------------
+MTV runs the SAME meter detection as the Titan product, but the release is
+executed on a VIRTUAL controller (ViGEmBus) that the remote-play app reads:
+an Xbox 360 pad for Xbox, or a DualShock 4 pad for PlayStation (the pad PS
+Remote Play accepts; ViGEmBus has no DualSense target):
+
+  * Every frame, the physical controller is read -- XInput for Xbox pads, SDL
+    for DualSense/DualShock -- and mirrored to the virtual pad, so you
+    play/move/dribble/pass normally.
+  * The detection engine watches the shot meter and predicts the release point.
+    Choose Shot Input in MTV's Values page:
+      - Stick executes the MTV tempo release on the virtual RIGHT STICK:
+        half-power flick -> full-power flick -> centre.
+      - X Button remaps X (Square on PlayStation) to the same right-stick DOWN
+        charge and upward tempo flick as a regular Stick shot.
+  * In Stick mode, release direction is read from your right stick:
+        regular shot (stick held DOWN)  -> flick UP
+        fade        (stick held UP)     -> flick DOWN
+
+No vgamepad: the virtual pad is driven through ViGEmClient.dll (bundled next
+to MTVRemotePlay.py). Xbox pads are read through raw XInput, PlayStation pads
+through SDL, so the pad keeps reading even while Helios is also watching it.
+
+There are two output modes - pick ONE:
+
+  MODE A - No Titan hardware (default): Python drives the virtual pad and
+           executes the release itself (remoteplay_bridge_enable: true).
+  MODE B - With a Titan Two: Python only detects and sends the trigger;
+           MTVRemotePlay.gpc / .gpc3 performs the release on the Titan.
+
+MODE A - VIRTUAL CONTROLLER (remoteplay_bridge_enable: true)
+------------------------------------------------------------
+THE ONE RULE: the physical controller must be plugged into the PC that runs
+Helios. It can NOT stay in the Titan Two or paired to the console.
+
+The release lives on the virtual controller, so the game (Helios) must read
+the VIRTUAL pad, not the physical one.
+
+MAKE HELIOS READ THE VIRTUAL PAD (do this, do NOT hide the controller):
+
+  1. Reboot the PC once so stale virtual pads from old sessions are cleared.
+  2. Plug in the physical controller (it takes XInput slot 0), then start
+     Helios and the CV Python script. The console prints:
+       [MTV] virtual pad on XInput slot N.
+     (With a clean boot and one physical pad, N = 1.)
+  3. In Helios -> XInput Input plugin -> set selectedControllerId to that
+     slot number N. Helios now reads the virtual pad; the bridge mirrors your
+     physical pad into it, and the release flick reaches the game.
+
+Why NOT hide the controller: hiding the physical pad (HidHide) also blocks
+Helios/XInput from reading it, which breaks the mirror -- that is the
+"sticks don't move when I hide the controller" failure. Pointing Helios at
+the virtual pad's slot is simpler and can't break your stick movement.
+
+HidHide is only needed for a STANDALONE remote-play app (Chiaki / the Xbox
+app) that cannot select which controller to read:
+  1. Run setup_hidhide.ps1 as admin (hides the physical pad from the app and
+     whitelists Helios's Python so the bridge can still read it).
+  2. Undo with revert_hidhide.ps1 (as admin) if the sticks go dead.
+
+If you use Helios's own "ViGEm Output" or "XInput Input" plugins in the same
+session, disable them -- two virtual pads means the app may read the wrong one.
+
+MODE B - TITAN TWO GPC (remoteplay_bridge_enable: false)
+-------------------------------------------------------
+1. Load MTVRemotePlay.py in Helios (it still runs detection and sends the
+   trigger payload over GCV, exactly like the Titan product).
+2. Set "remoteplay_bridge_enable": false in mtv_config.json. This is what
+   stops the Python from ALSO releasing on the virtual pad -- running the
+   bridge AND the GPC at once makes the game see two releases (the classic
+   "shoot only lates / untimed" report). The console prints
+   "[MTV] Remote Play bridge disabled -- using the GPC route" when it takes
+   effect.
+3. Release GPC, pick ONE route:
+     Route 1 - Helios GPC3 slot: add MTVRemotePlay.gpc3 to a GPC 3 slot.
+     Route 2 - Gtuner + Titan Two: compile MTVRemotePlay.gpc with
+               titanone.gph and load it on the Titan.
+
+The GPC fires on the trigger byte alone: the Python is the one authority on
+WHEN to release (it enforces arm/cooldown/one-shot), so a momentary
+controller-state hiccup can never silently swallow a shot. The flick
+DIRECTION also comes from the routed stick the Python sends (not the
+instantaneous physical read), so a noisy stick can never flip a regular
+jumper into a fade.
+
+Setup (both modes)
+------------------
+1. Install ViGEmBus once, then restart Windows. (Mode A only.)
+2. Install HidHide and run setup_hidhide.ps1 (Mode A only, if the game
+   reads the physical pad).
+3. Connect and turn on the physical controller, plugged into THIS PC, before
+   starting Helios.
+4. In the Xbox app / Chiaki-ng, choose the virtual pad (Xbox 360 Controller
+   for Xbox, PS4 Controller for PlayStation).
+5. In Helios, load RemotePlay\MTVRemotePlay.py in the CV Python panel and
+   press Start.
+
+Startup preflight
+-----------------
+Every load, Helios's console prints one line per check:
+  [MTV] preflight: numpy OK
+  [MTV] preflight: opencv OK
+  [MTV] preflight: ViGEmClient.dll OK (ViGEmClient.dll)
+  [MTV] preflight: ViGEmBus virtual pad OK
+  [MTV] preflight: controller OK (XInput slot(s) 0)
+If the ViGEmBus line is red, install ViGEmBus and restart Helios (no timed
+release can fire without it). If the controller line is red, the pad is not
+visible on any backend -- plug it in via USB and press a button on it.
+A DualSense/DualShock is read natively via SDL (no DS4Windows required);
+"remoteplay_output_type": "DS4" makes the virtual pad a DualShock 4.
+
+CONTROLLER DETECTION (BOTH FAMILIES)
+-------------------------------------
+Xbox and PlayStation pads are both supported, but they are read through
+different Windows backends, so "not detected" has different causes:
+
+  * XBOX pads -> XInput. USB or the Xbox Wireless Adapter work; the pad
+    occupies an XInput slot and the preflight prints
+    "controller OK (XInput slot(s) N)". If that line is missing, try the
+    USB cable -- plain Bluetooth pairing is flaky for Xbox pads.
+  * PLAYSTATION pads (DualSense/DualShock) -> SDL. They are NOT Windows
+    XInput devices, so they never appear in Helios's "XInput Input" plugin
+    and never take an XInput slot. The preflight prints "controller OK
+    (PlayStation pad via SDL)". Over USB a data cable is required; over
+    Bluetooth the pad must first be paired in Windows Settings > Bluetooth
+    & devices.
+  * The "XInput Input" plugin controller in Helios is ALWAYS the VIRTUAL pad
+    MTV creates -- never the physical PlayStation pad. Do not try to select
+    your real pad there; it cannot be an XInput device.
+  * Stale virtual pads: after a crash or abrupt exit, a leftover virtual pad
+    can occupy an XInput slot. MTV now verifies the slot is a real pad and
+    prefers the SDL reader for a PlayStation pad instead, but if a session
+    still reports NO CONTROLLER after a crash, restart Windows once.
+
+If the session reports NO CONTROLLER, run the built-in diagnostic from a
+command prompt to see exactly what each backend finds:
+  python -m remoteplay.diagnose   (from the installed RemotePlay folder)
+It tests the ViGEm DLL, creates the virtual pad, and reports which backend
+sees your physical pad (XInput slot for Xbox, SDL name for PlayStation),
+then reads your sticks/buttons live for 5 seconds.
+
+TROUBLESHOOTING "CVPY-0021 ... SystemExit: 1"
+---------------------------------------------
+If Helios reports "CV Python script session failed to start. Last error:
+SystemExit: 1", the script could not load at startup. Every such failure
+prints the exact reason to the Helios console just above the error, and the
+most common causes are:
+
+  * Python version mismatch - Helios is not using the MTV Python 3.11
+    environment. Run INSTALL_OR_REPAIR_MTV.cmd (it repoints Helios), close
+    Helios completely, and restart.
+  * Missing component - the install did not finish (no internet, antivirus,
+    or the folder was moved). Run INSTALL_OR_REPAIR_MTV.cmd again.
+  * Running from the extracted zip - if the script was selected from the
+    extracted release folder, MTV now redirects to the installed copy
+    automatically; if no copy is installed yet it prints a clear message.
+
+The load itself never depends on the console: Xbox pads (XInput) and
+PlayStation pads (SDL) take the same startup path, so this error is fixed
+identically for both. After the script loads, an absent or unplugged
+controller only disables the bridge - it never prevents the session from
+starting.
+
+Tuning (mtv_config.json, hot-reloaded)
+--------------------------------------
+  up_flick_ms             300   The tempo hold of the release flick (the
+                                "rhythm" the game reads). Raise = slower
+                                release, lower = faster.
+  remoteplay_rhythm_ms     50   Half-power phase before the full flick.
+  neutral_pause_ms         40   Neutral pause after the flick.
+  remoteplay_tempo_deadzone 0.30  Right-stick travel (0..1) that counts as a
+                                  held shot (fade/regular direction).
+  target_height            -    Release height in px above the meter base
+                                (tuned per your capture; same as the Titan
+                                product).
+  green_aim_enable      false  Aim the release at the meter's own GREEN
+                                release line (detected automatically) instead
+                                of a fixed pixel height. The engine latches
+                                the base-to-green-line distance per possession
+                                and releases at the line + green_aim_offset_px.
+                                This is the game's actual release marker, so
+                                misses stop landing on the same fixed spot and
+                                the tuning stays valid when the meter position
+                                or zoom changes. Set true and re-tune the
+                                offset once.
+  green_aim_offset_px      0.0  Release point relative to the green line.
+                                Negative = release earlier (compensates your
+                                capture/stream latency). Start at -4 and move
+                                down until greens are consistent.
+
+GREEN-AIM (WHY IT HELPS "SAME STOP" MISSES)
+--------------------------------------------
+With the fixed target_height the release always fires at the same meter
+height, so an off release stops the meter at the same spot every time (and
+that spot moves with the game zoom). With green_aim_enable: true the release
+aims at the green line the game actually shows, so the release lands on the
+green zone far more often, and green_aim_offset_px is the only number you
+tune -- it is a pure latency offset, not a position, so it stays valid across
+sessions and zoom changes. When the green line is not detected (first frames
+of a session, or a meter without a line) it falls back to target_height
+automatically.
+
+Notes
+-----
+- Detection values (meter color, ROI, target height, phase lead, etc.) are
+  byte-for-byte the same as the Titan product -- only the release transport
+  changed.
+- The bridge checks the MTV license continuously; it sends a neutral report
+  when the key is invalid or expired.
+- Stale virtual pads from a crashed session can occupy XInput slots and make
+  the real controller disappear. If the bridge reports NO CONTROLLER after a
+  crash, restart Windows to clear them, then reload the script.
+- Never ship the private_source or seller folders to customers.
