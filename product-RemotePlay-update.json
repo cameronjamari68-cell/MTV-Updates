@@ -3,9 +3,9 @@
   "type": "product",
   "mode": "full",
   "product": "RemotePlay",
-  "base_version": "2.6.7",
-  "version": "7.0.0",
-  "notes": "MTV 7.0: stabilized release target (session-firm), full meter-body color detection (no more sliver fill), removed meter zoom",
+  "base_version": "7.0.0",
+  "version": "7.0.1",
+  "notes": "MTV 7.0.1: installer hub now shows BOTH Titan and Remote Play cards for staff / both-role users after a self-update",
   "files": [
     {
       "path": "MTVRemotePlay.gpc",
@@ -1641,7 +1641,7 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "ca71398d34addfecd94bf1bcf55120c00426558b85ff4597c3499152f23be834"
+      "sha256": "0e28009db8e4d6bd1ec7bf0b28638a6ffa074bfe36f5da65288c2eb8d9a66fd6"
     },
     {
       "path": "mtv_launcher.py",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "395d857e3b4bfc7f8030a409db012f01bd76d0d80451f82708120edb1c7b0648"
+      "sha256": "142a5f06ef0632f36a44cd09d33eb0ecb1f35739de00f4e78fae9194fa8c28bf"
     },
     {
       "path": "mtv_logo.png",
@@ -1677,35 +1677,35 @@
     },
     {
       "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
-      "sha256": "62702cd51b6cabedabbc61c4436366d8980042243abf0d99ea5939745e03b2e5"
+      "sha256": "09e139aed7062960c4e5a1d95546270d56595909b01ed10ae08603822719eacb"
     },
     {
       "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "30aa3fae15b30d578639e748428ea9773f9163d974b0d7115a58822fc67c2490"
+      "sha256": "07ae64cd3337616cdfa566252b07914025595e1d7ea1d0529f96bd2723f8a6d1"
     },
     {
       "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "1f1ba34f6992f1f6860caae70d8caea32dfd0857681dab3712008fff963372c4"
+      "sha256": "ad235ca5d54c711272c51a8329a83f2aec71294ca24d1d72537adf5928612cdb"
     },
     {
       "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
-      "sha256": "8d4c3f829cca1c0e6e3e7c1ea314b74aa914919bfd43ee1cea1030fff98e8458"
+      "sha256": "123eff8116f1f6d40fb116dff91e9d928ae6f0e4bdba64548cd40f88ac16927b"
     },
     {
       "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
-      "sha256": "e282ea462fe9dfbb8a2c064ac2a744d9244f7ac6c70cc1ee6a59731b6d88c20a"
+      "sha256": "aed453ebaa1671658f0ba4369558d4cbfe247116f510cb0b29846be4bec412d5"
     },
     {
       "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
-      "sha256": "e160ed34ea782ee07a67a8eb4f5572b986b1d5faa47ddf6313da1fb1b9ff3d7e"
+      "sha256": "95fafe2dff863b9f07201788a594101ba1d4c269897059d226cd0648dd2808c3"
     },
     {
       "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
-      "sha256": "d856f09db747281cf52558f1997e70db600bf8251578ceb5de9689658207528d"
+      "sha256": "95a6c7dbc8c7368684f4b6ede7e4a2499950c462a075fd584ed0ebd43cef735a"
     },
     {
       "path": "remoteplay/bridge.cp311-win_amd64.pyd",
-      "sha256": "7b8e5ee52ff6b65a94f9e9ab114c904bedbc267ab0d705013ac3882567dc5cd7"
+      "sha256": "089c7adee9800f3096004426e888972b48ac3e98d10db5e8bcc427bb2d7f73a6"
     },
     {
       "path": "remoteplay/diagnose.py",
@@ -1713,15 +1713,15 @@
     },
     {
       "path": "remoteplay/input.cp311-win_amd64.pyd",
-      "sha256": "aad7a920618ecaeeafe3aa194af12e84b185804fa0cc62852a1bcd77741efafc"
+      "sha256": "5ed5327ea640c62585ea69392a1d091457122062dba92f8f1bf3a572fb2af1d0"
     },
     {
       "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "b11122d156571f8fcbbcaae6323bb6faa2b05d1fe181e8b817302cdfa9e8ae3a"
+      "sha256": "835026ce86c84dacd734df1a8ad5f6e3c60f83dc7e9f4d43fdf193fe0ff70d54"
     },
     {
       "path": "remoteplay/output.cp311-win_amd64.pyd",
-      "sha256": "9a05201154578aee18f85e5d00bde13b342fffab054c81627af319d4b1371fba"
+      "sha256": "e5a6a071347f63562964283cede46529a9268ff94d7f2f7b6f9db4456741b0d2"
     },
     {
       "path": "remoteplay/runtime.dat",
@@ -1729,7 +1729,7 @@
     },
     {
       "path": "remoteplay/state.cp311-win_amd64.pyd",
-      "sha256": "2d5728905ba849a3328a24982201d9cd3da7ab980ba4c28e387c82a94beb75ec"
+      "sha256": "56ff2385c1a993882089ad07d74f51a392af85443ff37073285fe1131ab40f0f"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1741,5 +1741,5 @@
     }
   ],
   "remove": [],
-  "sig": "Gk9rEq_kQJNnqHfuLuPpSOoHvRRkcABjNB4_HK26VDz_4n4Vq1ABbBuuQcK22uF8_M_BEn-9OS-6aCAmEEarCg"
+  "sig": "djT7BUm2mEOAEUSSFS4Md_PiO3XnLBQCT9jA0SMNtFyp5pvmkwgwxCdhRVIWgiHHmIWScDHisAf1YWqTOXjoDQ"
 }

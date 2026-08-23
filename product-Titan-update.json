@@ -3,9 +3,9 @@
   "type": "product",
   "mode": "full",
   "product": "Titan",
-  "base_version": "2.6.7",
-  "version": "7.0.0",
-  "notes": "MTV 7.0: stabilized release target (session-firm), full meter-body color detection (no more sliver fill), removed meter zoom",
+  "base_version": "7.0.0",
+  "version": "7.0.1",
+  "notes": "MTV 7.0.1: installer hub now shows BOTH Titan and Remote Play cards for staff / both-role users after a self-update",
   "files": [
     {
       "path": "MTV.gpc",
@@ -29,11 +29,11 @@
     },
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "352f016a9a951044147cd84a1f4579abbd7cf0175815cf4133760bf93b5ee448"
+      "sha256": "1d3076d9c575a75a3c01e972e6487e94150e12401760e6094ab4f79b7970c118"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "c2020e94e0a045e2f450e718aba0e2a923fbb5acb1ce1c17a4b9b8dcc31246e7"
+      "sha256": "f697cb110b767da67671d41d57c205e1bd0f0609a336d752b0f91c8c9bbcd8f1"
     },
     {
       "path": "deps/helios/Helios.exe",
@@ -1633,7 +1633,7 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "ca71398d34addfecd94bf1bcf55120c00426558b85ff4597c3499152f23be834"
+      "sha256": "0e28009db8e4d6bd1ec7bf0b28638a6ffa074bfe36f5da65288c2eb8d9a66fd6"
     },
     {
       "path": "mtv_launcher.py",
@@ -1649,7 +1649,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "2a07c72541afcd0ca7bd6823cf187af0a58541408d7526c6ab84980d704f36cd"
+      "sha256": "1f31a561b7e64b192497dd56892060f0ec15c1ea3eb92ac3f1929be4163c76ed"
     },
     {
       "path": "mtv_logo.png",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "370f511c9ac5206aacba44206b6ed115ab24b59b4ba8cbe8bbcdff27e4a186c0"
+      "sha256": "6657288c313056ece900a51a1f692632027a51e3629e554feb1447ae521294cc"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1673,5 +1673,5 @@
     }
   ],
   "remove": [],
-  "sig": "Pi-g_Pe2rPTXSyeJ6vn8L3ky5HDnbRdX3KQ4v35raMwdYvVKlY23-7EqMwDABJABC1pc30tSpgXQBOm8Umj-Cg"
+  "sig": "kohLizm5C1d4sQa78vCUgSgMVdgnZ6qqX48Hv4b6cJat2NggSmX2kx1dPIVhI3CGL-mRa2ee3Ef3WNP8CwtIBQ"
 }

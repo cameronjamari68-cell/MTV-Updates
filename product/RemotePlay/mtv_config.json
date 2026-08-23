@@ -2,13 +2,13 @@
     "meter_profile_type":  "Arrow2",
     "meter_profile_color":  "Custom",
     "meter_rgb_lower":  [
-                            150,
+                            162,
                             0,
-                            150
+                            163
                         ],
     "meter_rgb_upper":  [
                             255,
-                            100,
+                            91,
                             255
                         ],
     "meter_profile_occupancy_min":  0.3,
@@ -25,7 +25,7 @@
                       1.0,
                       0.68
                   ],
-    "target_height":  60.400000000000006,
+    "target_height":  51.00000000000006,
     "release_mode":  "threshold",
     "threshold_margin_px":  0.0,
     "threshold_margin_max_px":  0.0,
@@ -63,7 +63,7 @@
     "track_window_pad_y":  220,
     "idle_early_reject":  true,
     "idle_reject_scale":  4,
-    "show_hud":  false,
+    "show_hud":  true,
     "debug_mode":  false,
     "controller_type":  "PlayStation",
     "remoteplay_output_type":  "auto",
