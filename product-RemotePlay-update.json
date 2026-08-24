@@ -5,15 +5,15 @@
   "product": "RemotePlay",
   "base_version": "7.0.0",
   "version": "7.0.1",
-  "notes": "MTV 7.0.1: installer hub now shows BOTH Titan and Remote Play cards for staff / both-role users after a self-update",
+  "notes": "Remoteplay",
   "files": [
     {
       "path": "MTVRemotePlay.gpc",
-      "sha256": "353549748870b8b0d603087f2c0c0c0d20e1046acc1d461849e0ecde33c28789"
+      "sha256": "f4b3355c429c28f7b6f9eecdc1bea1d715fad33ca9d5013a0e6c2a5da808109f"
     },
     {
       "path": "MTVRemotePlay.gpc3",
-      "sha256": "fe6ab9739090098ac0028279be40a0f1b758dd8fe3a5e929f459d80d3a60068a"
+      "sha256": "d9863325c9aba3c8bc05b999b0e137aac416aaef8aea34172dd925957345c35e"
     },
     {
       "path": "MTVRemotePlay.py",
@@ -1641,11 +1641,11 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "0e28009db8e4d6bd1ec7bf0b28638a6ffa074bfe36f5da65288c2eb8d9a66fd6"
+      "sha256": "42d91b726046a9614e1db430fab01257845bfab36c310b43b7b6b26c10937c21"
     },
     {
       "path": "mtv_launcher.py",
-      "sha256": "179bb1b3e42f8b97ad0b2213cf72e5cc0ed256e60b0bf7c8a3dce2773fb8fb68"
+      "sha256": "7e789805d0d0494f442eed362be7b5c3abf35878fec51123f53419f7fc60d90a"
     },
     {
       "path": "mtv_license/__init__.py",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "142a5f06ef0632f36a44cd09d33eb0ecb1f35739de00f4e78fae9194fa8c28bf"
+      "sha256": "1c96388d82978849bba0288a63e4d6b4855330ee47e1965ef2d014f38a6f029a"
     },
     {
       "path": "mtv_logo.png",
@@ -1677,35 +1677,35 @@
     },
     {
       "path": "remoteplay/_diagnose_core.cp311-win_amd64.pyd",
-      "sha256": "09e139aed7062960c4e5a1d95546270d56595909b01ed10ae08603822719eacb"
+      "sha256": "c5dab096ad1893664a2b32f27cab885720d6fb9433da3c76eb5797aed00d5bc4"
     },
     {
       "path": "remoteplay/_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "07ae64cd3337616cdfa566252b07914025595e1d7ea1d0529f96bd2723f8a6d1"
+      "sha256": "26c9aee25ec4eff411979b688a98e1c72d8fbfa554ec2006d03ba46bdfe5a192"
     },
     {
       "path": "remoteplay/_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "ad235ca5d54c711272c51a8329a83f2aec71294ca24d1d72537adf5928612cdb"
+      "sha256": "fa71fa7a1ce50ccb8a1998c0e1490880ca4593ff9b52f89ef51c51488499a97f"
     },
     {
       "path": "remoteplay/_mtvremoteplay_core.cp311-win_amd64.pyd",
-      "sha256": "123eff8116f1f6d40fb116dff91e9d928ae6f0e4bdba64548cd40f88ac16927b"
+      "sha256": "d035ebb947d6a88fcea35777723088d7ada02441b26a00fd800d36cf96b9d67b"
     },
     {
       "path": "remoteplay/_sdl_input.cp311-win_amd64.pyd",
-      "sha256": "aed453ebaa1671658f0ba4369558d4cbfe247116f510cb0b29846be4bec412d5"
+      "sha256": "6c3c8c05d23dd050c38a1b994ac576c07705feb679aa4f636ba6b45bb339a3ee"
     },
     {
       "path": "remoteplay/_vigem.cp311-win_amd64.pyd",
-      "sha256": "95fafe2dff863b9f07201788a594101ba1d4c269897059d226cd0648dd2808c3"
+      "sha256": "0c8b2e3efdd1d157a15667f7cbf3aee6a2c7051832a99448af2bc29d584d27a0"
     },
     {
       "path": "remoteplay/_xinput.cp311-win_amd64.pyd",
-      "sha256": "95a6c7dbc8c7368684f4b6ede7e4a2499950c462a075fd584ed0ebd43cef735a"
+      "sha256": "d03ed4b5162ecfd339866e6ed654d0e9b54b58ba9f99a110df5b2e3b04a839ac"
     },
     {
       "path": "remoteplay/bridge.cp311-win_amd64.pyd",
-      "sha256": "089c7adee9800f3096004426e888972b48ac3e98d10db5e8bcc427bb2d7f73a6"
+      "sha256": "716ea0902185073d35b0dab974d03b93044ed0fac757badaad9b0eff386dc438"
     },
     {
       "path": "remoteplay/diagnose.py",
@@ -1713,15 +1713,15 @@
     },
     {
       "path": "remoteplay/input.cp311-win_amd64.pyd",
-      "sha256": "5ed5327ea640c62585ea69392a1d091457122062dba92f8f1bf3a572fb2af1d0"
+      "sha256": "e9010055f326bdac88057764070a56dcf50eb9f7b70bbb167ad7baeee443015f"
     },
     {
       "path": "remoteplay/mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "835026ce86c84dacd734df1a8ad5f6e3c60f83dc7e9f4d43fdf193fe0ff70d54"
+      "sha256": "0effc74ec456659d3548a796aea8bcc5351fb973b189643e2a4a1f3bd056c4fd"
     },
     {
       "path": "remoteplay/output.cp311-win_amd64.pyd",
-      "sha256": "e5a6a071347f63562964283cede46529a9268ff94d7f2f7b6f9db4456741b0d2"
+      "sha256": "59114f5bff247ce91f053e538ea43d8df654ccbb7b127c34221b4d85b63563d9"
     },
     {
       "path": "remoteplay/runtime.dat",
@@ -1729,7 +1729,7 @@
     },
     {
       "path": "remoteplay/state.cp311-win_amd64.pyd",
-      "sha256": "56ff2385c1a993882089ad07d74f51a392af85443ff37073285fe1131ab40f0f"
+      "sha256": "3f2ea3e6d86e90eb02e1de6f408537b99ede430371c680d154490fceb61c804b"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1741,5 +1741,5 @@
     }
   ],
   "remove": [],
-  "sig": "djT7BUm2mEOAEUSSFS4Md_PiO3XnLBQCT9jA0SMNtFyp5pvmkwgwxCdhRVIWgiHHmIWScDHisAf1YWqTOXjoDQ"
+  "sig": "tc2YM23xlmKNYW86BwcifxY-y7Z7yCOpm2RerAexx9N0ZqVL-kJ10dVbHPBj9KGpTCYIiKrcQ_lYw-C4LRzwBg"
 }

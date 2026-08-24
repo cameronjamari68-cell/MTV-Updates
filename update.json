@@ -2,20 +2,20 @@
   "v": 1,
   "version": "7.0.1",
   "exe": "MTVInstaller-7.0.1.exe",
-  "exe_sha256": "2c3cf087e61ecca83b115024a1a14084c11fcb158dc6f5cb4a8c4c5c2b004351",
+  "exe_sha256": "2ab1d0e248488a6c401c6e66300be3310512e05d1334e917d350b6dec2d08281",
   "min_version": "7.0.1",
-  "notes": "MTV 7.0.1: installer hub now shows BOTH Titan and Remote Play cards for staff / both-role users after a self-update",
+  "notes": "Remoteplay",
   "packages": {
     "Titan": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v7.0.1/MTV-Titan-7.0.1.zip",
-      "sha256": "f72d75bd31895a4a47c853d8c4d7ea0206e5d6ff817f53bb8edb45718f654a50",
-      "size": 239740279
+      "sha256": "8048abddabd784b9b39c0b8183a73a93546349af5fc4c1b5599620a95b1f3f68",
+      "size": 239770043
     },
     "RemotePlay": {
       "url": "https://github.com/cameronjamari68-cell/MTV-Updates/releases/download/v7.0.1/MTV-RemotePlay-7.0.1.zip",
-      "sha256": "b81255b45d910f4be48dec6c11b4cf786e712cf43675b6573fb75f8ff537263e",
-      "size": 241615548
+      "sha256": "2deb26ebd6406430998fcd7fc1290df2bd7e73126586db8d44a6935015b626db",
+      "size": 241653448
     }
   },
-  "sig": "6Ex4b67upLjbjYg5FbOY8KJf3bcX9RZZOZELBKeq0Xf5mSeyV7IYCyY6MUXCk2aAWQwTJ4LAMuX8rwOf5Of7AA"
+  "sig": "LGv0-0DX2jGvAvEQqZ6YC7slWxf2OkMAIyWhISdTkUZ7MzyjFga7wcCvV-ACln9PMkO2VI5KfgCBKHHnRcRzBA"
 }

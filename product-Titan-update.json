@@ -5,11 +5,11 @@
   "product": "Titan",
   "base_version": "7.0.0",
   "version": "7.0.1",
-  "notes": "MTV 7.0.1: installer hub now shows BOTH Titan and Remote Play cards for staff / both-role users after a self-update",
+  "notes": "Remoteplay",
   "files": [
     {
       "path": "MTV.gpc",
-      "sha256": "4df15da2b74b72d28d98ae40c7a687b2e94c9bac3abd12cc88d40fc60b1fcae0"
+      "sha256": "e7d285d5c75f2247eb372dde85434efd7607ef89ab60932231cc4d56a46c7bf9"
     },
     {
       "path": "MTVBridge.py",
@@ -29,11 +29,11 @@
     },
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "1d3076d9c575a75a3c01e972e6487e94150e12401760e6094ab4f79b7970c118"
+      "sha256": "0b42a2fec71fa5d68c60848072757dce27792973e4c76196a1034a640035188a"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "f697cb110b767da67671d41d57c205e1bd0f0609a336d752b0f91c8c9bbcd8f1"
+      "sha256": "ba6dde0c4e11440c92b112d850d81fa85320fa5ba509eff24df3f4bb6bc31120"
     },
     {
       "path": "deps/helios/Helios.exe",
@@ -1633,11 +1633,11 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "0e28009db8e4d6bd1ec7bf0b28638a6ffa074bfe36f5da65288c2eb8d9a66fd6"
+      "sha256": "42d91b726046a9614e1db430fab01257845bfab36c310b43b7b6b26c10937c21"
     },
     {
       "path": "mtv_launcher.py",
-      "sha256": "235fc3a476b7092582e8a9510f73adb0af891c9a910e53c744b849ad64c78d2e"
+      "sha256": "6406a18e12410b7e27ab527990e7a3b3c4243d13474a2234485526c0511a42b5"
     },
     {
       "path": "mtv_license/__init__.py",
@@ -1649,7 +1649,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "1f31a561b7e64b192497dd56892060f0ec15c1ea3eb92ac3f1929be4163c76ed"
+      "sha256": "32397835d523a13298c7a0227f2e180f18323f7d038f9860a31df5fd42f308dc"
     },
     {
       "path": "mtv_logo.png",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "6657288c313056ece900a51a1f692632027a51e3629e554feb1447ae521294cc"
+      "sha256": "f3121756d776637cc02a937b909a324768ac919d0cd4b801c273c5c3336c853b"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1673,5 +1673,5 @@
     }
   ],
   "remove": [],
-  "sig": "kohLizm5C1d4sQa78vCUgSgMVdgnZ6qqX48Hv4b6cJat2NggSmX2kx1dPIVhI3CGL-mRa2ee3Ef3WNP8CwtIBQ"
+  "sig": "gg2SW1x0m-5Dv9IGqjuSiPLTl4p4gP3eSM1rLZ_kL2T_Zix3DixCtyaYT_cUYZbnhneueWGCbnSfo8PyLqX_DA"
 }

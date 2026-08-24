@@ -131,7 +131,7 @@ REFERENCE = {
     "color_space": "rgb",
     "target_height": 64.0, "adaptive_geometry": True, "target_margin_px": 0.0,
     "threshold_margin_px": 0.0, "threshold_margin_max_px": 0.0,
-    "meter_width_normalize": False, "green_detect_enabled": True,
+    "meter_width_normalize": False, "green_detect_enabled": False,
     "green_calibrate_lead_px": 16.0,
     "vision_localizer_enabled": True, "vision_localizer_resource": "",
     "vision_localizer_interval_ms": 300.0, "vision_localizer_input_px": 320, "vision_localizer_confidence": 0.45,
@@ -149,6 +149,7 @@ REFERENCE = {
     "idle_reject_scale": 4,
     "show_hud": True, "debug_mode": False,
     "controller_type": "PlayStation", "dunk_release_ms": 50,
+    "hud_box_thickness_px": 3, "hud_guide_thickness_px": 3,
     "tempo_mid_value": 40, "tempo_ms": 65, "neutral_pause_ms": 40,
     "force_regular_only": True,
     "hold_power": 100, "flick_power": 100, "up_flick_ms": 300,
@@ -191,6 +192,11 @@ def load_live():
 
 
 def save_config(cfg):
+    cfg = dict(cfg)
+    try:
+        cfg["target_height"] = round(float(cfg.get("target_height", 64.0)), 1)
+    except (TypeError, ValueError):
+        cfg["target_height"] = 64.0
     tmp = CONFIG_PATH.with_name(f"{CONFIG_PATH.name}.{os.getpid()}.tmp")
     try:
         tmp.write_text(json.dumps(cfg, indent=2), encoding="utf-8")
@@ -542,7 +548,7 @@ class MainWindow(QMainWindow):
         self.target_height.setSingleStep(0.5)
         self.target_height.setSuffix(" px")
         self.target_height.setValue(float(self.cfg.get("target_height", 64.0)))
-        self.target_height.setToolTip("How high the meter fills before the shot releases (px from the base toward the top).")
+        self.target_height.setToolTip("Authoritative fill height for release (px from the base). Green graphics never override this value.")
         self.target_height.valueChanged.connect(lambda value: self.set_value("target_height", value))
         timing_grid.addWidget(self.target_height, 0, 1)
         timing_grid.addWidget(QLabel("Dunk"), 1, 0)
@@ -888,7 +894,9 @@ class MainWindow(QMainWindow):
                 box_text = f" • {int(box[2])} × {int(box[3])}"
             except (TypeError, ValueError):
                 box_text = ""
-        target = _to_float(cfg.get("_live_target_height"), 0.0)
+        # Show the authoritative UI value, not its internal downscaled-frame
+        # coordinate. This stays identical across meter styles and shot types.
+        target = _to_float(cfg.get("target_height"), 64.0)
         self.live_detail.setText(f"{profile} • {color} • TGT {target:.0f}px • "
                                  f"{velocity:.2f}px/ms{box_text}")
         rp_running = cfg.get("_live_rp_running")

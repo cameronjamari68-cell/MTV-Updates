@@ -14,8 +14,9 @@
 // like the wired capture-card setup.
 //
 // Two output modes (do NOT run both at once):
-//   * No Titan hardware: Python drives a virtual Xbox 360 pad (vgamepad) and
-//     executes the release in Python. Leave remoteplay_bridge_enable: true.
+//   * No Titan hardware: Python reads Xbox through XInput or DS5 through SDL,
+//     drives the matching ViGEm X360/DS4 target, and executes the release in
+//     Python. Leave remoteplay_bridge_enable: true.
 //   * With a Titan Two: load this GPC on the Titan and set
 //     remoteplay_bridge_enable: false in mtv_config.json so the Python bridge
 //     does not ALSO release (a double release would ruin the shot).
@@ -27,6 +28,9 @@
 // power held for the tempo (default 300 ms) -- with a small X drift, then
 // centers and suppresses the held stick until the player physically releases
 // it. The long full-power hold is what makes the tempo read correctly.
+// titanone.gph aliases the DS5/PlayStation binds to the same control slots used
+// below: PS4_R2=XB1_RT=4, PS4_L3=XB1_LS=8, PS4_RX/RY=XB1_RX/RY=9/10,
+// and PS4_SQUARE=XB1_X=20. Helios DS5 Input therefore needs no bind translation.
 #define CH_FLAGS       0
 #define CH_RIGHT_X     3
 #define CH_RIGHT_Y     4
@@ -46,6 +50,8 @@
 #define CH_CIRCLE_SWEEP_HI 24
 #define CH_CIRCLE_RADIUS  25
 #define CH_DUNK_STYLE     26
+#define CH_NODIP_HOLD     27
+#define CH_NODIP_PHASE    28
 #define GCV_TIMEOUT_MS 250
 #define CIRCLE_STEP_MS 15
 #define RESET_DEADZONE 20
@@ -84,6 +90,8 @@ int circle_active;
 uint32 circle_elapsed;
 fix32 circle_angle;
 fix32 circle_theta;
+int nodip_hold;
+int nodip_phase;
 
 init {
     routed_mode = FALSE;
@@ -121,7 +129,8 @@ int release_running() {
     // conditional blocks, so it cannot be a combo); circle_active keeps the
     // rest of the machine from double-firing while the sweep is in progress.
     return combo_running(MTV_Release) || combo_running(MTV_DunkRelease)
-        || circle_active || combo_running(MTV_DunkWave);
+        || circle_active || combo_running(MTV_DunkWave)
+        || combo_running(MTV_NoDipRelease);
 }
 
 void read_gcv_packet() {
@@ -139,7 +148,8 @@ void read_gcv_packet() {
     tempo_mid = gcv_read(CH_TEMPO_MID);
     shot_input_button = gcv_read(CH_SHOT_INPUT);
     release_style = gcv_read(CH_RELEASE_STYLE);
-    if (release_style != 0) release_style = 1;      // 0 = flick, 1 = circle
+    // 0 = flick, 1 = circle, 2 = Fast NO-DIP
+    if (release_style != 0 && release_style != 2) release_style = 1;
     circle_rate = gcv_read(CH_CIRCLE_RATE);          // 0.1 deg/ms units
     if (circle_rate < 2) circle_rate = 2;            // 0.2 deg/ms floor
     if (circle_rate > 60) circle_rate = 60;          // 6.0 deg/ms cap
@@ -151,6 +161,12 @@ void read_gcv_packet() {
     if (circle_radius > 100) circle_radius = 100;
     dunk_style = gcv_read(CH_DUNK_STYLE);
     if (dunk_style != 0) dunk_style = 1;             // 0 = hold, 1 = wave
+    nodip_hold = gcv_read(CH_NODIP_HOLD) * 4;   // byte carries hold_ms/4
+    if (nodip_hold < 1) nodip_hold = 420;
+    if (nodip_hold > 1000) nodip_hold = 1000;
+    nodip_phase = gcv_read(CH_NODIP_PHASE) * 2; // byte carries phase_ms/2
+    if (nodip_phase < 1) nodip_phase = 100;
+    if (nodip_phase > 500) nodip_phase = 500;
     // Button mode must be routable before a meter exists: physical X is not
     // visible to Python's stick-based activation channel.
     if (shot_input_button) routed_mode = TRUE;
@@ -221,6 +237,15 @@ main {
         if (dunk_active) {
             if (dunk_style == 1) combo_run(MTV_DunkWave);
             else combo_run(MTV_DunkRelease);
+            suppress_held_stick = TRUE;
+        } else if (release_style == 2
+                   || (!dunk_active && get_val(XB1_RT) > 50)) {
+            // Fast NO-DIP: full-power hold then a phased return to center so
+            // the stick never snaps through the opposite direction (the "dip"
+            // the game would read as a second input).  Activated either by
+            // explicit config (byte 21 == 2) OR automatically whenever the
+            // left trigger is held at fire time.
+            combo_run(MTV_NoDipRelease);
             suppress_held_stick = TRUE;
         } else if (release_style == 1) {
             // Circle release: the right stick sweeps a full circle at the
@@ -310,6 +335,26 @@ combo MTV_Release {
     set_val(XB1_RX, 0);
     set_val(XB1_RY, flick_dir * flick_power);
     wait(flick_lock);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, 0);
+    wait(40);
+}
+
+combo MTV_NoDipRelease {
+    // Fast NO-DIP release: the same two-stage flick as MTV_Release, but the
+    // full-power hold lasts nodip_hold (byte 27, default 420 ms) and the
+    // return to center is a PHASED ramp over nodip_phase (byte 28, default
+    // 100 ms) instead of one snap. The game never reads a fast return through
+    // the opposite direction as a second input (the "dip").
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, flick_dir * (flick_power * 50 / 100));
+    wait(50);
+    set_val(XB1_RX, 0);
+    set_val(XB1_RY, flick_dir * flick_power);
+    wait(nodip_hold);
+    set_val(XB1_RY, flick_dir * (flick_power * 75 / 100)); wait(nodip_phase / 4);
+    set_val(XB1_RY, flick_dir * (flick_power * 50 / 100)); wait(nodip_phase / 4);
+    set_val(XB1_RY, flick_dir * (flick_power * 25 / 100)); wait(nodip_phase / 4);
     set_val(XB1_RX, 0);
     set_val(XB1_RY, 0);
     wait(40);
