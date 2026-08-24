@@ -2,14 +2,14 @@
     "meter_profile_type":  "Arrow2",
     "meter_profile_color":  "Custom",
     "meter_rgb_lower":  [
-                            55,
-                            36,
-                            249
+                            150,
+                            0,
+                            150
                         ],
     "meter_rgb_upper":  [
-                            252,
-                            50,
-                            253
+                            255,
+                            100,
+                            255
                         ],
     "meter_profile_occupancy_min":  0.3,
     "morph_kernel_w":  3,
@@ -25,8 +25,9 @@
                       1.0,
                       0.68
                   ],
-    "target_height":  63.8,
+    "target_height":  62.0,
     "release_mode":  "threshold",
+    "release_fill_ratio":  0.99,
     "threshold_margin_px":  0.0,
     "threshold_margin_max_px":  0.0,
     "target_reference_width_px":  26.0,
@@ -64,11 +65,11 @@
     "idle_early_reject":  true,
     "idle_reject_scale":  4,
     "show_hud":  true,
-    "hud_box_thickness_px":  2,
-    "hud_guide_thickness_px":  2,
+    "hud_box_thickness_px":  3,
+    "hud_guide_thickness_px":  3,
     "debug_mode":  false,
     "controller_type":  "PlayStation",
-    "remoteplay_output_type":  "auto",
+    "remoteplay_output_type":  "ds5",
     "dunk_release_ms":  50,
     "tempo_mid_value":  40,
     "tempo_ms":  65,
@@ -90,7 +91,7 @@
     "remoteplay_trigger_threshold":  0.55,
     "remoteplay_release_threshold":  0.3,
     "remoteplay_rhythm_ms":  50,
-    "adaptive_color_enable":  false,
+    "adaptive_color_enable":  true,
     "adaptive_color_alpha":  0.15,
     "adaptive_color_tol":  12,
     "screen_cue_enable":  false,
@@ -114,7 +115,7 @@
                                 1.0,
                                 0.6
                             ],
-    "latency_comp_enable":  false,
+    "latency_comp_enable":  true,
     "latency_comp_jitter_alpha":  0.15,
     "latency_comp_margin_max_px":  6.0,
     "frame_close_kernel":  3,
@@ -137,7 +138,7 @@
     "screen_cue_lab_scale":  4,
     "green_aim_enable":  false,
     "green_aim_offset_px":  0.0,
-    "release_style":  "nodip",
+    "release_style":  "flick",
     "nodip_hold_ms":  420,
     "nodip_phase_ms":  100,
     "stick_stabilize_enable":  true,
@@ -148,5 +149,8 @@
     "trainer_sample_frames":  6,
     "trainer_min_pixels":  24,
     "trainer_auto_apply":  true,
-    "trainer_write_color_bounds":  true
+    "trainer_write_color_bounds":  true,
+    "infinite_stamina":  false,
+    "stamina_scale":  70,
+    "defense_mode":  "OFF"
 }

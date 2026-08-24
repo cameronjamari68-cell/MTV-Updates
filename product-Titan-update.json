@@ -3,8 +3,8 @@
   "type": "product",
   "mode": "full",
   "product": "Titan",
-  "base_version": "7.0.1",
-  "version": "7.0.2",
+  "base_version": "7.0.3",
+  "version": "7.0.1",
   "notes": "Remoteplay",
   "files": [
     {
@@ -29,11 +29,11 @@
     },
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "bbb49333e847c31caa795c29270e1f03ef5cac4e31930f5931ea84ad5838413e"
+      "sha256": "523b26fdd986c68de826539bb81b1f5d8536cb8733c5cc0bbfdfb482b56a9845"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "126a8637ea08fb00f83521c6e650637977468a88fae492e78d6f3900896878f3"
+      "sha256": "ddfe793e983e93bd0e990096d8b6688423343de3be550b97c3357d021e41ee42"
     },
     {
       "path": "deps/helios/Helios.exe",
@@ -1589,7 +1589,7 @@
     },
     {
       "path": "install_product.ps1",
-      "sha256": "c6c1645705d0b883141f8ea14357a142aa056101a44505fe79766ef62b87ac87"
+      "sha256": "3f03a592983253089993f11d8c29a29f760be2c3eb964835fe71f6f4c2ba928f"
     },
     {
       "path": "meters/Arrow.json",
@@ -1597,7 +1597,7 @@
     },
     {
       "path": "meters/Arrow2.json",
-      "sha256": "34c45c7788f8557c5b3888390b94e6b8b39c63b5090d80d6e86019990f46aa2c"
+      "sha256": "b28d504d2876796f9b80b0b8ef7b8e4aea99bf90a9a1d21bb0e5c551ff0dd831"
     },
     {
       "path": "meters/Dial.json",
@@ -1613,11 +1613,11 @@
     },
     {
       "path": "meters/Pill.json",
-      "sha256": "6654d2ef20a352bafcfdfc869186d0703bd4e24cca40ee063c113bafdd5c38a0"
+      "sha256": "7d9a4664f86720e79d9929e99ee74a3994f07f6f87251a505bb9df9d3dbd5fd9"
     },
     {
       "path": "meters/Straight.json",
-      "sha256": "d68900165e76ca5ccbfe5b922f6ca1b1870865e2fe9766229ad707bd48c823b9"
+      "sha256": "2f858cff5a98781ac14570837d5307777827ed8378ff5857e7416f7ac7ffe39c"
     },
     {
       "path": "meters/Sword.json",
@@ -1633,11 +1633,11 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "b4aa3dd9b1fba048c45990967afeb8702cc386ce9856ce386e92c50345739ecc"
+      "sha256": "f40a283f69e64d2f4dc7a10f5813684ff3a2a7c4d6bbb075141da54a76ddda11"
     },
     {
       "path": "mtv_launcher.py",
-      "sha256": "6406a18e12410b7e27ab527990e7a3b3c4243d13474a2234485526c0511a42b5"
+      "sha256": "05ad2eff7677eeddda716601defd0a108a4be1738cb2768287bae4bac06bbfa8"
     },
     {
       "path": "mtv_license/__init__.py",
@@ -1649,7 +1649,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "c43d6ead6dd712c784dea8280dcd28d0ea210335462c787b5da2e787e8751cf3"
+      "sha256": "f401e52501f07e9a8058d9a5a3efd9b3ab57ace6594cf7410fde1b61d8192fd2"
     },
     {
       "path": "mtv_logo.png",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "3369df01f76e548841f1bfdd740d629ad9c17805f98eddf13b2ed591f5c150ce"
+      "sha256": "ed0596025124bd272be0b1921e5ac17065cce3fe0d0a7eb6839ea18ae75692cf"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1673,5 +1673,5 @@
     }
   ],
   "remove": [],
-  "sig": "ZkYACAQhUZ1V-FfwurGT9rnE1gW2aOeAouzMlFDzDw4_CCKguR5dVOA3BvWVFJNw1PkV2akmgjKdbBEZAzd9AA"
+  "sig": "JXTMy7NQQew9eA0xj1YwAvgkQP53Q61-IqvAJDgmC1aoazC-0HzbXZJNWH5Mr6ENeijigfYZr6b6ZDZDhNj1Bw"
 }

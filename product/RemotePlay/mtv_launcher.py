@@ -597,8 +597,25 @@ class MainWindow(QMainWindow):
                              "keys: meter_zoom_scale, meter_zoom_corner, "
                              "meter_zoom_pad_px.")
         self.zoom.toggled.connect(lambda value: self.set_value("meter_zoom_enable", value))
-        meter_card.body.addWidget(self.hud)
         meter_card.body.addWidget(self.zoom)
+        pad_row = QHBoxLayout()
+        pad_row.setSpacing(8)
+        pad_lbl = QLabel("Pad output")
+        pad_lbl.setObjectName("Muted")
+        pad_row.addWidget(pad_lbl)
+        self.pad_output = QComboBox()
+        self.pad_output.addItems(["PlayStation (PS5)", "Xbox 360 (XInput)"])
+        pad_val = str(self.cfg.get("remoteplay_output_type", "ds5")).strip().casefold()
+        self.pad_output.setCurrentText(
+            "Xbox 360 (XInput)" if pad_val in ("x360", "xbox", "xbox360", "xinput")
+            else "PlayStation (PS5)")
+        self.pad_output.setToolTip("Which virtual pad the bridge creates. PS5 mode = "
+                                   "DualShock 4 pad (what PS Remote Play accepts); "
+                                   "Xbox 360 = XInput pad (Xbox Remote Play).")
+        self.pad_output.currentTextChanged.connect(self._on_pad_output)
+        pad_row.addWidget(self.pad_output)
+        pad_row.addStretch()
+        meter_card.body.addLayout(pad_row)
         self.restore = QPushButton("RESTORE DEFAULTS")
         self.restore.setObjectName("QuietButton")
         self.restore.clicked.connect(self.restore_reference)
@@ -681,6 +698,19 @@ class MainWindow(QMainWindow):
             QTimer.singleShot(800, lambda: self.saved.setText("REFERENCE MODE"))
         except Exception:
             log_exc(f"step_value({key})")
+
+    def _on_pad_output(self, text):
+        """Pad output selected: save the raw output type (ds5 / x360)."""
+        value = "ds5" if str(text).startswith("PlayStation") else "x360"
+        try:
+            fresh = load_config()
+            fresh["remoteplay_output_type"] = value
+            save_config(fresh)
+            self.cfg = fresh
+            self.saved.setText("SAVED")
+            QTimer.singleShot(800, lambda: self.saved.setText("REFERENCE MODE"))
+        except Exception:
+            log_exc("_on_pad_output")
 
     def open_license_dialog(self):
         if self._activation_dialog_open:

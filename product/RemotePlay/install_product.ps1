@@ -474,13 +474,44 @@ try {
     # was the wrong Python version; that path is removed just above.
     $candidates311 = @()
     if ($existingEnvIs311) { $candidates311 += $EnvPython }
+    # Helios managed-python
     $managed311 = Get-ChildItem -LiteralPath (Join-Path $PythonRoot "managed-python") -Directory -Filter "cpython-3.11*-windows-x86_64-none" -ErrorAction SilentlyContinue |
         Sort-Object Name -Descending | ForEach-Object { Join-Path $_.FullName "python.exe" } |
         Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -First 1
     if ($managed311) { $candidates311 += $managed311 }
+    # Python Launcher for Windows (py -3.11) — detects any globally installed 3.11
+    try {
+        $pyLauncher = (Get-Command py.exe -ErrorAction SilentlyContinue).Source
+        if ($pyLauncher) {
+            $py311Path = & $pyLauncher -3.11 -c "import sys; print(sys.executable)" 2>$null
+            if ($py311Path -and (Test-Path -LiteralPath $py311Path.Trim() -PathType Leaf)) {
+                $candidates311 += $py311Path.Trim()
+            }
+        }
+    } catch {}
+    # Common global install locations
     $candidates311 += (Join-Path $env:LOCALAPPDATA "Programs\Python\Python311\python.exe")
-    $Py311 = $candidates311 | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -First 1
-    if (-not $Py311) { throw "Python 3.11 64-bit was not found (run Helios once so it provisions Python 3.11)." }
+    $candidates311 += (Join-Path $env:ProgramFiles "Python311\python.exe")
+    $candidates311 += (Join-Path ${env:ProgramFiles(x86)} "Python311\python.exe")
+    # Microsoft Store Python
+    $candidates311 += (Join-Path $env:LOCALAPPDATA "Microsoft\WindowsApps\python3.11.exe")
+    # Search PATH for python3.11.exe or python.exe that reports 3.11
+    $pathHits = @()
+    foreach ($name in @("python3.11.exe", "python.exe")) {
+        $cmd = Get-Command $name -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($cmd) { $pathHits += $cmd.Source }
+    }
+    $pathHits = $pathHits | Sort-Object -Unique
+    foreach ($p in $pathHits) {
+        try {
+            $ver = & $p -c "import sys; print('.'.join(map(str, sys.version_info[:2])))" 2>$null
+            if ($ver -and $ver.Trim() -like "3.11*") {
+                $candidates311 += $p
+            }
+        } catch {}
+    }
+    $Py311 = $candidates311 | Where-Object { $_ -and (Test-Path -LiteralPath $_ -PathType Leaf) } | Select-Object -First 1
+    if (-not $Py311) { throw "Python 3.11 64-bit was not found. Install Python 3.11 from https://www.python.org/downloads/ or run Helios once so it provisions Python 3.11." }
 
     Set-Stage "Python 3.11 environment"
     if (-not (Test-Path -LiteralPath $EnvPython -PathType Leaf)) {
