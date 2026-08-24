@@ -3,8 +3,8 @@
   "type": "product",
   "mode": "full",
   "product": "Titan",
-  "base_version": "7.0.0",
-  "version": "7.0.1",
+  "base_version": "7.0.1",
+  "version": "7.0.2",
   "notes": "Remoteplay",
   "files": [
     {
@@ -29,11 +29,11 @@
     },
     {
       "path": "_mtv_engine.cp311-win_amd64.pyd",
-      "sha256": "0b42a2fec71fa5d68c60848072757dce27792973e4c76196a1034a640035188a"
+      "sha256": "bbb49333e847c31caa795c29270e1f03ef5cac4e31930f5931ea84ad5838413e"
     },
     {
       "path": "_mtvbridge_core.cp311-win_amd64.pyd",
-      "sha256": "ba6dde0c4e11440c92b112d850d81fa85320fa5ba509eff24df3f4bb6bc31120"
+      "sha256": "126a8637ea08fb00f83521c6e650637977468a88fae492e78d6f3900896878f3"
     },
     {
       "path": "deps/helios/Helios.exe",
@@ -1589,7 +1589,7 @@
     },
     {
       "path": "install_product.ps1",
-      "sha256": "9902ad9a2e14a29dfe5742fbfe9e665455c971385f3abad54fcc0dfa41533131"
+      "sha256": "c6c1645705d0b883141f8ea14357a142aa056101a44505fe79766ef62b87ac87"
     },
     {
       "path": "meters/Arrow.json",
@@ -1633,7 +1633,7 @@
     },
     {
       "path": "mtv_config.json",
-      "sha256": "42d91b726046a9614e1db430fab01257845bfab36c310b43b7b6b26c10937c21"
+      "sha256": "b4aa3dd9b1fba048c45990967afeb8702cc386ce9856ce386e92c50345739ecc"
     },
     {
       "path": "mtv_launcher.py",
@@ -1649,7 +1649,7 @@
     },
     {
       "path": "mtv_license/core.cp311-win_amd64.pyd",
-      "sha256": "32397835d523a13298c7a0227f2e180f18323f7d038f9860a31df5fd42f308dc"
+      "sha256": "c43d6ead6dd712c784dea8280dcd28d0ea210335462c787b5da2e787e8751cf3"
     },
     {
       "path": "mtv_logo.png",
@@ -1657,7 +1657,7 @@
     },
     {
       "path": "mtv_vision.cp311-win_amd64.pyd",
-      "sha256": "f3121756d776637cc02a937b909a324768ac919d0cd4b801c273c5c3336c853b"
+      "sha256": "3369df01f76e548841f1bfdd740d629ad9c17805f98eddf13b2ed591f5c150ce"
     },
     {
       "path": "requirements-runtime.txt",
@@ -1673,5 +1673,5 @@
     }
   ],
   "remove": [],
-  "sig": "gg2SW1x0m-5Dv9IGqjuSiPLTl4p4gP3eSM1rLZ_kL2T_Zix3DixCtyaYT_cUYZbnhneueWGCbnSfo8PyLqX_DA"
+  "sig": "ZkYACAQhUZ1V-FfwurGT9rnE1gW2aOeAouzMlFDzDw4_CCKguR5dVOA3BvWVFJNw1PkV2akmgjKdbBEZAzd9AA"
 }

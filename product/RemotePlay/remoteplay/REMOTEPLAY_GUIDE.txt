@@ -30,7 +30,15 @@ There are two output modes - pick ONE:
   MODE A - No Titan hardware (default): Python drives the virtual pad and
            executes the release itself (remoteplay_bridge_enable: true).
   MODE B - With a Titan Two: Python only detects and sends the trigger;
-           MTVRemotePlay.gpc / .gpc3 performs the release on the Titan.
+           MTVRemotePlay.gpc performs the release on the Titan.
+
+HELIOS GPC 3 SLOT
+-----------------
+MTVRemotePlay.gpc3 is a minimal compatibility slot for Helios. It intentionally
+does not run a second release combo. In normal RemotePlay mode the Python/ViGEm
+bridge is the only release authority, so loading the GPC3 slot cannot change
+shot timing or double-flick the right stick. Helios keeps the compiled slot;
+the installer preloads it into slot 1 only when that slot is empty.
 
 MODE A - VIRTUAL CONTROLLER (remoteplay_bridge_enable: true)
 ------------------------------------------------------------
@@ -76,9 +84,22 @@ MODE B - TITAN TWO GPC (remoteplay_bridge_enable: false)
    "[MTV] Remote Play bridge disabled -- using the GPC route" when it takes
    effect.
 3. Release GPC, pick ONE route:
-     Route 1 - Helios GPC3 slot: add MTVRemotePlay.gpc3 to a GPC 3 slot.
+     Route 1 - Helios GPC3 slot: Install/Repair preloads
+               MTVRemotePlay.gpc3 into slot 0. If the slot was already being
+               used, your existing script is preserved; select
+               MTVRemotePlay.gpc3 manually in an empty slot instead.
      Route 2 - Gtuner + Titan Two: compile MTVRemotePlay.gpc with
                titanone.gph and load it on the Titan.
+
+For the Helios GPC3 route with a PlayStation controller:
+  * Open DS5 Input, press Refresh, and choose Controller 1. Install/Repair
+    preselects its zero-based id 0, which Helios labels Controller 1.
+  * If Controller 1 is absent, Windows is not exposing the raw DualSense to
+    Helios. Connect it to THIS PC with a USB data cable, then close
+    DS4Windows/Steam Input and disable HidHide cloaking for HeliosApp.exe.
+    Restart Helios and press Refresh again.
+  * Do not run the Python virtual-pad release and GPC3 release together;
+    keep remoteplay_bridge_enable false for this route.
 
 The GPC fires on the trigger byte alone: the Python is the one authority on
 WHEN to release (it enforces arm/cooldown/one-shot), so a momentary

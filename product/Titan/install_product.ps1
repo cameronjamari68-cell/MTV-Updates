@@ -612,6 +612,21 @@ try {
             Set-IniValue $ini "cv_python" "selectedScript" $scriptFwd
             Set-IniValue $ini "XInputInput" "selectedControllerId" $slot
         }
+        if ($Product -eq "RemotePlay") {
+            # Helios labels its zero-based DS5 id 0 as "Controller 1". Make
+            # that device the initial DS5 selection. Preload the GPC3 source
+            # into slot 0 only when the customer has no script there already;
+            # never erase a working/custom GPC3 slot during repair.
+            $gpc3Path = (Join-Path $InstallDir "MTVRemotePlay.gpc3").Replace("\", "/")
+            Set-IniValue $ini "DS5Input" "selectedControllerId" "0"
+            Set-IniValue $ini "DS5Input" "pollingRate" "250"
+            $gpc3SlotLine = Get-Content -LiteralPath $ini | Where-Object { $_ -match '^\s*slotScripts\s*=' } | Select-Object -First 1
+            if (-not $gpc3SlotLine -or $gpc3SlotLine -match '^\s*slotScripts\s*=\s*(?:,\s*)?$') {
+                Set-IniValue $ini "gpc3" "slotScripts" ($gpc3Path + ", ")
+                Set-IniValue $ini "gpc3" "slotTranslators" ", "
+            }
+            Set-IniValue $ini "gpc3" "activeSlot" "0"
+        }
         Write-Host "Helios now uses the MTV Python 3.11 environment:" -ForegroundColor Green
         Write-Host "  $envPyFwd" -ForegroundColor Cyan
 
